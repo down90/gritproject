@@ -4,7 +4,7 @@ public class lectureVO {
 	private int Cno "C_NO"
 	private String C_category
 	private String C_name
-	"C_TEACHER_INTRO" VARCHAR2(500)  NULL,     -- 모임소개
+	"C_TEACHER_INTRO" VARCHAR2(500)  NULL,     ㅁ농ㅁ농ㅁㄴ옴ㄴㅇㅁ노
 	"C_STATUS"        VARCHAR2(50)   NOT NULL, -- 모임상태
 	"C_SUMMARY"       VARCHAR2(1000) NULL,     -- 모임요약
 	"C_DETAIL"        CLOB           NULL,     -- 모임상세내용
