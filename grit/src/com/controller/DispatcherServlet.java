@@ -15,33 +15,33 @@ import javax.servlet.http.HttpServletResponse;
 //@WebServlet("/DispatcherServlet")
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Properties props;//mapping ÆÄÀÏÀ» ÀúÀåÇÒ ÄÃ·º¼Ç
+	private Properties props;//mapping ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
     
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		//super.init(config);
-		//mapping ÆÄÀÏ(CommandPro.properties)À» ÀÐ¾î¼­ properties ÄÃ·º¼Ç¿¡ ÀúÀå
+		//mapping ï¿½ï¿½ï¿½ï¿½(CommandPro.properties)ï¿½ï¿½ ï¿½Ð¾î¼­ properties ï¿½Ã·ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
-		//1. ¸ÅÇÎÆÄÀÏ ÀÐ¾î¿À±â
+		//1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½
 		String configFile=config.getInitParameter("configFile");
 		//=>CommandPro.properties
 		System.out.println("configFile= "+configFile);
 		
-		//2. ¹°¸®ÀûÀÎ ½ÇÁ¦ °æ·Î ±¸ÇÏ±â
+		//2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
 		String realConfigFile=config.getServletContext().getRealPath(configFile);
 		System.out.println("realConfigFile= "+realConfigFile);
 		
-		//Å×½ºÆ® °æ·Î
+		//ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½
 		realConfigFile="C:\\Users\\user\\Desktop\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
-		System.out.println("Å×½ºÆ® °æ·Î= "+realConfigFile+"\n\n");
+		System.out.println("ï¿½×½ï¿½Æ® ï¿½ï¿½ï¿½= "+realConfigFile+"\n\n");
 		
-		//3. Properties ÄÃ·º¼Ç¿¡ ÀúÀåÇÑ´Ù.
+		//3. Properties ï¿½Ã·ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		props=new Properties();
 		
 		FileInputStream fis=null;
 		try {
-			fis=new FileInputStream(realConfigFile);//¸Å°³º¯¼ö·Î ¹°¸®ÀûÀÎ ½ÇÁ¦ °æ·Î°¡ ÇÊ¿ä
-			props.load(fis);//load ¸Þ¼­µå¸¦ ÀÌ¿ëÇÔ
+			fis=new FileInputStream(realConfigFile);
+			props.load(fis);//load ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½Ì¿ï¿½ï¿½ï¿½
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}catch (IOException e) {
@@ -68,10 +68,10 @@ public class DispatcherServlet extends HttpServlet {
 
 
 	private void requestPro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//=>¸í·É¾î Ã³¸® Å¬·¡½º¸¦ ±¸ÇÏ¿© ÇØ´ç Å¬·¡½ºÀÇ ¸Þ¼­µå¸¦ È£ÃâÇÑ´Ù
-		//- ¿äÃ» ½Ã ÇØ´ç URI¿¡¼­ ¸í·É¾î(contextPath¸¦ Á¦¿ÜÇÑ url)¸¦ ÃßÃâÇÏ¿© Properties ÄÃ·º¼Ç¿¡¼­ Å°(¸í·É¾î)¿¡ ÇØ´çÇÏ´Â
-		//valueÀÎ ¸í·É¾î Ã³¸® Å¬·¡½º¸¦ ±¸ÇÑ´Ù
-		//- ¸í·É¾î Ã³¸® Å¬·¡½ºÀÇ ¸Þ¼­µå¸¦ È£ÃâÇÑ ÈÄ ºäÆäÀÌÁö¸¦ ¸®ÅÏ ¹Þ¾Æ¼­ Æ÷¿öµå ÇÑ´Ù
+		//=>ï¿½ï¿½É¾ï¿½ Ã³ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ø´ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ È£ï¿½ï¿½ï¿½Ñ´ï¿½
+		//- ï¿½ï¿½Ã» ï¿½ï¿½ ï¿½Ø´ï¿½ URIï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É¾ï¿½(contextPathï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ url)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ Properties ï¿½Ã·ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ Å°(ï¿½ï¿½É¾ï¿½)ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½
+		//valueï¿½ï¿½ ï¿½ï¿½É¾ï¿½ Ã³ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½
+		//- ï¿½ï¿½É¾ï¿½ Ã³ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ È£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½
 		
 		//
 		response.setContentType("charset=utf-8");
@@ -80,48 +80,48 @@ public class DispatcherServlet extends HttpServlet {
 		
 		
 		
-		//1. ¿äÃ» URI ¾ò¾î¿À±â
+		//1. ï¿½ï¿½Ã» URI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		String uri=request.getRequestURI();	//=> /mymvc/tips/book.do
 		System.out.println("uri= "+uri);
 		
-		//2. uri¿¡¼­ Context path¸¦ Á¦°ÅÇØ¼­ ¸í·É¾î ºÎºÐ¸¸ ÃßÃâÇÏ±â
+		//2. uriï¿½ï¿½ï¿½ï¿½ Context pathï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½É¾ï¿½ ï¿½ÎºÐ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½
 		String contextPath=request.getContextPath();//=> /mymvc
 		System.out.println("contextPath="+contextPath);
 		System.out.println("uri.indexOf(contextPath)="+uri.indexOf(contextPath));
 		
-		//¸í·É¾î¸¸ ÃßÃâ
+		//ï¿½ï¿½É¾î¸¸ ï¿½ï¿½ï¿½ï¿½
 		String key="";
 		if(uri.indexOf(contextPath)==0) {
 			key=uri.substring(contextPath.length());	//=> /tips/book.do
 		}
-		System.out.println("key="+key);//¸í·É¾î
+		System.out.println("key="+key);//ï¿½ï¿½É¾ï¿½
 		
-		//¸í·É¾î¿¡ ÇØ´çÇÏ´Â ¸í·É¾î Ã³¸® Å¬·¡½º ¾ò¾î¿À±â
-		//getProperty¸Þ¼­µå¸¦ ±â¾ïÇØµÎÀÚ key¿¡ ´ëÇÑ valueÀÇ °ªÀ» ±¸ÇÏ´Â ¸Þ¼­µå
-		String commandStr=props.getProperty(key);	//¹®ÀÚ¿­ 
+		//ï¿½ï¿½É¾î¿¡ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½É¾ï¿½ Ã³ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//getPropertyï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ keyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ valueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
+		String commandStr=props.getProperty(key);	//ï¿½ï¿½ï¿½Ú¿ï¿½ 
 		//=> com.tips.controller.BookController2
-		System.out.println("¸í·É¾î Ã³¸® Å¬·¡½º:"+commandStr+"\n");
+		System.out.println("ï¿½ï¿½É¾ï¿½ Ã³ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½:"+commandStr+"\n");
 		
 		try {
-			//¹®ÀÚ¿­À» Å¬·¡½º·Î
-			Class commandClass=Class.forName(commandStr);//forName()Àº static ¸Þ¼­µåÀÓ
-			//¹®ÀÚ¿­ commandStrÀ» Å¬·¡½º·Î º¯°æÇØÁÖ´Â forName() ¸Þ¼­µå
+			//ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			Class commandClass=Class.forName(commandStr);//forName()ï¿½ï¿½ static ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½
+			//ï¿½ï¿½ï¿½Ú¿ï¿½ commandStrï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ forName() ï¿½Þ¼ï¿½ï¿½ï¿½
 			
-			//Å¬·¡½º¸¦ ÀÎ½ºÅÏ½º·Î
+			//Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½
 			Controller controller=(Controller)commandClass.newInstance();
-			//°´Ã¼¸¦ »ý¼ºÇÏ±â À§ÇØ¼­ newInstance() ¸Þ¼­µå¸¦ »ç¿ëÇÏ°í ¹ÝÈ¯Å¸ÀÔÀÌ object ÀÌ±â ¶§¹®¿¡ ´Ù¿î Ä³½ºÆÃÀ» ÇØ¾ßÇÏ´Âµ¥
-			//°¢°¢ÀÇ controller¸¦ °øÅëÀûÀ¸·Î ¹Þ¾Æ¿Ã ¼ö ÀÖ´Â ÀÎÅÍÆäÀÌ½º°¡  ControllerÀÌ±â ¶§¹®¿¡ ControllerÀÎÅÍÆäÀÌ½º·Î ¹ÞÀ½
+			//ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ newInstance() ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½È¯Å¸ï¿½ï¿½ï¿½ï¿½ object ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½ï¿½Ï´Âµï¿½
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ controllerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½  Controllerï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Controllerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			
-			//¸Þ¼­µå È£Ãâ
+			//ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½
 			String resultPage=controller.requestProcess(request, response);
 			System.out.println("resultPage= "+resultPage+"\n\n");
 			
-			//forward/redirect ¿©ºÎ¿¡ µû¶ó Ã³¸®
+			//forward/redirect ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 			if(controller.isRedirect()) {
 				response.sendRedirect(contextPath+resultPage);
 				//=> /mymvc + /tips/book.do => /mymvc/tips/book.do
 			}else {
-				//ÇØ´ç ºä ÆäÀÌÁö·Î Æ÷¿öµå
+				//ï¿½Ø´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				RequestDispatcher dispatcher=request.getRequestDispatcher(resultPage);
 				dispatcher.forward(request, response);
 			}
