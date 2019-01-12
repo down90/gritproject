@@ -32,7 +32,7 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("realConfigFile= "+realConfigFile);
 		
 		//테스트 경로
-		realConfigFile="D:\\down\\lecture\\workspace_list\\jsp_ws\\mymvc\\WebContent\\config\\CommandPro.properties";
+		realConfigFile="C:\\Users\\user\\Desktop\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
 		System.out.println("테스트 경로= "+realConfigFile+"\n\n");
 		
 		//3. Properties 컬렉션에 저장한다.
