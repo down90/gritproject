@@ -70,20 +70,34 @@
 
 
 </style>
-<script type="text/javascript" src="/jquery/jquery-3.3.1.min.js">
+<script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
 $(function(){
 	$("#l1").click(function(){
-		$("#l1").css("background","lightgray");
+		$("#l1").css("background-color","lightgray");
+		$("#l2").css("background-color","");
+		$("#l3").css("background-color","");
+		$("#infodetail").css("display","");
+		$("#profilelist").css("display","none");
+		$("#comment").css("display","none");
 	});
 	$("#l2").click(function(){
-		
+		$("#l2").css("background-color","lightgray");
+		$("#l3").css("background-color","");
+		$("#l1").css("background-color","");
+		$("#infodetail").css("display","none");
+		$("#profilelist").css("display","");
+		$("#comment").css("display","none");
 	});
 	$("#l3").click(function(){
-
+		$("#l3").css("background-color","lightgray");
+		$("#l1").css("background-color","");
+		$("#l2").css("background-color","");
+		$("#infodetail").css("display","none");
+		$("#profilelist").css("display","none");
+		$("#comment").css("display","");
 	});
 });
-</script>
-<script type="text/javascript">
 	
 </script>
 	<link href="../css/slider_style.css" rel="stylesheet">
