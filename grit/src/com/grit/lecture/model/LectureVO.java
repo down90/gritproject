@@ -1,6 +1,6 @@
 package com.grit.lecture.model;
 
-public class lectureVO {
+public class LectureVO {
 	private int Cno "C_NO"
 	private String C_category
 	private String C_name
