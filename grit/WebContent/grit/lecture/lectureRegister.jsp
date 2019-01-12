@@ -86,8 +86,8 @@
 				</div>
 				<div class="pwrap">
 					<p class="size_15">수강료</p>
-					<input type="radio" name="rd1" style="float: none;"> 무료 <input
-						type="radio" name="rd2" style="float: none;"> 유료
+					<input type="radio" name="c_pay" style="float: none;"> 무료 
+					<input type="radio" name="c_pay" style="float: none;"> 유료
 				</div>
 				<div class="pwrap">
 					<p class="size_15">가격</p>
