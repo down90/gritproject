@@ -1,4 +1,4 @@
-package com.grit.admin.member.mode;
+package com.grit.admin.member.model;
 
 import java.sql.SQLException;
 
