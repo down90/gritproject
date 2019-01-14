@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 //@WebServlet("/DispatcherServlet")
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Properties props;//mapping ������ ������ �÷���
+	private Properties props;
     
 	@Override
 	public void init(ServletConfig config) throws ServletException {
@@ -94,7 +94,7 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("��ɾ� ó�� Ŭ����:"+commandStr+"\n");
 		
 		try {
-			Class commandClass=Class.forName(commandStr);//forName()�� static �޼�����
+			Class commandClass=Class.forName(commandStr);
 			
 			Controller controller=(Controller)commandClass.newInstance();
 			String resultPage=controller.requestProcess(request, response);
