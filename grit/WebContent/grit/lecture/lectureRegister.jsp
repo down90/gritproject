@@ -14,24 +14,26 @@
 			<div class="cont1">
 				<div class="pwrap">
 					<p style="float: left; width: 12%;">강의 제목</p>
-					<input type="text" class="size_85" name="txt1" value="">
+					<input type="text" class="size_85" name="cName">
 				</div>
 				<div class="pwrap">
 					<p style="float: left; width: 12%;">강사 소개</p>
-					<textarea class="size_85" name="txt_ar1"></textarea>
+					<textarea class="size_85" name="cTeacherIntro"></textarea>
 				</div>
 				<div class="pwrap">
 					<p style="float: left; width: 15%;">카테고리</p>
-					<div class="ctwrap">
-						<li class="cate_box">카테고리1</li>
-						<li class="cate_box">카테고리2</li>
-						<li class="cate_box">카테고리3</li>
-						<li class="cate_box">카테고리4</li>
-						<li class="cate_box">카테고리5</li>
-						<li class="cate_box">카테고리6</li>
-						<li class="cate_box">카테고리7</li>
-						<li class="cate_box">카테고리8</li>
-						<li class="cate_box">카테고리9</li>
+					<div class="">
+						<ul>
+							<li class="cate_box">카테고리1</li>
+							<li class="cate_box">카테고리2</li>
+							<li class="cate_box">카테고리3</li>
+							<li class="cate_box">카테고리4</li>
+							<li class="cate_box">카테고리5</li>
+							<li class="cate_box">카테고리6</li>
+							<li class="cate_box">카테고리7</li>
+							<li class="cate_box">카테고리8</li>
+							<li class="cate_box">카테고리9</li>
+						</ul>
 					</div>
 					<div class="btnwrap1">
 						<div class="btn_box">+ 직접입력</div>

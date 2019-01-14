@@ -6,8 +6,4 @@ public class LectureService {
 	public LectureService() {
 		lectureDao= new LectureDAO();
 	}
-	
-	
-	
-	
 }
