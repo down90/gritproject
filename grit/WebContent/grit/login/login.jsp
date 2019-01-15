@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,34 +14,28 @@
 </head>
 <body>
 	<div class="container">
-		<!-- login 버튼 -->
-		<input type="button" class="main-login-btn" data-toggle="modal" data-target="#modal1" value="Log in">
-		<!-- join 버튼 -->
-		<input type="button" class="main-login-btn" data-toggle="modal" data-target="#modal2" value="Join">
-
-		<!-- modal login -->
 		<div class="modal fade" id="modal1" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content content-size1">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h3 class="modal-title">Log in</h3>
-					<div>
+					<form action="index.do" method="post" name="frmLogin">
 						<div>
-							<input type="text" placeholder="계정(이메일)을 입력해주세요" class="modal-button">
-							<input type="password" placeholder="비밀번호를 입력해 주세요" class="modal-button">
+							<input type="text" placeholder="계정(이메일)을 입력해주세요" class="modal-button" name="memUserid">
+							<input type="password" placeholder="비밀번호를 입력해 주세요" class="modal-button" name="memPwd">
+							<p>validation message field</p>
+							<div>
+								<input type="submit" value="로그인" class="modal-button">
+							</div>
+							<div>
+								<a href="#" data-toggle="modal" data-target="#modal1_1">패스워드가 기억나지 않나요?</a>
+							</div>
 						</div>
-						<p>validation message field</p>
 						<div>
-							<input type="button" value="로그인" class="modal-button">
+							<input type="button" value="카카오로 로그인 하기" class="modal-button">
+							<input type="button" value="페이스북으로 로그인 하기" class="modal-button">
 						</div>
-						<div>
-							<a href="#" data-toggle="modal" data-target="#modal1_1">패스워드가 기억나지 않나요?</a>
-						</div>
-					</div>
-					<div>
-						<input type="button" value="카카오로 로그인 하기" class="modal-button">
-						<input type="button" value="페이스북으로 로그인 하기" class="modal-button">
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -60,6 +55,7 @@
 		</div>
 		<!-- modal findpwd -->
 		<!-- modal join -->
+		<!-- form태그를 modal창 전부를 묶어서 post되는지 확인 -->
 		<div class="modal fade" id="modal2" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content content-size1">
@@ -114,11 +110,9 @@
 						<div class="align-c">
 							<input type="text" placeholder="닉네임을 입력해주세요" class="modal-button">
 							<textarea rows="" cols="" class="modal-intro" placeholder="자기소개를 입력해주세요" >
-							
 							</textarea>
 						</div>
 					</div>
-					
 					<div class="intro-size float-r">
 						<div>
 							<h4>포지션</h4>

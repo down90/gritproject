@@ -142,7 +142,6 @@ body {
 	<!-- Navigation -->
 
 
-
 	<header>
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-ride="carousel">
@@ -155,7 +154,7 @@ body {
 			<div class="carousel-inner" role="listbox">
 				<!-- Slide One - Set the background image for this slide in the line below -->
 				<div class="carousel-item active"
-					style="background-image: url('./img/banner1.png')">
+					style="background-image: url('img/banner1.png');">
 
 					<!--<div class="carousel-caption d-none d-md-block">
                국내 유일 스타트업 네트워크 STAR-IT에 오신 것을 환영합니다</h3>
@@ -165,7 +164,7 @@ body {
 				</div>
 				<!-- Slide Two - Set the background image for this slide in the line below -->
 				<div class="carousel-item"
-					style="background-image: url('./img/banner1.png')">
+					style="background-image: url('img/banner1.png');">
 					<!-- <div class="carousel-caption d-none d-md-block">
               <h3>Second Slide</h3>
               <p>This is a description for the second slide.</p>
@@ -173,7 +172,7 @@ body {
 				</div>
 				<!-- Slide Three - Set the background image for this slide in the line below -->
 				<div class="carousel-item"
-					style="background-image: url('./img/banner1.png')">
+					style="background-image: url('img/banner1.png');">
 					<!--  <div class="carousel-caption d-none d-md-block">
               <h3>Third Slide</h3>
               <p>This is a description for the third slide.</p>
