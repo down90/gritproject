@@ -46,8 +46,13 @@ table {
 	width: 80px;
 	height: 35px;
 }
+.close{
+	position:absolute;
+	right:20px;
+}
 
 /* modal size */
+
 .content-size1 {
 	width: 300px;
 	height: 450px;
@@ -60,20 +65,27 @@ table {
 }
 .intro-size{
 	width: 50%;
-	height: 350px;
+	margin-top:20px;
+	height: 400px;
+	float:left;
 	
 }
 .image-div-size{
 	width:280px;
 	height:166px;
+	border:1px solid gray;
+	margin:0 auto;
+	margin-bottom:10px;
 }
 /* modal button css */
 .modal-button {
 	width: 280px;
 	height: 40px;
+	line-height:40px;
 	border-radius: 5px;
 	border: 1px solid #aaa;
 	text-indent: 10px;
+	margin-bottm:10px;
 }
 .modal-intro {
 	width: 280px;
@@ -82,6 +94,15 @@ table {
 	border-radius: 5px;
 	border: 1px solid #aaa;
 	text-indent: 10px;
+}
+
+.button1{
+	width:68px;
+	height:22px;
+	background-color:lightgray;
+	border:1px solid lightgray;
+	text-align:center;
+	margin:3px;
 }
 
 /* modal h3 */
@@ -93,7 +114,7 @@ h3 {
 h4{
 	font-size: 15px;
 	margin:10px 0;
-	text-indent: 10px;
+	text-indent: 5px;
 }
 
 /* float */

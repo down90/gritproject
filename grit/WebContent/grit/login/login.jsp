@@ -104,10 +104,10 @@
 		<!-- modal 프로필 생성 -->
 		<div class="modal" id="modal2_2" role="dialog">
 			<div class="modal-dialog">
-				<div class="modal-content content-size2">
+				
+				<div class="modal-content content-size2" >
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					
-					<div class="intro-size float-l" style="border:1px solid black">
+					<div class="intro-size float-l">
 						<div class="image-div-size">
 							<a><img alt="" src=""></a>
 						</div>
@@ -118,31 +118,32 @@
 							</textarea>
 						</div>
 					</div>
-					<div class="intro-size float-r" style="border:1px solid black">
+					
+					<div class="intro-size float-r">
 						<div>
 							<h4>포지션</h4>
 							<div class="wrap">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
 							</div>  
 						</div>
 						<div>
 							<h4>관심분야</h4>
 							<div class="wrap">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
-							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
+							   	<input type="button" value="포지션 명" id="" class="button1">
 							</div>  
 						</div>
 					</div>
