@@ -114,7 +114,7 @@
 						<div class="align-c">
 							<input type="text" placeholder="닉네임을 입력해주세요" class="modal-button">
 							<textarea rows="" cols="" class="modal-intro" placeholder="자기소개를 입력해주세요" >
-								
+							
 							</textarea>
 						</div>
 					</div>
@@ -122,81 +122,27 @@
 						<div>
 							<h4>포지션</h4>
 							<div class="wrap">
-							    <div class="box">
-									<label for="position1-1">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position1-2">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position1-3">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position1-4">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position1-5">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position1-6">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position1-7">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position1-8">포지션 명</label>
-							    </div>
-							    <div>
-								   	<input type="checkbox" value="" id="position1-1" class="display-n">
-								   	<input type="checkbox" value="" id="position1-2" class="display-n">
-								   	<input type="checkbox" value="" id="position1-3" class="display-n">
-								   	<input type="checkbox" value="" id="position1-4" class="display-n">
-								   	<input type="checkbox" value="" id="position1-5" class="display-n">
-								   	<input type="checkbox" value="" id="position1-6" class="display-n">
-								   	<input type="checkbox" value="" id="position1-7" class="display-n">
-								   	<input type="checkbox" value="" id="position1-8" class="display-n">
-							    </div>
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
 							</div>  
 						</div>
 						<div>
 							<h4>관심분야</h4>
 							<div class="wrap">
-							    <div class="wrap">
-							    <div class="box">
-									<label for="position2-1">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position2-2">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position2-3">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position2-4">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position2-5">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position2-6">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position2-7">포지션 명</label>
-							    </div>
-							    <div class="box">
-									<label for="position2-8">포지션 명</label>
-							    </div>
-							    <div>
-								   	<input type="checkbox" value="" id="position2-1" class="display-n">
-								   	<input type="checkbox" value="" id="position2-2" class="display-n">
-								   	<input type="checkbox" value="" id="position2-3" class="display-n">
-								   	<input type="checkbox" value="" id="position2-4" class="display-n">
-								   	<input type="checkbox" value="" id="position2-5" class="display-n">
-								   	<input type="checkbox" value="" id="position2-6" class="display-n">
-								   	<input type="checkbox" value="" id="position2-7" class="display-n">
-								   	<input type="checkbox" value="" id="position2-8" class="display-n">
-							    </div>
-							</div>  
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
+							   	<input type="button" value="포지션 명" id="" class="">
 							</div>  
 						</div>
 					</div>
