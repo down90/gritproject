@@ -14,6 +14,7 @@ public class MemberDAO {
 	}
 	public int insertMember(MemberVO vo) throws SQLException {
 		//회원 가입 처리
+		//수정해야함
 		Connection con=null;
 		PreparedStatement ps=null;
 		try {
@@ -28,7 +29,7 @@ public class MemberDAO {
 			ps.setString(6, vo.getMemHp());
 			ps.setString(7, vo.getMemPicture());
 			ps.setString(8, vo.getMemIntro());
-			
+
 			int cnt=ps.executeUpdate();
 			System.out.println("cnt="+cnt);
 			return cnt;
@@ -51,7 +52,7 @@ public class MemberDAO {
 			ps.setString(1, memUserid);
 			//[4] exec
 			rs=ps.executeQuery();
-			
+
 			if(rs.next()) {
 				int count=rs.getInt(1);
 				if(count>0) {
@@ -70,7 +71,7 @@ public class MemberDAO {
 			pool.dbClose(rs, ps, con);
 		}
 	}//
-	
+
 	public int procMLogin(String memUserid, String memPwd) throws SQLException {
 		//로그인 처리
 		Connection con=null;
@@ -82,7 +83,7 @@ public class MemberDAO {
 			String sql="select mem_pwd from member where mem_userid=? and mem_outdate is null";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, memUserid);
-			
+
 			rs=ps.executeQuery();
 			if(rs.next()) {
 				String dbPwd=rs.getString(1);
@@ -103,9 +104,10 @@ public class MemberDAO {
 			pool.dbClose(rs, ps, con);
 		}
 	}//
-	
+
 	public MemberVO selectMember(String memUserid) throws SQLException {
 		//아이디에 해당하는 회원 (레코드) 조회하기 - 멤버구분코드 넣어야할지 확인해야함.
+		//수정해야함
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
@@ -115,10 +117,10 @@ public class MemberDAO {
 			ps=con.prepareStatement(sql);
 			ps.setString(1, memUserid);
 			rs=ps.executeQuery();
-			
+
 			MemberVO vo=null;
 			if(rs.next()) {
-				
+
 			}
 			System.out.println("vo="+vo+", userid="+memUserid);
 			return vo;
@@ -127,8 +129,44 @@ public class MemberDAO {
 			pool.dbClose(rs, ps, con);
 		}
 	}//
-	
-	//회원 수정하기
-	
-	//회원 탈퇴 처리
+
+	public int editMember(MemberVO vo) throws SQLException {
+		//회원 수정하기
+		//수정해야함
+		Connection con=null;
+		PreparedStatement ps=null;
+		try {
+			con=pool.getConnection();
+			String sql="";
+			ps=con.prepareStatement(sql);
+
+			int cnt=ps.executeUpdate();
+			System.out.println("cnt="+cnt+", vo="+vo);
+
+			return cnt;
+		}
+		finally {
+			pool.dbClose(ps, con);
+		}
+	}
+
+	public int withdrawMember(String memUserid) throws SQLException {
+		//회원 탈퇴 처리
+		Connection con=null;
+		PreparedStatement ps=null;
+		try {
+			con=pool.getConnection();
+			
+			String sql="update member"
+					+ " set mem_outdate=sysdate"
+					+ " where mem_userid=?";
+			ps=con.prepareStatement(sql);
+			ps.setString(1, memUserid);
+			int cnt=ps.executeUpdate();
+			System.out.println("cnt="+cnt+"userid"+memUserid);
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}//
 }

@@ -30,8 +30,8 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("realConfigFile= "+realConfigFile);
 		
 
-		realConfigFile="C:\\Users\\user\\Desktop\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
-		System.out.println("�׽�Ʈ ���= "+realConfigFile+"\n\n");
+		realConfigFile="D:\\down\\lecture\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
+		System.out.println("realConfigFile="+realConfigFile+"\n\n");
 		
 	
 		props=new Properties();
@@ -91,7 +91,7 @@ public class DispatcherServlet extends HttpServlet {
 		
 		String commandStr=props.getProperty(key);	
 		
-		System.out.println("��ɾ� ó�� Ŭ����:"+commandStr+"\n");
+		System.out.println("commandStr="+commandStr+"\n");
 		
 		try {
 			Class commandClass=Class.forName(commandStr);

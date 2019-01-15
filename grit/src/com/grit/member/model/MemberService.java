@@ -23,4 +23,16 @@ public class MemberService {
 	public int duplicateMUseid(String memUserid) throws SQLException {
 		return memberDao.duplicateMUseid(memUserid);
 	}
+	public int procMLogin(String memUserid, String memPwd) throws SQLException {
+		return memberDao.procMLogin(memUserid, memPwd);
+	}
+	public MemberVO selectMember(String memUserid) throws SQLException {
+		return memberDao.selectMember(memUserid);
+	}
+	public int editMember(MemberVO vo) throws SQLException {
+		return memberDao.editMember(vo);
+	}
+	public int withdrawMember(String memUserid) throws SQLException {
+		return memberDao.withdrawMember(memUserid);
+	}
 }

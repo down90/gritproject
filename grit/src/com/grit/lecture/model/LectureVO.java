@@ -3,27 +3,28 @@ package com.grit.lecture.model;
 import java.sql.Timestamp;
 
 public class LectureVO {
-	private int cNo;
-	private String cCategory;
-	private String cName;
-	private String cTeacherIntro;
-	private String cStatus;
-	private String cSummary;
-	private String cDetail;
-	private Timestamp cDate;
-	private String cLocation;
-	private String cMaxPerson;
-	private String cPerson;
-	private String cPay;
-	private int cMoney;
-	private String cAccount;
-	private int imgNo;
-	private String cBank;
-	private int cReadCount;
-	private Timestamp cRegdate;
-	private String cDelflag;
-	private String cRecommand;
-	private String memUserid;
+	//추후에 강의등록 테이블로 사용할 것
+	private int cNo;//모임등록번호
+	private String cCategory;//모임종류 (강의, 팀빌딩)
+	private String cName;//모임명
+	private String cTeacherIntro;//모임소개
+	private String cStatus;//모임상태
+	private String cSummary;//모임요약
+	private String cDetail;//모임상세내용
+	private Timestamp cDate;//모임시작일
+	private String cLocation;//모임장소
+	private String cMaxPerson;//모임최대인원
+	private String cPerson;//모임현재인원
+	private String cPay;//모임유무료구분
+	private int cMoney;//모임비용
+	private String cAccount;//계좌번호
+	private int imgNo;//이미지번호
+	private String cBank;//은행
+	private int cReadCount;//조회수
+	private Timestamp cRegdate;//모임등록일
+	private String cDelflag;//삭제구분
+	private String cRecommand;//추천여부
+	private String memUserid;//개인회원아이디
 
 	public LectureVO() {
 		super();
