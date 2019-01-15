@@ -1,20 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link type="text/css" href="../css/register.css" rel="stylesheet" />
+<script type="text/javascript" src="<c:url value='/jquery/jquery-3.3.1.min.js'/>"></script>
+<script>
+	$(function(){
+		$(".btn_box").click(function(){
+			if($("#cName").val().length<1){
+				alert("강의 제목을 입력하세요");
+				$("#cName").focus();
+				return false;
+			}
+		});
+	});
+</script>
 <title>register.jsp</title>
 </head>
 <body>
-	<form name="login" method="post"  action="../grit/vendor/classinfo.jsp">
+	<form name="login" method="post"  action="<c:url value='/leture/letureRegister_ok.do'/>">
 		<div class="pg_layout">
 			<div class="cont1">
 				<div class="pwrap">
 					<p style="float: left; width: 12%;">강의 제목</p>
-					<input type="text" class="size_85" name="cName">
+					<input type="text" class="size_85" name="cName" id="cName">
 				</div>
 				<div class="pwrap">
 					<p style="float: left; width: 12%;">강사 소개</p>
