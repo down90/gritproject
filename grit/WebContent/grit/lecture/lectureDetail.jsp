@@ -220,7 +220,57 @@ $(function(){
 			<!-- 강의 장소 -->
 			<div class="bor-s" style="height:600px;">
 				&nbsp;<div class="" style="font-size:30px;">&nbsp;강의 장소</div>
-				<div class="h70 w50 bor-s ali-c" style="margin:40px 0 20px 40px; line-height: 420px">지도</div>
+				<div class="h70 w50 bor-s ali-c" style="margin:40px 0 20px 40px; line-height: 420px"> <div id="map" style="width: 100%; height: 100%;"></div>
+
+   <script type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=baf5b9ccc0421b2e1e36a0342486e30b&libraries=services"></script>
+   <script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = {
+        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };  
+
+// 지도를 생성합니다    
+var map = new daum.maps.Map(mapContainer, mapOption); 
+
+// 주소-좌표 변환 객체를 생성합니다
+var geocoder = new daum.maps.services.Geocoder();
+
+// 주소로 좌표를 검색합니다
+geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(result, status) {
+                  //address 주소 입력하면 될듯!!
+    // 정상적으로 검색이 완료됐으면 
+     if (status === daum.maps.services.Status.OK) {
+
+        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new daum.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+    	 // 마커가 드래그 가능하도록 설정합니다 
+        marker.setDraggable(true);
+
+        var iwContent = '<div style="text-align:left;font-size:12px;width:200px; height:30px; line-height:30px;"><a href="http://map.daum.net/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">Hello World</a> <a href="http://map.daum.net/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank"></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        iwPosition = new daum.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+
+        // 인포윈도우를 생성합니다
+        var infowindow = new daum.maps.InfoWindow({
+            position : iwPosition, 
+            content : iwContent 
+        });
+          
+        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
+});    
+</script></div>
 				<div class="w60 bor-s ali-c line-h40" style="height:40px;margin-left:40px;">강의 장소 상세주소</div>
 			</div>
 			<!-- ------ -->
