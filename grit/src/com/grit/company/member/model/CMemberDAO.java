@@ -86,6 +86,8 @@ public class CMemberDAO {
 		}
 	}
 	
+	
+	
 	public List<Object> selectCMember(String compUserid) throws SQLException {
 		Connection con=null;
 		PreparedStatement ps=null;
@@ -153,6 +155,7 @@ public class CMemberDAO {
 		}
 		
 	}
+	
 	//로그인 처리 메서드
 	public int duplicateCUserid(String compUserid) throws SQLException {
 		Connection con=null;
@@ -169,12 +172,10 @@ public class CMemberDAO {
 			
 			rs=ps.executeQuery();
 			if(rs.next()) {
-				int cnt=rs.getInt(1); //컬럼명이 없으면 첫번째 컬럼이란 의미에서 1을 써준다
+				int cnt=rs.getInt(1);
 				if(cnt>0) {
-					//해당 아이디가 이미 존재하는 경우
 					result=CMemberService.NOT_AVAILABLE_USERID; //사용불가
 				}else{
-					//존재하지 않는 경우
 					result=CMemberService.AVAILABLE_USERID; //사용가능
 				}
 			}
@@ -185,8 +186,8 @@ public class CMemberDAO {
 		}
 	}
 	
+	// 비밀번호 확인 메서드
 	public int procLogin(String compUserid, String compPassword) throws SQLException {
-		//로그인 처리
 		Connection con=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;

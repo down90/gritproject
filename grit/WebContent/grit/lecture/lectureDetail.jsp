@@ -73,6 +73,11 @@
 <script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 $(function(){
+	$("#l1").css("background-color","lightgray");
+	$("#infodetail").css("display","");
+	$("#profilelist").css("display","none");
+	$("#comment").css("display","none");
+	
 	$("#l1").click(function(){
 		$("#l1").css("background-color","lightgray");
 		$("#l2").css("background-color","");
