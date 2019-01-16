@@ -361,7 +361,7 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
 						<div class="fl-r bor-s bor-ra" style="height:30px;width:150px;">등록시간</div>
 					</div>
 					<div class="clear-b bor-s" style="height:120px;line-height:100px;margin-top: 50px"><p>댓글 메시지</p></div>
-					<div><a class="fl-r" href="#";>답글달기</a></div>
+					<div><a class="fl-r" href="#">답글달기</a></div>
 				</div>
 			</div>
 			
@@ -382,7 +382,7 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
 						<div class="fl-r bor-s bor-ra" style="height:30px;width:150px;">등록시간</div>
 					</div>
 					<div class="clear-b bor-s" style="height:120px;line-height:100px;margin-top: 50px"><p>댓글 메시지</p></div>
-					<div><a class="fl-r" href="#";>답글달기</a></div>
+					<div><a class="fl-r" href="#">답글달기</a></div>
 				</div>
 			</div>
 				
