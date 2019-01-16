@@ -202,7 +202,7 @@ body {
 	<!-- Page Content -->
 	
 	<div style="width:1024px;margin:0 auto;clear:both;margin-left:75%">
-		<input class="lecturebtn" type="button" onclick="location.href='<%=request.getContextPath()%>/grit/lecture/lrctureRegister.do'" value="강의등록">
+		<input class="lecturebtn" type="button" onclick="location.href='<c:url value="/grit/lecture/lectureRegister.do"/>'" value="강의등록">
 	</div>
 	
 	<ul class="contents" style="list-style: none">
