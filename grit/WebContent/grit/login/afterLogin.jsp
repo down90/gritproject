@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,14 +37,33 @@
 	<div class="modal fade" id="modal3" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
-				
+				<div class="profile-nickname">
+					<a><img alt="" src=""></a>
+				</div>
+				<div class="profile-category">
+					<div class="profile-position">
+						<h4>포지션</h4>
+						<div class="profile-btn align-c">카테고리</div>
+						<div class="profile-btn align-c">카테고리</div>
+					</div>
+					<div class="profile-interests">
+						<h4>관심분야</h4>
+						<div class="profile-btn align-c">카테고리</div>
+						<div class="profile-btn align-c">카테고리</div>
+						<div class="profile-btn align-c">카테고리</div>
+					</div>
+					<div class="profile-intro">
+						<h4>자기소개</h4>
+						<textarea rows="" cols=""></textarea>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="modal fade" id="modal4" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
-				
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
 		</div>
 	</div>

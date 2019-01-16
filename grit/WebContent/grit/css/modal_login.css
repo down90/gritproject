@@ -69,6 +69,7 @@ table {
 	height: 400px;
 	float:left;
 	
+	
 }
 .image-div-size{
 	width:280px;
@@ -188,4 +189,12 @@ h4{
 .profile-div{
 	width:80px;
 	
+}
+.profile-btn{
+	width:80px;
+	height: 20px;
+	color: #aaa;
+	background-color: #eee;
+	border: 1px solid #aaa;
+	border-radius: 3px;
 }

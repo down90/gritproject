@@ -322,9 +322,10 @@ body {
 				<div class="card">
 
 					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1"><a
-							href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""> </a>
+						<input type="button" value="참가비" class="joinfee1">
+						<a href="#">
+							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
+						</a>
 					</div>
 
 					<div class="card-body" style="height: 150px;">
