@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>GRIT</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,6 @@
   .gnb{
       	width:160px;
       	height:50px;
-      	border:1px solid red;
       	float:right;
       }
       .gnb_li1{
@@ -40,7 +39,7 @@
       	border: 1px solid lightgray;
       	background-color:white;
       	line-height:25px;
-      	margin-top:15px;
+      	margin-top:20px;
       	margin-right:10px;
       	text-align:center;
       	list-style:none;
@@ -53,13 +52,13 @@
       	border: 1px solid lightgray;
       	background-color:white;
       	line-height:25px;
-      	margin-top:15px;
+      	margin-top:20px;
       	text-align:center;
       	list-style:none;
       	font-size:12px; 
       }
       .gnb_li_a{
-      	color: gray;  	  	
+      	color: black;  	  	
       }
       .gnb_li_a:hover{
       	text-decoration:none;
