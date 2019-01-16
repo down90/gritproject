@@ -66,7 +66,7 @@ table {
 	width: 650px;
 	height: 450px;
 	background-color:green;
-	display:block;s
+	display:block;
 }
 .intro-size{
 	width: 50%;
@@ -182,6 +182,11 @@ h4{
 .display-n{
 	display: none;
 }
+/* display inline */
+.display-i{
+	display: inline;
+}
+
 /* 유효성 msg */
 .validation_msg {
 	margin: 10px 0;
@@ -220,6 +225,7 @@ h4{
 }
 
 /* after Login header*/
+/* main 부분*/
 #after-login-header div{
 	display: inline-block;
 }
@@ -227,9 +233,49 @@ h4{
 	width:80px;
 	
 }
-.profile-btn{
-	width:80px;
-	height: 20px;
+
+/* modal부분 */
+/* 프로필 header부분 (이미지, 닉네임)*/
+.profile-header{
+	width:100%;
+	height:150px;
+}
+.profile-img{
+	width: 70px;
+	height: 70px;	
+	border-radius: 70px;
+	margin-top: 40px;
+	margin-left: 60px;
+}
+.profile-img-box{
+	text-align:center;
+}
+.profile-nick-box{
+	text-align:center;
+}
+/* 프로필 카테고리 부분*/
+.profile-category-btn{
+	width:30%;
+	height: 25px;
+	color: #aaa;
+	background-color: #eee;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	display: inline-block;
+	line-height: 25px;
+}
+.profile-intro-text{
+	width:100%;
+	height:60px;
+	
+}
+.set-box{
+	float: right;
+}
+.profile-header-btn{
+	flaot:right;
+	width:30px;
+	height:30px;
 	color: #aaa;
 	background-color: #eee;
 	border: 1px solid #aaa;

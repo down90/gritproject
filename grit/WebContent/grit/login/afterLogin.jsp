@@ -17,49 +17,92 @@
 	<div id="after-login-header">
 		<div>
 			<div class="profile-div"><img alt="프로필 사진" scr=""></div>
-			<a href="">{닉네임}</a>
+			<a href="#" data-toggle="modal" data-target="#modal3">{닉네임}</a>
 		</div>
 		<div>
 			<div>
-				<button type="button" class="main-btn-small" data-toggle="modal" data-target="#modal3"><img alt="" src="">3</button>
+				<button type="button" class="main-btn-small" data-toggle="modal" data-target="#modal4"><img alt="" src="">3</button>
 			</div>
 			<div>
-				<button type="button" class="main-btn-small" data-toggle="modal" data-target="#modal4"><img alt="" src="">4</button>
+				<button type="button" class="main-btn-small" data-toggle="modal" data-target="#modal5"><img alt="" src="">4</button>
 			</div>
 		</div>
 		<div>
 			<input type="button" class="main-login-btn" value="Log out">
 		</div>
 	</div>
-	<!-- Log out 버튼 -->
+
 	
 	<!-- modal부분시작 -->
+	<!-- 프로필-->
 	<div class="modal fade" id="modal3" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
-				<div class="profile-nickname">
-					<a><img alt="" src=""></a>
+			<button type="button" class="close" data-dismiss="modal" style="display: none;">&times;</button>
+				<div class="profile-header">
+					<div class="profile-img-box">
+						<div class="set-box">
+							<div class="display-i-b">
+								<input type="button" class="profile-header-btn" data-toggle="modal" data-target="#modal3-1" >
+								<img alt="" src="">
+							</div>
+							<div class="display-i-b">
+								<input type="button" class="profile-header-btn" data-toggle="modal" data-target="#modal3-2">
+								<img alt="" src="">
+							</div>
+						</div>
+						<a href=""><img alt="개인회원이 등록한 사진" src="../img/img1.png" class="profile-img"></a>
+					</div>
+					<div class="profile-nick-box">
+						<a href="" data-toggle="modal" data-target="#modal3-2">{닉네임}</a>
+					</div>
 				</div>
 				<div class="profile-category">
 					<div class="profile-position">
 						<h4>포지션</h4>
-						<div class="profile-btn align-c">카테고리</div>
-						<div class="profile-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
 					</div>
 					<div class="profile-interests">
 						<h4>관심분야</h4>
-						<div class="profile-btn align-c">카테고리</div>
-						<div class="profile-btn align-c">카테고리</div>
-						<div class="profile-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
+						<div class="profile-category-btn align-c">카테고리</div>
 					</div>
 					<div class="profile-intro">
 						<h4>자기소개</h4>
-						<textarea rows="" cols=""></textarea>
+						<div class="profile-intro-text"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- 프로필 -->
+	<!-- 비밀번호 변경 -->
+	<div class="modal fade" id="modal3-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content content-size1">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+		</div>
+	</div>
+	<!-- 비밀번호 변경 -->
+	<!-- 프로필 수정 -->
+	<div class="modal fade" id="modal3-2" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content content-size1">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+		</div>
+	</div>
+	<!-- 프로필 수정 -->
+	
+	<!-- 콘텐츠-->
 	<div class="modal fade" id="modal4" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
@@ -67,5 +110,16 @@
 			</div>
 		</div>
 	</div>
+	<!-- 콘텐츠-->
+	
+	<!-- 공지사항 시작-->
+	<div class="modal fade" id="modal5" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content content-size1">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+		</div>
+	</div>
+	<!-- 공지사항 종료-->
 </body>
 </html>
