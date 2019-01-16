@@ -38,6 +38,9 @@ table {
 
 
 /* modal css */
+.modal-title{
+	font-weight:bold;
+}
 .main-login-btn {
 	background-color: #eee;
 	border: 1px solid #aaa;
@@ -49,6 +52,7 @@ table {
 .close{
 	position:absolute;
 	right:20px;
+	top:10px;
 }
 
 /* modal size */
@@ -61,13 +65,16 @@ table {
 .content-size2{
 	width: 650px;
 	height: 450px;
-	padding: 10px;
+	background-color:green;
+	display:block;s
 }
 .intro-size{
 	width: 50%;
 	margin-top:20px;
 	height: 400px;
 	float:left;
+	display:inline-block;
+	margin-top:30px;
 	
 }
 .image-div-size{
@@ -85,7 +92,36 @@ table {
 	border-radius: 5px;
 	border: 1px solid #aaa;
 	text-indent: 10px;
-	margin-bottm:10px;
+}
+.findpwd{
+	width:278px;
+	height:18px;
+	margin-top:5px;
+	border-bottom:1px solid gray;
+}
+.kakao{
+	background-color:#fbe300;
+	border:1px solid #fbe300;
+	
+}
+.facebook{
+	background-color:#295396;
+	border:1px solid #295396;
+	color:white;
+}
+.login{
+	background-color: gray;
+	border:1px solid gray;
+	color:white;
+}
+.modal_margin5{
+	margin-top:5px;
+}
+.modal_margin80{
+	margin-top:80px;
+}
+.modal_margin30{
+	margin-top:30px;
 }
 .modal-intro {
 	width: 280px;
@@ -94,6 +130,7 @@ table {
 	border-radius: 5px;
 	border: 1px solid #aaa;
 	text-indent: 10px;
+	resize:none;
 }
 
 .button1{
