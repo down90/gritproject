@@ -220,7 +220,7 @@ $(function(){
 			<!-- 강의 장소 -->
 			<div class="bor-s" style="height:600px;">
 				&nbsp;<div class="" style="font-size:30px;">&nbsp;강의 장소</div>
-				<div class="h70 w50 bor-s ali-c" style="margin:40px 0 20px 40px; line-height: 420px"> <div id="map" style="width: 100%; height: 100%;"></div>
+				<div class="h70 w90 bor-s ali-c" style="margin:30px auto; line-height: 420px"> <div id="map" style="width: 100%; height: 100%;"></div>
 
    <script type="text/javascript"
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=baf5b9ccc0421b2e1e36a0342486e30b&libraries=services"></script>
@@ -256,7 +256,7 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
 
         var iwContent = '<div style="text-align:left;font-size:12px;width:200px; height:30px; line-height:30px;"><a href="http://map.daum.net/link/map/Hello World!,33.450701, 126.570667" style="color:blue" target="_blank">Hello World</a> <a href="http://map.daum.net/link/to/Hello World!,33.450701, 126.570667" style="color:blue" target="_blank"></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
         iwPosition = new daum.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
-
+ 
         // 인포윈도우를 생성합니다
         var infowindow = new daum.maps.InfoWindow({
             position : iwPosition, 
@@ -271,7 +271,7 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
     } 
 });    
 </script></div>
-				<div class="w60 bor-s ali-c line-h40" style="height:40px;margin-left:40px;">강의 장소 상세주소</div>
+				<div class="w90 bor-s ali-c line-h40" style="height:40px;margin:0 auto;">강의 장소 상세주소</div>
 			</div>
 			<!-- ------ -->
 			
@@ -361,7 +361,7 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
 						<div class="fl-r bor-s bor-ra" style="height:30px;width:150px;">등록시간</div>
 					</div>
 					<div class="clear-b bor-s" style="height:120px;line-height:100px;margin-top: 50px"><p>댓글 메시지</p></div>
-					<div><a class="fl-r" href="#";>답글달기</a></div>
+					<div><a class="fl-r" href="#">답글달기</a></div>
 				</div>
 			</div>
 			
@@ -382,7 +382,7 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
 						<div class="fl-r bor-s bor-ra" style="height:30px;width:150px;">등록시간</div>
 					</div>
 					<div class="clear-b bor-s" style="height:120px;line-height:100px;margin-top: 50px"><p>댓글 메시지</p></div>
-					<div><a class="fl-r" href="#";>답글달기</a></div>
+					<div><a class="fl-r" href="#">답글달기</a></div>
 				</div>
 			</div>
 				

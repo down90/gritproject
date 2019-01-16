@@ -18,22 +18,22 @@
 			<div class="modal-dialog">
 				<div class="modal-content content-size1">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h3 class="modal-title">Log in</h3>
+					<h3 class="modal-title">로그인</h3>
 					<form action="index.do" method="post" name="frmLogin">
 						<div>
-							<input type="text" placeholder="계정(이메일)을 입력해주세요" class="modal-button" name="memUserid">
-							<input type="password" placeholder="비밀번호를 입력해 주세요" class="modal-button" name="memPwd">
-							<p>validation message field</p>
+							<input type="text" placeholder="계정(이메일)을 입력해주세요" class="modal-button modal_margin30" name="memUserid">
+							<input type="password" placeholder="비밀번호를 입력해 주세요" class="modal-button modal_margin5" name="memPwd">
+							<p style="margin-top:5px; text-align:right">validation message field</p>
 							<div>
-								<input type="submit" value="로그인" class="modal-button">
+								<input type="submit" value="로그인" class="modal-button login">
 							</div>
-							<div>
-								<a href="#" data-toggle="modal" data-target="#modal1_1">패스워드가 기억나지 않나요?</a>
+							<div class="findpwd">
+								<a href="#" data-toggle="modal" data-target="#modal1-1">패스워드가 기억나지 않나요?</a>
 							</div>
 						</div>
 						<div>
-							<input type="button" value="카카오로 로그인 하기" class="modal-button">
-							<input type="button" value="페이스북으로 로그인 하기" class="modal-button">
+							<input type="button" value="카카오로 로그인 하기" class="modal-button kakao modal_margin80">
+							<input type="button" value="페이스북으로 로그인 하기" class="modal-button facebook modal_margin5">
 						</div>
 					</form>
 				</div>
@@ -42,7 +42,7 @@
 		<!-- modal login -->
 		
 		<!-- modal findpwd -->
-		<div class="modal" id="modal1_1" role="dialog">
+		<div class="modal" id="modal1-1" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content content-size1">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -72,7 +72,7 @@
 						</div>
 					</div>
 					<div>
-						<input type="button" value="직접 계정 생성하기" class="modal-button" data-toggle="modal" data-target="#modal2_1">
+						<input type="button" value="직접 계정 생성하기" class="modal-button" data-toggle="modal" data-target="#modal2-1">
 						<input type="button" value="카카오로 가입하기" class="modal-button">
 						<input type="button" value="페이스북으로 가입하기" class="modal-button">
 					</div>
@@ -81,7 +81,7 @@
 		</div>
 		<!-- modal-join -->
 		<!-- modal 계정 직접생성 -->
-		<div class="modal" id="modal2_1" role="dialog">
+		<div class="modal" id="modal2-1" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content content-size1">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -91,19 +91,20 @@
 						<input type="password" placeholder="비밀번호를 한번 더 입력해주세요." class="modal-button">
 						<p>[!] 이메일을 허위로 작성할 경우, 비밀번호를 분실 했을 때 비밀번호를 찾을 수 없습니다.</p>
 						<p>validation message field</p>
-						<input type="button" value="다음" class="modal-button" data-toggle="modal" data-target="#modal2_2">				
+						<input type="button" value="다음" class="modal-button" data-toggle="modal" data-target="#modal2-2">				
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- modal 계정 직접생성 -->
 		<!-- modal 프로필 생성 -->
-		<div class="modal" id="modal2_2" role="dialog">
+		<div class="modal" id="modal2-2" role="dialog">
 			<div class="modal-dialog">
 				
-				<div class="modal-content content-size2" >
+				<div class="modal-content content-size2">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<div class="intro-size float-l">
+					
+					<div class="intro-size">
 						<div class="image-div-size">
 							<a><img alt="" src=""></a>
 						</div>
@@ -113,7 +114,7 @@
 							</textarea>
 						</div>
 					</div>
-					<div class="intro-size float-r">
+					<div class="intro-size">
 						<div>
 							<h4>포지션</h4>
 							<div class="wrap">

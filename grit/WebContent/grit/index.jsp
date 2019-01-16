@@ -136,12 +136,21 @@ body {
 	border: 1px solid black;
 	border-radius: 5px;
 }
+.lecturebtn{
+	width:80px;
+	height:40px;
+	float: right;
+	font-size:18px;
+	font-weight: bold;
+	position: fixed;
+	margin: 0 auto;
+	z-index:1;
+}
 </style>
 <body>
 
 	<!-- Navigation -->
-
-
+	
 	<header>
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-ride="carousel">
@@ -190,9 +199,12 @@ body {
 			</a>
 		</div>
 	</header>
-
 	<!-- Page Content -->
-
+	
+	<div style="width:1024px;margin:0 auto;clear:both;margin-left:75%">
+		<input class="lecturebtn" type="button" onclick="location.href='<c:url value="/grit/lecture/lectureRegister.do"/>'" value="강의등록">
+	</div>
+	
 	<ul class="contents" style="list-style: none">
 		<li class="contents1">
 			<div>
@@ -322,9 +334,10 @@ body {
 				<div class="card">
 
 					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1"><a
-							href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""> </a>
+						<input type="button" value="참가비" class="joinfee1">
+						<a href="#">
+							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
+						</a>
 					</div>
 
 					<div class="card-body" style="height: 150px;">
