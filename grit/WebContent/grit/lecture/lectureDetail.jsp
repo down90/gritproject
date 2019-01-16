@@ -254,7 +254,7 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
     	 // 마커가 드래그 가능하도록 설정합니다 
         marker.setDraggable(true);
 
-        var iwContent = '<div style="text-align:left;font-size:12px;width:200px; height:30px; line-height:30px;"><a href="http://map.daum.net/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">Hello World</a> <a href="http://map.daum.net/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank"></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        var iwContent = '<div style="text-align:left;font-size:12px;width:200px; height:30px; line-height:30px;"><a href="http://map.daum.net/link/map/Hello World!,33.450701, 126.570667" style="color:blue" target="_blank">Hello World</a> <a href="http://map.daum.net/link/to/Hello World!,33.450701, 126.570667" style="color:blue" target="_blank"></a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
         iwPosition = new daum.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
 
         // 인포윈도우를 생성합니다
