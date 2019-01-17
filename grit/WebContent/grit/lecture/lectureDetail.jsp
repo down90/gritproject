@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../inc/header.jsp"%>
+<%@ include file="../login/login.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,7 +107,6 @@ $(function(){
 });
 	
 </script>
-	<link href="../css/slider_style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
@@ -122,21 +123,13 @@ $(function(){
 </head>
 <body>
 
-<!-- 상단 nav 자리입니다 56픽셀인거 보고 넣었는데 변동되면 확인후 수정이 필요 -->
-<div style="width:1920px;background-color:black; height:56px; position: fixed;"></div>
-<div style="width:1920px;background-color:white; height:56px;"></div>
-<!-- ///////////////////////////////////////////////////// -->
-<body>
-
-
-
 <!-- //////////페이지 전체적 틀 1024px에 margin:0 auto로 가운데정렬이 되어있는 상태입니다////////// -->
 
 	<div class="topbox">
 		<!-- 상단 강의명과 참가비를 포함한 div태그 -->
 		<div>
 			<div class="ali-c" style="height:100px;">
-				<div class="fl-l bkg h100" style="width:84%;"><h1>강의 제목 입니다</h1></div>
+				<div class="fl-l bkg h100" style="width:84%;font-size: 30px">강의 제목 입니다</div>
 				<div class="fl-r bkg h100" style="width:14%;">
 					<div class="bor-ra bor-s w80 h30" style="margin:34px 14px;line-height:30px">참가비</div>
 				</div>
@@ -415,8 +408,4 @@ geocoder.addressSearch('경기도 안양시 동안구 호계동 1102-1', functio
 <!-- ============================================================================================ -->	
 	</div>
 	
-	<!-- height:114px 의 footer nav와 같은 내용 -->
-	<div style="width:1920px;height:114px;background-color: black"></div>
-	
-</body>
-</html>
+<%@ include file="../inc/footer.jsp"%>

@@ -18,9 +18,10 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
     <!-- <link href="css/style.css" rel="stylesheet"> -->
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/grit/css/modal_login.css">
+    <link type="text/css" href="${pageContext.request.contextPath}/grit/css/register.css" rel="stylesheet" />
+	<link type="text/css" href="${pageContext.request.contextPath}/grit/css/slider_style.css" rel="stylesheet">
+	<link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="${pageContext.request.contextPath}/grit/css/modal_login.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -83,7 +84,7 @@
     <!-- Navigation -->
     <nav class="fixed-top" style="background-color:black;margin-bottom:0;">
       <div class="container">
-        <div class="navbar-brand" href="#" style="width:56.5px; height:50px; background-image: url('./img/grit_logo.png')">
+        <div class="navbar-brand" href="#" style="width:56.5px; height:50px; background-image: url('${pageContext.request.contextPath}/grit/img/grit_logo.png')">
        </div>
         
           <ul class="gnb">
@@ -97,4 +98,3 @@
         
       </div>
     </nav>
-   </body>

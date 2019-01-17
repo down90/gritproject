@@ -64,11 +64,11 @@
 						<div><img src="#" class="image-div-size"></div>
 						<div class="modal-button">
 							<span>개인정보 취급 방침에 동의 <a href="#">[보기]</a></span>
-							<img src="${pageContext.request.contextPath}/grit/img/icon/check.png" alt="" class="float-r">
+							<img src="${pageContext.request.contextPath}/grit/img/icon/check.png" alt="" class="float-r check-img">
 						</div>
 						<div class="modal-button">
 							<span>서비스 이용약관에 동의 <a href="#">[보기]</a></span>
-							<img src="${pageContext.request.contextPath}/grit/img/icon/check.png" alt="" class="float-r">
+							<img src="${pageContext.request.contextPath}/grit/img/icon/check.png" alt="" class="float-r check-img">
 						</div>
 					</div>
 					<div>
