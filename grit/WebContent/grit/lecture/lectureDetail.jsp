@@ -238,7 +238,7 @@ var map = new daum.maps.Map(mapContainer, mapOption);
 var geocoder = new daum.maps.services.Geocoder();
 
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(result, status) {
+geocoder.addressSearch('경기도 안양시 동안구 호계동 1102-1', function(result, status) {
                   //address 주소 입력하면 될듯!!
     // 정상적으로 검색이 완료됐으면 
      if (status === daum.maps.services.Status.OK) {
@@ -250,11 +250,12 @@ geocoder.addressSearch('경기도 안양시 동안구 갈산로 41', function(re
             map: map,
             position: coords
         });
+        var ka=coords;
 
     	 // 마커가 드래그 가능하도록 설정합니다 
         marker.setDraggable(true);
 
-        var iwContent = '<div style="text-align:left;font-size:12px;width:200px; height:50px; line-height:30px;">모임장소<br><a href="http://map.daum.net/link/map/hell,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="http://map.daum.net/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        var iwContent = '<div style="text-align:left;font-size:12px;width:200px; height:50px; line-height:30px;">모임장소<br><a href="http://map.daum.net/link/map/hell,'+result[0].y+','+result[0].x+'" style="color:blue" target="_blank">큰지도보기</a> <a href="http://map.daum.net/link/to/hell,'+result[0].y+','+result[0].x+'" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
         iwPosition = new daum.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
  
         // 인포윈도우를 생성합니다
