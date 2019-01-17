@@ -280,3 +280,41 @@ h4{
 	border: 1px solid #aaa;
 	border-radius: 3px;
 }
+
+/* 컨텐츠 modal 부분*/
+
+
+/* 공지사항 modal 부분*/
+.new-box{
+	width: 20px;
+	height: 20px;
+	border: 1px solid #555;
+	background-color: #555;
+}
+.notice-box{
+	width:100%;
+	height:20%;
+	background-color: #eee;
+	border: 1px solid #aaa;
+	padding:10px;
+}
+.notice-title{
+	width:100%;
+	height:30px;
+	margin-bottom: 10px;
+	text-align: left;
+	text-indent: 12px;
+	background-color: #fff;
+	line-height: 30px;
+}
+.notice-title span{
+	font-size: 14px;
+}
+.notice-regdate{
+	width:80%;
+	height:25px;
+	line-height:25px;
+	text-align: left;
+	text-indent: 12px;
+	background-color: #fff;
+}

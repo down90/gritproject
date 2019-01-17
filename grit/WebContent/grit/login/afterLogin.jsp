@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/modal_login.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/grit/css/modal_login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -166,6 +166,31 @@
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<!-- 반복시작 -->
+				<div class="new-box">
+					<img alt="" src="">
+				</div>
+				<button class="notice-box">
+					<div class="notice-title"><span>공지사항 명</span></div>
+					<div class="notice-regdate"><span>게시일시</span></div>
+				</button>
+				<!-- 반복끝 -->
+				<div class="new-box">
+					<img alt="" src="">
+				</div>
+				<button class="notice-box">
+					<div class="notice-title"><span>공지사항 명</span></div>
+					<div class="notice-regdate"><span>게시일시</span></div>
+				</button>
+				<div class="new-box">
+					<img alt="" src="">
+				</div>
+				<button class="notice-box">
+					<div class="notice-title"><span>공지사항 명</span></div>
+					<div class="notice-regdate"><span>게시일시</span></div>
+				</button>
+				
+				
 			</div>
 		</div>
 	</div>

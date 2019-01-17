@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/modal_login.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/grit/css/modal_login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -64,11 +64,11 @@
 						<div><img src="#" class="image-div-size"></div>
 						<div class="modal-button">
 							<span>개인정보 취급 방침에 동의 <a href="#">[보기]</a></span>
-							<img src="../img/check.png" alt="" class="float-r">
+							<img src="${pageContext.request.contextPath}/grit/img/icon/check.png" alt="" class="float-r">
 						</div>
 						<div class="modal-button">
 							<span>서비스 이용약관에 동의 <a href="#">[보기]</a></span>
-							<img src="../img/check.png" alt="" class="float-r">
+							<img src="${pageContext.request.contextPath}/grit/img/icon/check.png" alt="" class="float-r">
 						</div>
 					</div>
 					<div>
