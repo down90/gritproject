@@ -133,18 +133,31 @@ body {
 	height: 30px;
 	background-color: black;
 	color: white;
-	border: 1px solid black;
+	border: 1px solid black;s
 	border-radius: 5px;
 }
 .lecturebtn{
-	width:80px;
+	width:85px;
 	height:40px;
-	float: right;
-	font-size:18px;
-	font-weight: bold;
+	position:absolute;
+	right:19%;
+	font-size:12px;
+	line-height:12px;
 	position: fixed;
-	margin: 0 auto;
-	z-index:1;
+	background-color: #02340f;
+	border:1px solid #02340f;
+	color:white;
+	margin-top:90px;
+}
+.advertisement{
+	width:85px;
+	height:120px;
+	position:absolute;
+	right:19%;
+	position: fixed;
+	/*border:1px solid #02340f;*/
+	margin-top:140px;
+	background-image: url('img/event.png');
 }
 </style>
 <body>
@@ -194,22 +207,21 @@ body {
 				class="sr-only">Previous</span>
 			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 				role="button" data-slide="next"> <span
-				class="carousel-control-next-icon" aria-hidden="true"></span> <span
 				class="sr-only">Next</span>
 			</a>
 		</div>
 	</header>
 	<!-- Page Content -->
 	
-	<div style="width:1024px;margin:0 auto;clear:both;margin-left:75%">
-		<input class="lecturebtn" type="button" onclick="location.href='<c:url value="/grit/lecture/lectureRegister.do"/>'" value="강의등록">
-	</div>
+	
+	<input class="lecturebtn" type="button" onclick="location.href='<c:url value="/grit/lecture/lectureRegister.do"/>'" value="모임개설하기">
+	<div class="advertisement"></div>
 	
 	<ul class="contents" style="list-style: none">
 		<li class="contents1">
 			<div>
 				<div
-					style="margin: 20px 0 0 40px; font-size: 14px; text-align: left;">실시간
+					style="margin: 20px 0 0 40px; font-size: 14px; text-align: left; font-wegiht:bold;">실시간
 					인기 모임</div>
 				<div class="imgbox1">
 					<input type="button" value="참가비" class="joinfee">

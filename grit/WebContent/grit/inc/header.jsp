@@ -27,42 +27,53 @@
 	
   </head>
   <style>
+  .container{
+  	width:990px;
+  }
+  .navbar-brand{
+  	margin-left:6%;
+  }
   .gnb{
       	width:160px;
       	height:50px;
       	float:right;
+      	margin-right:55px;
       }
       .gnb_li1{
       	float:left;
       	width:67px;
       	height:25px;
       	border: 1px solid lightgray;
-      	background-color:white;
+      	background-color: #f9f9f9;
       	line-height:25px;
       	margin-top:20px;
       	margin-right:10px;
       	text-align:center;
       	list-style:none;
       	font-size:12px; 
+      	border-radius:5px;
       }
       .gnb_li2{
       	float:left;
       	width:67px;
       	height:25px;
-      	border: 1px solid lightgray;
-      	background-color:white;
+      	border: 1px solid #545454;
+      	background-color: #f9f9f9;
       	line-height:25px;
       	margin-top:20px;
       	text-align:center;
       	list-style:none;
-      	font-size:12px; 
+      	font-size:12px;
+      	border-radius:5px;
+      	 
       }
       .gnb_li_a{
-      	color: black;  	  	
+      	color: #545454;
+      	font-size:11.5px;  	 
       }
       .gnb_li_a:hover{
       	text-decoration:none;
-      	color:black;
+      	color:green;
       	
       }
    </style>
@@ -72,8 +83,8 @@
     <!-- Navigation -->
     <nav class="fixed-top" style="background-color:black;margin-bottom:0;">
       <div class="container">
-        <a class="navbar-brand" href="#" style="width:56.5px; height:50px; background-image: url('./img/grit_logo.png')">
-       </a>
+        <div class="navbar-brand" href="#" style="width:56.5px; height:50px; background-image: url('./img/grit_logo.png')">
+       </div>
         
           <ul class="gnb">
             <li class="gnb_li1">
