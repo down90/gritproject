@@ -87,7 +87,17 @@
 	<div class="modal fade" id="modal3-1" role="dialog">
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<button type="button" class="close" data-dismiss="modal" style="display: none;">&times;</button>
+				<form action="" method="post" name="">
+					<div>
+						<input type="text"  placeholder="현재 비밀번호를 입력해주세요" class="modal-button">
+						<input type="text"  placeholder="새 비밀번호를 입력해주세요" class="modal-button">
+						<input type="text"  placeholder="비밀번호를 한번 더 입력해주세요" class="modal-button">
+					</div>
+					<div>
+						<input type="submit" value="변경" class="modal-button">
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -95,8 +105,47 @@
 	<!-- 프로필 수정 -->
 	<div class="modal fade" id="modal3-2" role="dialog">
 		<div class="modal-dialog">
-			<div class="modal-content content-size1">
+			<div class="modal-content content-size2">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
+					
+				<div class="intro-size">
+					<div class="image-div-size">
+						<a><img alt="" src=""></a>
+					</div>
+					<div class="align-c">
+						<input type="text" placeholder="닉네임을 입력해주세요" class="modal-button">
+						<textarea class="modal-intro" placeholder="자기소개를 입력해주세요" ></textarea>
+					</div>
+				</div>
+				<div class="intro-size">
+					<div>
+						<h4>포지션</h4>
+						<div class="wrap">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						</div>  
+					</div>
+					<div>
+						<h4>관심분야</h4>
+						<div class="wrap">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						   	<input type="button" value="포지션 명" id="" class="button1">
+						</div>  
+					</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>

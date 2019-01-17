@@ -110,8 +110,7 @@
 						</div>
 						<div class="align-c">
 							<input type="text" placeholder="닉네임을 입력해주세요" class="modal-button">
-							<textarea rows="" cols="" class="modal-intro" placeholder="자기소개를 입력해주세요" >
-							</textarea>
+							<textarea class="modal-intro" placeholder="자기소개를 입력해주세요" ></textarea>
 						</div>
 					</div>
 					<div class="intro-size">
