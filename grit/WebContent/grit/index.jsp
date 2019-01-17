@@ -259,8 +259,7 @@ body {
 						<table border="1" class="infoboxtable">
 							<thead>
 								<tr>
-									<td colspan="2" style="height: 40px; line-height: 40px;">강의
-										명</td>
+									<td colspan="2" style="height: 40px; line-height: 40px;">강의명</td>
 								</tr>
 							</thead>
 							<tbody>
@@ -287,8 +286,7 @@ body {
 						<table border="1" class="infoboxtable">
 							<thead>
 								<tr>
-									<td colspan="2" style="height: 40px; line-height: 40px;">강의
-										명</td>
+									<td colspan="2" style="height: 40px; line-height: 40px;">강의명</td>
 								</tr>
 							</thead>
 							<tbody>
@@ -315,8 +313,7 @@ body {
 						<table border="1" class="infoboxtable">
 							<thead>
 								<tr>
-									<td colspan="2" style="height: 40px; line-height: 40px;">강의
-										명</td>
+									<td colspan="2" style="height: 40px; line-height: 40px;">강의명</td>
 								</tr>
 							</thead>
 							<tbody>
@@ -328,8 +325,7 @@ body {
 							<tfoot>
 								<tr style="height: 30px;">
 									<td class="box70">카테고리</td>
-									<td class="box30"><input type="button" value="참가비"
-										id="joinbtn"></td>
+									<td class="box30"><input type="button" value="참가비" id="joinbtn"></td>
 								</tr>
 							</tfoot>
 						</table>
@@ -375,13 +371,12 @@ body {
 			<div class="col-lg-4 col-sm-6 portfolio-item">
 				<div class="card">
 					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1"><a
-							href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""> </a>
+						<input type="button" value="참가비" class="joinfee1">
+						<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
+						</a>
 					</div>
 					<div class="card-body" style="height: 150px;">
 						<table class="cardtable">
-
 							<tr>
 								<td colspan="2">강의 명</td>
 							</tr>
@@ -402,40 +397,13 @@ body {
 			<div class="col-lg-4 col-sm-6 portfolio-item">
 				<div class="card">
 					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1"><a
-							href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""> </a>
+						<input type="button" value="참가비" class="joinfee1">
+						<a href="#">
+							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
+						</a>
 					</div>
 					<div class="card-body" style="height: 150px;">
 						<table class="cardtable">
-
-							<tr>
-								<td colspan="2">강의 명</td>
-							</tr>
-
-							<tr>
-								<td class="box30">남은 자리</td>
-								<td class="box70">D-day</td>
-							</tr>
-
-							<tr>
-								<td colspan="2">카테고리</td>
-							</tr>
-						</table>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 portfolio-item">
-				<div class="card">
-					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1"><a
-							href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""> </a>
-					</div>
-					<div class="card-body" style="height: 150px;">
-						<table class="cardtable">
-
 							<tr>
 								<td colspan="2">강의 명</td>
 							</tr>
@@ -455,9 +423,10 @@ body {
 			<div class="col-lg-4 col-sm-6 portfolio-item">
 				<div class="card">
 					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1"><a
-							href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""> </a>
+						<input type="button" value="참가비" class="joinfee1">
+						<a href="#">
+							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
+						</a>
 					</div>
 					<div class="card-body" style="height: 150px;">
 						<table class="cardtable">
@@ -475,6 +444,31 @@ body {
 								<td colspan="2">카테고리</td>
 							</tr>
 						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 portfolio-item">
+				<div class="card">
+					<div style="position: relative; height: 170px;">
+						<input type="button" value="참가비" class="joinfee1">
+						<a href="#">
+							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
+						</a>
+					</div>
+					<div class="card-body" style="height: 150px;">
+						<table class="cardtable">
+							<tr>
+								<td colspan="2">강의 명</td>
+							</tr>
+							<tr>
+								<td class="box30">남은 자리</td>
+								<td class="box70">D-day</td>
+							</tr>
+
+							<tr>
+								<td colspan="2">카테고리</td>
+							</tr>
+						</table>
 
 					</div>
 				</div>
@@ -482,9 +476,10 @@ body {
 			<div class="col-lg-4 col-sm-6 portfolio-item">
 				<div class="card">
 					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1"><a
-							href="#"><img class="card-img-top"
-							src="http://placehold.it/700x400" alt=""> </a>
+						<input type="button" value="참가비" class="joinfee1">
+						<a href="#">
+							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
+						</a>
 					</div>
 					<div class="card-body" style="height: 150px;">
 						<table class="cardtable">
