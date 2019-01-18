@@ -8,6 +8,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
+<script src="../resource/ckeditor/ckeditor.js"></script>
+<link rel="stylesheet" href="resource/ckeditor/samples/sample.css">
+
 <script type="text/javascript" src="<c:url value='/jquery/jquery-3.3.1.min.js'/>"></script>
 <script>
 	$(function(){
@@ -67,9 +70,21 @@
 					<p style="float: left; width: 12%;">강사 요약</p>
 					<textarea class="size_85" name="txt_ar2"></textarea>
 				</div>
-				<div class="pwrap">
-					<p style="float: left; width: 12%;">강사 상세</p>
-					<textarea class="size_85" name="txt_ar3"></textarea>
+				
+				<div style="width:100%; height:300px;">
+					<div style="float:left; margin-right:39px;">
+						<p>강사 상세</p>
+					</div>
+					<div style="width:80%; float:left; ">
+						<textarea id="editor1" style="resize:none;"></textarea>
+						<script>
+	  						 CKEDITOR.replace( 'editor1', {
+	  							 width:640,
+	  							 height:200
+						});
+						</script>
+					</div>
+					
 				</div>
 
 				<div class="pwrap">
