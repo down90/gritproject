@@ -68,15 +68,15 @@
 				</div>
 				<div class="pwrap">
 					<p style="float: left; width: 12%;">강사 요약</p>
-					<textarea class="size_85" name="txt_ar2"></textarea>
+					<textarea class="size_85" name="cSummary"></textarea>
 				</div>
 				
 				<div style="width:100%; height:300px;">
 					<div style="float:left; margin-right:39px;">
-						<p>강사 상세</p>
+						<p>강의 상세</p>
 					</div>
 					<div style="width:80%; float:left; ">
-						<textarea id="editor1" style="resize:none;"></textarea>
+						<textarea id="editor1" style="resize:none;" name="cDetail"></textarea>
 						<script>
 	  						 CKEDITOR.replace( 'editor1', {
 	  							 width:640,
@@ -90,7 +90,7 @@
 				<div class="pwrap">
 					<p class="size_15">강의날짜</p>
 					<div class="in_wrap">
-						<input type="text" class="b_left" name="txt2">
+						<input type="text" class="b_left" name="cDate">
 						<div class="btnwrap2">
 							<div class="btn_box">선택</div>
 						</div>
@@ -99,7 +99,7 @@
 				<div class="pwrap">
 					<p class="size_15">강의장소</p>
 					<div class="in_wrap">
-						<input type="text" class="b_left" name="txt2">
+						<input type="text" class="b_left" name="cLocation">
 						<div class="btnwrap2">
 							<div class="btn_box">검색</div>
 						</div>
@@ -108,7 +108,7 @@
 				<div class="pwrap">
 					<p class="size_15">수강인원</p>
 					<div class="in_wrap">
-						<input type="text" class="b_left" name="txt3">
+						<input type="text" class="b_left" name="cMaxPerson">
 						<div class="btnwrap2">
 							<div class="btn_box">▲</div>
 							<div class="btn_box">▼</div>
@@ -117,13 +117,13 @@
 				</div>
 				<div class="pwrap">
 					<p class="size_15">수강료</p>
-					<input type="radio" name="c_pay" style="float: none;"> 무료 
-					<input type="radio" name="c_pay" style="float: none;"> 유료
+					<input type="radio" name="cPay" style="float: none;" value="N"> 무료 
+					<input type="radio" name="cPay" style="float: none;" value="Y"> 유료
 				</div>
 				<div class="pwrap">
 					<p class="size_15">가격</p>
 					<div class="in_wrap">
-						<input type="text" class="b_left t_center" name="txt5" value="0">
+						<input type="text" class="b_left t_center" name="cMoney" value="0">
 						<div class="btnwrap2">
 							<div class="btn_box">▲</div>
 							<div class="btn_box">▼</div>
@@ -133,12 +133,12 @@
 				<div class="pwrap">
 					<p class="size_15">입금계좌</p>
 					<div class="slctwrap1">
-						<select name="slct1" class="b_left" style="height: 48px;">
+						<select name="cBank" class="b_left" style="height: 48px;">
 							<option>은행선택</option>
 							<option>국민은행</option>
 							<option>신한은행</option>
 							<option>하나은행</option>
-						</select> <input type="text" class="in_mg" name="txt4">
+						</select> <input type="text" class="in_mg" name="cAccount">
 					</div>
 				</div>
 				<div class="clear"></div>

@@ -13,8 +13,8 @@ public class LectureVO {
 	private String cDetail;//모임상세내용
 	private Timestamp cDate;//모임시작일
 	private String cLocation;//모임장소
-	private String cMaxPerson;//모임최대인원
-	private String cPerson;//모임현재인원
+	private int cMaxPerson;//모임최대인원
+	private int cPerson;//모임현재인원
 	private String cPay;//모임유무료구분
 	private int cMoney;//모임비용
 	private String cAccount;//계좌번호
@@ -31,7 +31,7 @@ public class LectureVO {
 	}
 
 	public LectureVO(int cNo, String cCategory, String cName, String cTeacherIntro, String cStatus, String cSummary,
-			String cDetail, Timestamp cDate, String cLocation, String cMaxPerson, String cPerson, String cPay,
+			String cDetail, Timestamp cDate, String cLocation, int cMaxPerson, int cPerson, String cPay,
 			int cMoney, String cAccount, int imgNo, String cBank, int cReadCount, Timestamp cRegdate, String cDelflag,
 			String cRecommand, String memUserid) {
 		super();
@@ -130,19 +130,19 @@ public class LectureVO {
 		this.cLocation = cLocation;
 	}
 
-	public String getcMaxPerson() {
+	public int getcMaxPerson() {
 		return cMaxPerson;
 	}
 
-	public void setcMaxPerson(String cMaxPerson) {
+	public void setcMaxPerson(int cMaxPerson) {
 		this.cMaxPerson = cMaxPerson;
 	}
 
-	public String getcPerson() {
+	public int getcPerson() {
 		return cPerson;
 	}
 
-	public void setcPerson(String cPerson) {
+	public void setcPerson(int cPerson) {
 		this.cPerson = cPerson;
 	}
 
