@@ -26,7 +26,7 @@
 <title>register.jsp</title>
 </head>
 <body>
-	<form name="login" method="post"  action="<c:url value='/leture/letureRegister_ok.do'/>">
+	<form name="login" method="post"  action="<c:url value='/grit/lecture/lectureRegister_ok.do'/>">
 		<div class="pg_layout">
 			<div class="cont1">
 				<div class="pwrap">

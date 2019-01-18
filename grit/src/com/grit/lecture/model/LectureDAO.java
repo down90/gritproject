@@ -20,15 +20,15 @@ private ConnectionPoolMgr2 pool;
 		try {
 			con=pool.getConnection();
 			
-			String sql="insert into class(c_no,c_name,c_teacher_intro,c_summary,c_detail,c_date,c_location,c_maxperson,c_pay,c_money,c_account,c_bank,mem_userid) "
+			String sql="insert into class(c_no,c_name,c_category,c_teacher_intro,c_summary,c_detail,c_location,c_maxperson,c_pay,c_money,c_account,c_bank,mem_userid) "
 					+ " values(class_seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?) ";
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, vo.getcName());
-			ps.setString(2, vo.getcTeacherIntro());
-			ps.setString(3, vo.getcSummary());
-			ps.setString(4, vo.getcDetail());
-			ps.setTimestamp(5, vo.getcDate());
+			ps.setString(2, vo.getcCategory());
+			ps.setString(3, vo.getcTeacherIntro());
+			ps.setString(4, vo.getcSummary());
+			ps.setString(5, vo.getcDetail());
 			ps.setString(6, vo.getcLocation());
 			ps.setInt(7, vo.getcMaxPerson());
 			ps.setString(8, vo.getcPay());
