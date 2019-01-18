@@ -169,7 +169,7 @@ $(function(){
 					<div class="w20 h30 bkg fl-l bor-s bor-ra" style="margin-left:30px;margin-top:20px ">카테고리</div>
 				</div>
 				<div class="w100 bkg h40" style="line-height:160px">강의 요약 설명</div>
-				<div class="w100 h20" style="line-height:80px"><input type="button" value="참가하기" class="w60 h80" style=""></div>
+				<div class="w100 h20" style="line-height:80px"><input type="button" value="참가하기" class="w60 h80" style="border-radius:5px;margin-top:20px"></div>
 			</div>
 			<!-- ///////// -->
 			
