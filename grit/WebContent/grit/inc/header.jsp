@@ -18,10 +18,10 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
     <!-- <link href="css/style.css" rel="stylesheet"> -->
-    <link type="text/css" href="${pageContext.request.contextPath}/grit/css/register.css" rel="stylesheet" />
 	<link type="text/css" href="${pageContext.request.contextPath}/grit/css/slider_style.css" rel="stylesheet">
 	<link type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link type="text/css" href="${pageContext.request.contextPath}/grit/css/modal_login.css" rel="stylesheet">
+    <link type="text/css" href="${pageContext.request.contextPath}/grit/css/register.css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
