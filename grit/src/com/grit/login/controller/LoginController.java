@@ -1,4 +1,4 @@
-package com.grit.member.controller;
+package com.grit.login.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

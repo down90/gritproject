@@ -19,7 +19,9 @@ public class MemberDAO {
 		PreparedStatement ps=null;
 		try {
 			con=pool.getConnection();
-			String sql="";
+			String sql="insert" + 
+					" into member(mem_userid,mem_no,mem_pwd,mem_name,mem_nickname,mem_email,mem_hp,mem_intro)" + 
+					" values(?,member_seq.nextval,?,?,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, vo.getMemUserid());
 			ps.setString(2, vo.getMemPwd());
@@ -27,8 +29,7 @@ public class MemberDAO {
 			ps.setString(4, vo.getMemNickname());
 			ps.setString(5, vo.getMemEmail());
 			ps.setString(6, vo.getMemHp());
-			ps.setString(7, vo.getMemPicture());
-			ps.setString(8, vo.getMemIntro());
+			ps.setString(7, vo.getMemIntro());
 
 			int cnt=ps.executeUpdate();
 			System.out.println("cnt="+cnt);

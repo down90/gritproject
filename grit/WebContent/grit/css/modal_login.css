@@ -193,11 +193,13 @@ h4{
 }
 
 /* 유효성 msg */
-.validation_msg {
+.validation{
 	margin: 10px 0;
 	color: red;
-	visibility: visible;
 	text-align: right;
+}
+.validation-msg {
+	visibility: hidden;
 }
 
 
