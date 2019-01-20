@@ -64,7 +64,7 @@
 				<div class="modal-content content-size1">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 					<h3 class="modal-title">로그인</h3>
-					<form action="<c:url value='/grit/index.do'/>" method="post" name="frmLogin">
+					<form action="<c:url value='/grit/index-login.do'/>" method="post" name="frmLogin">
 						<div>
 							<input type="text" placeholder="계정(이메일)을 입력해주세요" class="modal-button modal_margin30">
 							<input type="password" placeholder="비밀번호를 입력해 주세요" class="modal-button modal_margin5">

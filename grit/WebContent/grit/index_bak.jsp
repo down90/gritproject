@@ -224,7 +224,7 @@ body {
 					style="margin: 20px 0 0 40px; font-size: 14px; text-align: left; font-wegiht:bold;">실시간
 					인기 모임</div>
 				<div class="imgbox1">
-					<input type="button" value="${cntvo.cMoney }" class="joinfee">
+					<input type="button" value="참가비" class="joinfee">
 				</div>
 			</div>
 			<div>
@@ -232,7 +232,7 @@ body {
 					style="width: 500px; margin: auto; text-align: center">
 					<thead>
 						<tr>
-							<td colspan="3" style="height: 25px;">${cntvo.cName }</td>
+							<td colspan="3" style="height: 25px;">강의 명</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -253,7 +253,6 @@ body {
 		<li class="contents2">
 			<div style="margin: 20px 0 0 40px; font-size: 14px;">추천 모임</div>
 			<!-- 반복시작 -->
-			
 			<div class="infobox1">
 				<ul class="dotnone">
 					<li class="leli"></li>
@@ -282,6 +281,59 @@ body {
 				</ul>
 			</div>
 			<!-- 반복끝 -->
+			<div class="infobox2">
+				<ul class="dotnone">
+					<li class="leli"></li>
+					<li class="rili">
+						<table border="1" class="infoboxtable">
+							<thead>
+								<tr>
+									<td colspan="2" style="height: 40px; line-height: 40px;">강의명</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="height: 30px;">
+									<td class="box30">남은 자리</td>
+									<td class="box70">D-day</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr style="height: 30px;">
+									<td class="box70">카테고리</td>
+									<td class="box30"><input type="button" value="참가비"
+										id="joinbtn"></td>
+								</tr>
+							</tfoot>
+						</table>
+					</li>
+				</ul>
+			</div>
+			<div class="infobox3">
+				<ul class="dotnone">
+					<li class="leli"></li>
+					<li class="rili">
+						<table border="1" class="infoboxtable">
+							<thead>
+								<tr>
+									<td colspan="2" style="height: 40px; line-height: 40px;">강의명</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr style="height: 30px;">
+									<td class="box30">남은 자리</td>
+									<td class="box70">D-day</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr style="height: 30px;">
+									<td class="box70">카테고리</td>
+									<td class="box30"><input type="button" value="참가비" id="joinbtn"></td>
+								</tr>
+							</tfoot>
+						</table>
+					</li>
+				</ul>
+			</div>
 		</li>
 	</ul>
 	<!-- Portfolio Section -->

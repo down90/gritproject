@@ -10,28 +10,18 @@ import com.controller.Controller;
 import com.grit.lecture.model.LectureService;
 import com.grit.lecture.model.LectureVO;
 
-public class IndexController implements Controller {
+public class IndexRegdateListController implements Controller{
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
 		LectureService lectureService=new LectureService();
-		LectureVO cntvo=null;
-		List<LectureVO> recommandList=null;
+		List<LectureVO> list=null;
 		try {
-			cntvo=lectureService.selectReadCnt();
-			recommandList=lectureService.selectRecommand();
-			
-		} catch(SQLException e) {
+			list=lectureService.selectRegdate();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("cntvo="+cntvo);
-		request.setAttribute("cntvo", cntvo);
-		
-		System.out.println("recommandList="+recommandList);
-		request.setAttribute("recommandList", recommandList);
-		
-		
 		return "/grit/index.jsp";
 	}
 
@@ -39,5 +29,5 @@ public class IndexController implements Controller {
 	public boolean isRedirect() {
 		return false;
 	}
-
+	
 }
