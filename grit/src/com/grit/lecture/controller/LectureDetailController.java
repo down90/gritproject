@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.controller.Controller;
 import com.grit.lecture.model.LectureService;
 import com.grit.lecture.model.LectureVO;
+import com.grit.member.model.MemberService;
+import com.grit.member.model.MemberVO;
 
 public class LectureDetailController implements Controller{
 
@@ -23,13 +25,24 @@ public class LectureDetailController implements Controller{
 		}
 		
 		LectureVO vo=null;
+		MemberVO memvo=null;
 		LectureService service=new LectureService();
+		MemberService memberService=new MemberService();
 		try {
 			vo=service.selectClassByNo(Integer.parseInt(no));
+			try {
+				memvo=memberService.selectMember(vo.getMemUserid());
+				if(memvo.getMemNickname()==null||memvo.getMemNickname().isEmpty()) {
+					memvo.setMemNickname(memvo.getMemName());
+				}
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}catch (SQLException e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("vo",vo);
+		request.setAttribute("memvo", memvo);
 		System.out.println("vo="+vo);
 		
 		return "/grit/lecture/lectureDetail.jsp";

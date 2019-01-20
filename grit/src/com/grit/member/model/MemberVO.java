@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class MemberVO {
 	private String memUserid;//개인회원아이디
-	private int mgNo;//멤버구분번호
+	private String mgCode;//멤버구분코드
 	private int memNo;//회원번호
 	private String memPwd;//비밀번호
 	private String memName;//a이름
@@ -21,12 +21,12 @@ public class MemberVO {
 		super();
 	}
 
-	public MemberVO(String memUserid, int mgNo, int memNo, String memPwd, String memName, String memNickname,
+	public MemberVO(String memUserid, String mgCode, int memNo, String memPwd, String memName, String memNickname,
 			String memEmail, Timestamp memJoindate, Timestamp memOutdate, String memHp, String memPicture, int cgNo,
 			String memIntro) {
 		super();
 		this.memUserid = memUserid;
-		this.mgNo = mgNo;
+		this.mgCode = mgCode;
 		this.memNo = memNo;
 		this.memPwd = memPwd;
 		this.memName = memName;
@@ -48,12 +48,12 @@ public class MemberVO {
 		this.memUserid = memUserid;
 	}
 
-	public int getMgNo() {
-		return mgNo;
+	public String getMgCode() {
+		return mgCode;
 	}
 
-	public void setMgNo(int mgNo) {
-		this.mgNo = mgNo;
+	public void setMgCode(String mgCode) {
+		this.mgCode = mgCode;
 	}
 
 	public int getMemNo() {
@@ -146,7 +146,7 @@ public class MemberVO {
 
 	@Override
 	public String toString() {
-		return "MemberVO [memUserid=" + memUserid + ", mgNo=" + mgNo + ", memNo=" + memNo + ", memPwd=" + memPwd
+		return "MemberVO [memUserid=" + memUserid + ", mgCode=" + mgCode + ", memNo=" + memNo + ", memPwd=" + memPwd
 				+ ", memName=" + memName + ", memNickname=" + memNickname + ", memEmail=" + memEmail + ", memJoindate="
 				+ memJoindate + ", memOutdate=" + memOutdate + ", memHp=" + memHp + ", memPicture=" + memPicture
 				+ ", cgNo=" + cgNo + ", memIntro=" + memIntro + "]";

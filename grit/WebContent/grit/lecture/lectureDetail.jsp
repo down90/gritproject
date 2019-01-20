@@ -188,7 +188,7 @@ $(function(){
 			<!-- 우측 이것저것 -->
 			<div class="h100 fl-r ali-c" style="width:48%">
 				<div class="w100" style="height:15%">
-					<div class="h70 fl-l bor-s line-h40" style="width:48%;">참가인원 : ${vo.cMaxPerson }명</div>
+					<div class="h70 fl-l bor-s line-h40" style="width:48%;">참가인원 : 0 / ${vo.cMaxPerson }명</div>
 					<div class="h70 fl-r bor-s line-h40" style="width:48%;">강의 시작일 : ${vo.cRegdate }</div>
 				</div>
 				<div class="w100" style="height:24%; line-height:30px">
@@ -230,9 +230,9 @@ $(function(){
 				&nbsp;<div class="" style="font-size:30px;">&nbsp;강사소개</div>
 				<div>
 					<div class="fl-l bor-s ali-c" style="width:80px;height:80px;border-radius:100px;line-height:80px;margin:20px;margin-left:40px">프로필사진</div>
-					<div class="fl-l bor-s ali-c" style="width:100px;margin-top:20px">닉네임</div>
+					<div class="fl-l bor-s ali-c" style="width:100px;margin-top:20px">${memvo.memNickname }</div>
 				</div>
-				<div class="h60 w60 bor-s clear-b ali-c" style="margin-left:40px; line-height: 300px">강사소개</div>
+				<div class="h60 w60 bor-s clear-b ali-c" style="margin-left:40px; line-height: 300px">${memvo.memIntro}</div>
 			</div>
 			<!-- ------ -->
 			
