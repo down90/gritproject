@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="inc/header.jsp"%>
@@ -97,7 +96,6 @@ body {
 	margin: 10px auto;
 	width: 500px;
 	height: 200px;
-	background-image: url("img/img1.png");
 	border: 1px solid black;
 }
 
@@ -163,6 +161,20 @@ body {
 	margin-top: 140px;
 	background-image: url('img/event.png');
 }
+
+.a_text {
+	display: block;
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+}
+
+.a_text:hover {
+	background-color: #333;
+	color: white; height : 100%;
+	width: 100%;
+	height: 100%;
+}
 </style>
 <body>
 
@@ -215,7 +227,7 @@ body {
 		</div>
 	</header>
 	<!-- Page Content -->
-	
+
 
 	<input class="lecturebtn" type="button"
 		onclick="location.href='<c:url value="/grit/lecture/lectureRegister.do"/>'"
@@ -228,16 +240,27 @@ body {
 				<div
 					style="margin: 20px 0 0 40px; font-size: 14px; text-align: left; font-wegiht: bold;">실시간
 					인기 모임</div>
-				<div class="imgbox1">
-					<input type="button" value="${cntvo.cMoney }" class="joinfee">
-				</div>
+				<a href="#">
+					<div class="imgbox1" style="background-image: url('img/img1.png')">
+						<!-- 이미지 넣는곳 ${img_no} -->
+						<c:if test="${cntvo.cPay=='N'}">
+							<input type="button" value="무료" class="joinfee">
+						</c:if>
+						<c:if test="${cntvo.cPay=='Y'}">
+							<input type="button" value="${cntvo.cMoney }" class="joinfee">
+						</c:if>
+					</div>
+				</a>
 			</div>
 			<div>
 				<table border="1"
 					style="width: 500px; margin: auto; text-align: center">
 					<thead>
 						<tr>
-							<td colspan="3" style="height: 25px;">${cntvo.cName }</td>
+							<td colspan="3" style="height: 25px;">
+								<div class="a_text" style="line-height: 25px"
+									onclick="location.href='<c:url value="/grit/lecture/lectureDetail?cNo=${cntvo.cNo }"/>'">${cntvo.cName }</div>
+							</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -246,9 +269,7 @@ body {
 								${cntvo.cCategory }</td>
 							<td style="width: 20%; height: 25px;">남은자리 :
 								${cntvo.cMaxPerson-cntvo.cPerson }</td>
-							<td style="width: 20%; height: 25px;">D-day :${day}
-							 
-							</td>
+							<td style="width: 20%; height: 25px;">D-day :</td>
 						</tr>
 					</tbody>
 					<tfoot>
@@ -264,12 +285,17 @@ body {
 			<c:forEach var="recommandvo" items="${recommandList }">
 				<div class="infobox1">
 					<ul class="dotnone">
-						<li class="leli"></li>
+						<li class="leli" style=""></li>
+						<!-- 이미지 넣는곳 ${img_no} -->
 						<li class="rili">
 							<table border="1" class="infoboxtable">
 								<thead>
 									<tr>
-										<td colspan="2" style="height: 40px; line-height: 40px;">${recommandvo.cName }</td>
+										<td colspan="2" style="height: 40px; line-height: 40px;">
+											<div class="a_text"
+												onclick="location.href='<c:url value="/grit/lecture/lectureDetail?cNo=${recommandvo.cNo }"/>'">
+												${recommandvo.cName }</div>
+										</td>
 									</tr>
 								</thead>
 								<tbody>
@@ -282,8 +308,12 @@ body {
 								<tfoot>
 									<tr style="height: 30px;">
 										<td class="box70">카테고리 : ${recommandvo.cCategory }</td>
-										<td class="box30"><input type="button"
-											value="${recommandvo.cMoney }" id="joinbtn"></td>
+										<td class="box30"><c:if test="${recommandvo.cPay=='N'}">
+												<input type="button" value="무료" id="joinbtn">
+											</c:if> <c:if test="${recommandvo.cPay=='Y'}">
+												<input type="button" value="${recommandvo.cMoney }"
+													id="joinbtn">
+											</c:if></td>
 									</tr>
 								</tfoot>
 							</table>
@@ -303,9 +333,15 @@ body {
 					<div class="card">
 
 						<div style="position: relative; height: 170px;">
-							<input type="button" value="${regdateList.cMoney }"
-								class="joinfee1"> <a href="#"> <img
-								class="card-img-top" src="http://placehold.it/700x400" alt="">
+							<c:if test="${regdateList.cPay=='N'}">
+								<input type="button" value="무료" class="joinfee1">
+							</c:if>
+							<c:if test="${regdateList.cPay=='Y'}">
+								<input type="button" value="${regdateList.cMoney }"
+									class="joinfee1">
+							</c:if>
+							<a href="#"> <img class="card-img-top"
+								src="http://placehold.it/700x400" alt=""> <!--src 이미지 넣는곳 ${img_no} -->
 							</a>
 						</div>
 
@@ -313,7 +349,11 @@ body {
 							<table class="cardtable">
 
 								<tr>
-									<td colspan="2">${regdateList.cName }</td>
+									<td colspan="2" style="height: 30px; line-height: 30px;">
+										<div class="a_text"
+											onclick="location.href='<c:url value="/grit/lecture/lectureDetail?cNo=${regdateList.cNo }"/>'">
+											${regdateList.cName }</div>
+									</td>
 								</tr>
 
 								<tr>

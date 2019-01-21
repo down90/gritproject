@@ -16,8 +16,8 @@ public class LectureDetailController implements Controller{
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		
-		String no=request.getParameter("c_no");
-		if(no==null||no.isEmpty()) {
+		String cNo=request.getParameter("cNo");
+		if(cNo==null||cNo.isEmpty()) {
 			request.setAttribute("msg", "잘못된 url");
 			request.setAttribute("url", "/grit/grit/index.do");
 			
@@ -29,7 +29,7 @@ public class LectureDetailController implements Controller{
 		LectureService service=new LectureService();
 		MemberService memberService=new MemberService();
 		try {
-			vo=service.selectClassByNo(Integer.parseInt(no));
+			vo=service.selectClassByNo(Integer.parseInt(cNo));
 			try {
 				memvo=memberService.selectMember(vo.getMemUserid());
 				if(memvo.getMemNickname()==null||memvo.getMemNickname().isEmpty()) {
