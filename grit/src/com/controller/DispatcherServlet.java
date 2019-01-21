@@ -30,10 +30,12 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("realConfigFile= "+realConfigFile);
 		
 
-		//realConfigFile="D:\\down\\lecture\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
+		realConfigFile="D:\\down\\lecture\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
 		//realConfigFile="D:\\down\\lecture\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //다운 학원경로
 		//realConfigFile="C:\\Users\\in440\\git\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //강훈이 노트북 경로
-		realConfigFile="C:\\Users\\pjs3m\\git\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //종석이 노트북경로
+		//realConfigFile="C:\\Users\\pjs3m\\git\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //종석이 노트북경로
+		//realConfigFile="C:\\Users\\in440\\git\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //강훈이 노트북 경로
+		//realConfigFile="C:\\Users\\pjs3m\\OneDrive\\Desktop\\projectlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //종석이 노트북경로
 		//realConfigFile="C:\\Users\\user\\Desktop\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
 		//realConfigFile="C:\\Users\\jhkim\\grit\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
 		System.out.println("realConfigFile="+realConfigFile+"\n\n");
