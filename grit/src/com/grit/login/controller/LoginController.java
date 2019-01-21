@@ -16,7 +16,6 @@ public class LoginController implements Controller{
    @Override
    public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
       //modal창은 index.jsp로 보내야함 대신 controller들을 전부 별개로 만들어줄것!
-      //테스트 결과 파라미터 모두 정상적으로 읽어옴
       //login 처리
       String memUserid=request.getParameter("memUserid");
       String memPwd=request.getParameter("memPwd");
@@ -31,8 +30,8 @@ public class LoginController implements Controller{
             HttpSession session=request.getSession();//세션객체를 request에서 가져오자
             
             //세션에 저장
-            session.setAttribute("userid", memUserid);
-            session.setAttribute("userName", vo.getMemName());
+            session.setAttribute("memUserid", memUserid);
+            session.setAttribute("memName", vo.getMemName());
             
             //쿠키에 저장
             Cookie ck=new Cookie("ck_userid", memUserid);

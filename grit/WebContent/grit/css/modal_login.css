@@ -197,9 +197,7 @@ h4{
 	margin: 10px 0;
 	color: red;
 	text-align: right;
-}
-.validation-msg {
-	visibility: hidden;
+	font-size: 10px;
 }
 
 

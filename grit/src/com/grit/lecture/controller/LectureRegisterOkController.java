@@ -16,10 +16,15 @@ public class LectureRegisterOkController implements Controller{
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		Date date=new Date();
 		
-		
-		
+		String memUserid=(String) request.getSession().getAttribute("memUserid");
+		System.out.println("memUserid="+memUserid);
+		//로그인된 경우만 처리되도록
+		if(memUserid==null||memUserid.isEmpty()) {
+			request.setAttribute("msg", "먼저 로그인하세요");
+			request.setAttribute("url", "/grit/grit/index.do");
+			return "/grit/common/message.jsp";
+		}
 		String cName=request.getParameter("cName");
 		String cTeacherIntro=request.getParameter("cTeacherIntro");
 		String cSummary=request.getParameter("cSummary");
@@ -30,9 +35,6 @@ public class LectureRegisterOkController implements Controller{
 		String cMoney=request.getParameter("cMoney");
 		String cAccount=request.getParameter("cAccount");
 		String cBank=request.getParameter("cBank");
-		String memUserid="whdtjr123";
-		//String memUserid="in44022@naver.com";
-		
 		LectureVO vo=new LectureVO();
 		vo.setcName(cName);
 		vo.setcTeacherIntro(cTeacherIntro);

@@ -5,8 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="inc/header.jsp"%>
-<%@ include file="login/login.jsp"%>
-<%@ include file="login/afterLogin.jsp" %>
+
 <style>
 * {
 	padding: 0;

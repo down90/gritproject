@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,7 +146,7 @@
 				onclick="location.href='<c:url value="/grit/index.do"/>'">
 			</div>
 			<ul class="gnb">
-				<c:if test="${empty sessionScope.userid }">
+				<c:if test="${empty sessionScope.memUserid }">
 					<li class="gnb_li1">
 						<a class="gnb_li_a" href="#" data-toggle="modal" data-target="#modal1">로그인</a>
 					</li>
@@ -153,7 +154,7 @@
 						<a class="gnb_li_a" href="#" data-toggle="modal" data-target="#modal2">회원가입</a>
 					</li>
 				</c:if>
-				<c:if test="${!empty sessionScope.userid }">
+				<c:if test="${!empty sessionScope.memUserid }">
 					<li class="gnb_li">
 						<div class="profile-div"></div>
 					</li>
@@ -166,10 +167,12 @@
 					<li class="gnb_li4">
 						<a class="gnb_li_a" data-toggle="modal" data-target="#modal5">4</a>
 					</li>
-					<li class="gnb_li5">
-						<a class="gnb_li_a" >Log out</a>
+					<li class="gnb_li5" onclick="location.href='<c:url value="/grit/index-logout.do"/>'">
+						<a class="gnb_li_a">Log out</a>
 					</li>
 				</c:if>
 			</ul>
 		</div>
 	</nav>
+	<%@ include file="../login/login.jsp"%>
+	<%@ include file="../login/afterLogin.jsp" %>

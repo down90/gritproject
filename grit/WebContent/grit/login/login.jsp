@@ -11,24 +11,52 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/grit/css/modal_login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- 정규식<script type="text/javascript" src="<c:url value='/js/member.js'/>"></script>-->
+<script type="text/javascript" src="<c:url value='/grit/js/member.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/grit/jquery/jquery-3.3.1.min.js'/>"></script>
 <script type="text/javascript">
 	$(function(){
-		$("#join-submit").click(function(){
-			//이름, 아이디 ,비밀번호 필수
-			/* 집에서 다시 볼것!
-			if($("#memName").val()==""){
-				$(".validation-msg").css("visibility","visible");
-				$("#memName").focus();
-				event.preventDefault();
+		$("#validation").css("visibility","hidden");
+		
+		$("#memUserid").keyup(function(){
+			if(!validate_userid($(this).val())||$(this).val().length<2){
+				$("#validation").html("아이디 규칙에 맞지 않습니다.");
+				$("#validation").css("visibility","visible");
+			}else{
+				$.ajax({
+					url:"<c:url value='/grit/index-ajaxCheckUserid.do'/>",
+					type:"post",
+					data:"memUserid="+$(this).val(),
+					success:function(res){
+						//alert(res);	//1,2
+						var str="";
+						if(res==1){//사용 가능한 아이디
+							str="사용 가능한 아이디"
+						}
+						else if(res==2){//사용 불가능한 아이디
+							str="이미 등록된 아이디"
+						}
+						$("#validation").html(str);
+						$("#validation").css("visibility","visible");
+					},
+					error:function(xhr,status,error){
+						alert("에러 : "+error);
+					}
+				});
 			}
-			*/
-			/*
-			else if(!validate_userid($("#userid").val())){
-				alert("아이디는 숫자나 알파벳 대, 소문자나 _를 입력해야 합니다.");
-				$("#userid").focus();
-				event.preventDefault();
+		});
+	 	$("#checkInfo").click(function(){
+			//이름, 아이디 ,비밀번호 필수
+		/* 	if($("#memName").val().length<1){
+				$("#validation").css("visibility","visible");
+				$("#memName").focus();
+				$("#validation").html("이름을 입력해주세요.");
+				return false;
+			}
+			 else if(!validate_userid($("#memUserid").val())){
+				$("#validation").css("visibility","visible");
+				$("#validation").html("이메일형식이 아닙니다.");
+				$("#memUserid").focus();
+				return false
 			}		
 			else if(!validate_pwd($("#pwd").val())){
 				alert("비밀번호는 숫자나 알파벳, 특수문자를 모두 포함하여 15글자 이내로 입력해야 합니다.");
@@ -52,13 +80,13 @@
 				$("#btnChkId").focus();
 				event.preventDefault();				
 			}
-			*/
-		});
-	})
+			  */
+		}); 
+	});
 </script>
 </head>
 <body>
-	<div class="container">
+	<div class="container" >
 		<div class="modal fade" id="modal1" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content content-size1">
@@ -136,10 +164,10 @@
 							<input type="text" placeholder="계정으로 사용하실 이메일 입력해주세요." class="modal-button" name="memUserid" id="memUserid">
 							<input type="password" placeholder="비밀번호를 입력해주세요." class="modal-button" name="memPwd" id="memPwd">
 							<input type="password" placeholder="비밀번호를 한번 더 입력해주세요." class="modal-button">
-							<p>[!] 이메일을 허위로 작성할 경우, 비밀번호를 분실 했을 때 비밀번호를 찾을 수 없습니다.</p>
 							<input type="text" placeholder="휴대폰 전화번호를 입력해주세요" class="modal-button" name="memHp" id="memHp" maxlength="11">
-							<p class="validation-msg validation">validation message field</p>
-							<input type="button" value="다음" class="modal-button" data-toggle="modal" data-target="#modal2-2">				
+							<p>[!] 이메일을 허위로 작성할 경우, 비밀번호를 분실 했을 때 비밀번호를 찾을 수 없습니다.</p>
+							<p id="validation" class="validation">validation message field</p>
+							<input type="button" value="다음" id="checkInfo"class="modal-button" data-toggle="modal" data-target="#modal2-2">				
 						</div>
 					</div>
 				</div>
@@ -189,7 +217,7 @@
 								</div>  
 							</div>
 							<p class="validatio-msg">validation message field</p>
-							<input type="submit" value="계정생성완료" id="join-submit">
+							<input type="submit" value="계정생성완료" id="">
 						</div>
 						
 					</div>
