@@ -114,14 +114,28 @@ public class MemberDAO {
 		ResultSet rs=null;
 		try {
 			con=pool.getConnection();
-			String sql="";
+			String sql="select * from member where mem_userid=? and mem_outdate is null";
 			ps=con.prepareStatement(sql);
 			ps.setString(1, memUserid);
 			rs=ps.executeQuery();
 
 			MemberVO vo=null;
+			System.out.println("selectMember메서드 입력값(memUserid):"+memUserid);
 			if(rs.next()) {
-
+				vo=new MemberVO();
+				vo.setMemUserid(memUserid);
+				vo.setMgCode(rs.getString("mg_code"));
+				vo.setMemNo(rs.getInt("mem_no"));
+				vo.setMemPwd(rs.getString("mem_pwd"));
+				vo.setMemName(rs.getString("mem_name"));
+				vo.setMemNickname(rs.getString("mem_nickname"));
+				vo.setMemEmail(rs.getString("mem_email"));
+				vo.setMemJoindate(rs.getTimestamp("mem_joindate"));
+				vo.setMemOutdate(rs.getTimestamp("mem_outdate"));
+				vo.setMemHp(rs.getString("mem_hp"));
+				vo.setMemPicture(rs.getString("mem_picture"));
+				vo.setCgNo(rs.getInt("cg_no"));
+				vo.setMemIntro(rs.getString("mem_intro"));
 			}
 			System.out.println("vo="+vo+", userid="+memUserid);
 			return vo;

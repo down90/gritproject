@@ -50,6 +50,46 @@ public class LectureDAO {
 		}
 
 	}
+	
+	public LectureVO selectClassByNo(int no) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		
+		LectureVO vo=new LectureVO();
+		try {
+			con=pool.getConnection();
+			
+			String sql="select * from class where c_no=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, no);
+			
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				vo.setcNo(rs.getInt("c_no"));
+				vo.setcCategory(rs.getString("c_category"));
+				vo.setcName(rs.getString("c_name"));
+				vo.setcSummary(rs.getString("c_summary"));
+				vo.setcDetail(rs.getString("c_detail"));
+				vo.setcLocation(rs.getString("c_location"));
+				vo.setcMaxPerson(rs.getInt("c_maxperson"));
+				vo.setcPay(rs.getString("c_pay"));
+				vo.setcMoney(rs.getInt("c_money"));
+				vo.setcAccount(rs.getString("c_account"));
+				vo.setcBank(rs.getString("c_bank"));
+				vo.setcRegdate(rs.getTimestamp("c_regdate"));
+				vo.setMemUserid(rs.getString("mem_userid"));
+			}
+			return vo;
+			
+		}finally {
+			pool.dbClose(rs, ps, con);
+		}
+		
+		
+	}
+	
+	
 
 	public LectureVO selectReadCnt() throws SQLException{
 		Connection con=null;
@@ -207,3 +247,7 @@ public class LectureDAO {
 		}
 	}//
 }
+
+
+
+

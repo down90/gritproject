@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>강의 상세보기</title>
 <script type="text/javascript">
-	var IMP = window.IMP; // 생략가능
+	/* var IMP = window.IMP; // 생략가능
 	
 	
 	IMP.init('imp07537802');  // 가맹점 식별 코드
@@ -39,7 +39,7 @@
 	    }
 
 	    alert(msg);
-	});
+	}); */
 </script>
 <style type="text/css">
 	body{margin:0;padding:0;}
@@ -158,14 +158,13 @@ $(function(){
 <body>
 
 <!-- //////////페이지 전체적 틀 1024px에 margin:0 auto로 가운데정렬이 되어있는 상태입니다////////// -->
-
 	<div class="topbox">
 		<!-- 상단 강의명과 참가비를 포함한 div태그 -->
 		<div>
 			<div class="ali-c" style="height:100px;">
-				<div class="fl-l bkg h100" style="width:84%;font-size: 30px">강의 제목 입니다</div>
+				<div class="fl-l bkg h100" style="width:84%;font-size: 30px">강의명 : ${vo.cName}</div>
 				<div class="fl-r bkg h100" style="width:14%;">
-					<div class="bor-ra bor-s w80 h30" style="margin:34px 14px;line-height:30px">참가비</div>
+					<div class="bor-ra bor-s w80 h30" style="margin:34px 14px;line-height:30px">참가비 : ${vo.cMoney}원</div>
 				</div>
 			</div>
 		</div>
@@ -189,8 +188,8 @@ $(function(){
 			<!-- 우측 이것저것 -->
 			<div class="h100 fl-r ali-c" style="width:48%">
 				<div class="w100" style="height:15%">
-					<div class="h70 fl-l bor-s line-h40" style="width:48%;">현재 참가 인원</div>
-					<div class="h70 fl-r bor-s line-h40" style="width:48%;">강의 날짜</div>
+					<div class="h70 fl-l bor-s line-h40" style="width:48%;">참가인원 : 0 / ${vo.cMaxPerson }명</div>
+					<div class="h70 fl-r bor-s line-h40" style="width:48%;">강의 시작일 : ${vo.cRegdate }</div>
 				</div>
 				<div class="w100" style="height:24%; line-height:30px">
 					<div class="w20 h30 bkg fl-l bor-s bor-ra" style="">카테고리</div>
@@ -202,7 +201,7 @@ $(function(){
 					<div class="w20 h30 bkg fl-l bor-s bor-ra" style="margin-left:30px;margin-top:20px">카테고리</div>
 					<div class="w20 h30 bkg fl-l bor-s bor-ra" style="margin-left:30px;margin-top:20px ">카테고리</div>
 				</div>
-				<div class="w100 bkg h40" style="line-height:160px">강의 요약 설명</div>
+				<div class="w100 bkg h40" style="line-height:160px">${vo.cSummary }</div>
 				<div class="w100 h20" style="line-height:80px"><input type="button" value="참가하기" id="join" class="w60 h80" style="border-radius:5px;margin-top:20px"></div>
 			</div>
 			<!-- ///////// -->
@@ -231,16 +230,16 @@ $(function(){
 				&nbsp;<div class="" style="font-size:30px;">&nbsp;강사소개</div>
 				<div>
 					<div class="fl-l bor-s ali-c" style="width:80px;height:80px;border-radius:100px;line-height:80px;margin:20px;margin-left:40px">프로필사진</div>
-					<div class="fl-l bor-s ali-c" style="width:100px;margin-top:20px">닉네임</div>
+					<div class="fl-l bor-s ali-c" style="width:100px;margin-top:20px">${memvo.memNickname }</div>
 				</div>
-				<div class="h60 w60 bor-s clear-b ali-c" style="margin-left:40px; line-height: 300px">강사소개</div>
+				<div class="h60 w60 bor-s clear-b ali-c" style="margin-left:40px; line-height: 300px">${memvo.memIntro}</div>
 			</div>
 			<!-- ------ -->
 			
 			<!-- 강의 상세소개 -->
 			<div class="bor-s" style="height:500px;">
 				&nbsp;<div class="" style="font-size:30px;">&nbsp;강의 상세소개</div>
-				<div class="h70 w60 bor-s ali-c" style="margin:40px 0 0 40px; line-height: 350px">강사소개</div>
+				<div class="h70 w60 bor-s ali-c" style="margin:40px 0 0 40px; line-height: 350px">${vo.cDetail }</div>
 			</div>
 			<!-- --------- -->
 			
@@ -299,7 +298,7 @@ geocoder.addressSearch('경기도 안양시 동안구 호계동 1102-1', functio
     } 
 });    
 </script></div>
-				<div class="w90 bor-s ali-c line-h40" style="height:40px;margin:0 auto;">강의 장소 상세주소</div>
+				<div class="w90 bor-s ali-c line-h40" style="height:40px;margin:0 auto;">${vo.cLocation }</div>
 			</div>
 			<!-- ------ -->
 			
