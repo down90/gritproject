@@ -66,8 +66,8 @@
 					<h3 class="modal-title">로그인</h3>
 					<form action="<c:url value='/grit/index-login.do'/>" method="post" name="frmLogin">
 						<div>
-							<input type="text" placeholder="계정(이메일)을 입력해주세요" class="modal-button modal_margin30">
-							<input type="password" placeholder="비밀번호를 입력해 주세요" class="modal-button modal_margin5">
+							<input name="memUserid" type="text" placeholder="계정(이메일)을 입력해주세요" class="modal-button modal_margin30">
+							<input name="memPwd"type="password" placeholder="비밀번호를 입력해 주세요" class="modal-button modal_margin5">
 							<p style="margin-top:5px; text-align:right">validation message field</p>
 							<div>
 								<input type="submit" value="로그인" class="modal-button login">

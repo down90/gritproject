@@ -13,8 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<!--  -->
-	<div id="after-login-header">
+<!-- 	<div id="after-login-header">
 		<div>
 			<div class="profile-div"><img alt="프로필 사진" scr=""></div>
 			<a href="#" data-toggle="modal" data-target="#modal3">{닉네임}</a>
@@ -30,7 +29,7 @@
 		<div>
 			<input type="button" class="main-login-btn" value="Log out">
 		</div>
-	</div>
+	</div> -->
 
 	
 	<!-- modal부분시작 -->
@@ -51,7 +50,7 @@
 								<img alt="" src="">
 							</div>
 						</div>
-						<a href=""><img alt="개인회원이 등록한 사진" src="../img/img1.png" class="profile-img"></a>
+						<a href=""><img alt="개인회원이 등록한 사진" src="<c:url value='/grit/img/img1.png'/>" class="profile-img"></a>
 					</div>
 					<div class="profile-nick-box">
 						<a href="" data-toggle="modal" data-target="#modal3-2">{닉네임}</a>
