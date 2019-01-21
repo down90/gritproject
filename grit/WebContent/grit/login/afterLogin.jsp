@@ -188,8 +188,6 @@
 					<div class="notice-title"><span>공지사항 명</span></div>
 					<div class="notice-regdate"><span>게시일시</span></div>
 				</button>
-				
-				
 			</div>
 		</div>
 	</div>

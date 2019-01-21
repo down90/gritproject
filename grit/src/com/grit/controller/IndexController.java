@@ -14,7 +14,8 @@ public class IndexController implements Controller {
 
 	@Override
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
-		
+		String memUserid=(String) request.getSession().getAttribute("memUserid");
+		System.out.println("index session memUserid="+memUserid);
 		LectureService lectureService=new LectureService();
 		LectureVO cntvo=null;
 		List<LectureVO> recommandList=null;
