@@ -30,7 +30,7 @@ public class LectureRegisterOkController implements Controller{
 		String cMoney=request.getParameter("cMoney");
 		String cAccount=request.getParameter("cAccount");
 		String cBank=request.getParameter("cBank");
-		String memUserid="whdtjr123";
+		String memUserid="in44022@naver.com";
 		//String memUserid="in44022@naver.com";
 		
 		LectureVO vo=new LectureVO();
