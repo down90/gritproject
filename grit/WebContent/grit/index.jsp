@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="inc/header.jsp"%>
@@ -75,11 +77,11 @@ body {
 }
 
 .leli {
-	background-color:gray;
+	background-color: gray;
 	float: left;
 	height: 100px;
 	width: 100px;
-	border:1px solid black;
+	border: 1px solid black;
 }
 
 .rili {
@@ -134,37 +136,39 @@ body {
 	height: 30px;
 	background-color: black;
 	color: white;
-	border: 1px solid black;s
-	border-radius: 5px;
+	border: 1px solid black;
+	s border-radius: 5px;
 }
-.lecturebtn{
-	width:85px;
-	height:40px;
-	position:absolute;
-	right:19%;
-	font-size:12px;
-	line-height:12px;
+
+.lecturebtn {
+	width: 85px;
+	height: 40px;
+	position: absolute;
+	right: 19%;
+	font-size: 12px;
+	line-height: 12px;
 	position: fixed;
 	background-color: #02340f;
-	border:1px solid #02340f;
-	color:white;
-	margin-top:90px;
+	border: 1px solid #02340f;
+	color: white;
+	margin-top: 90px;
 }
-.advertisement{
-	width:85px;
-	height:120px;
-	position:absolute;
-	right:19%;
+
+.advertisement {
+	width: 85px;
+	height: 120px;
+	position: absolute;
+	right: 19%;
 	position: fixed;
 	/*border:1px solid #02340f;*/
-	margin-top:140px;
+	margin-top: 140px;
 	background-image: url('img/event.png');
 }
 </style>
 <body>
 
 	<!-- Navigation -->
-	
+
 	<header>
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-ride="carousel">
@@ -207,22 +211,23 @@ body {
 				class="carousel-control-prev-icon" aria-hidden="true"></span> <span
 				class="sr-only">Previous</span>
 			</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
-				role="button" data-slide="next"> <span
-				class="sr-only">Next</span>
+				role="button" data-slide="next"> <span class="sr-only">Next</span>
 			</a>
 		</div>
 	</header>
 	<!-- Page Content -->
 	
-	
-	<input class="lecturebtn" type="button" onclick="location.href='<c:url value="/grit/lecture/lectureRegister.do"/>'" value="모임개설하기">
+
+	<input class="lecturebtn" type="button"
+		onclick="location.href='<c:url value="/grit/lecture/lectureRegister.do"/>'"
+		value="모임개설하기">
 	<div class="advertisement"></div>
-	
+
 	<ul class="contents" style="list-style: none">
 		<li class="contents1">
 			<div>
 				<div
-					style="margin: 20px 0 0 40px; font-size: 14px; text-align: left; font-wegiht:bold;">실시간
+					style="margin: 20px 0 0 40px; font-size: 14px; text-align: left; font-wegiht: bold;">실시간
 					인기 모임</div>
 				<div class="imgbox1">
 					<input type="button" value="${cntvo.cMoney }" class="joinfee">
@@ -238,51 +243,55 @@ body {
 					</thead>
 					<tbody>
 						<tr>
-							<td style="width: 60%; height: 25px;">카테고리</td>
-							<td style="width: 20%; height: 25px;">남은 자리</td>
-							<td style="width: 20%; height: 25px;">D-day</td>
+							<td style="width: 60%; height: 25px;">카테고리 :
+								${cntvo.cCategory }</td>
+							<td style="width: 20%; height: 25px;">남은자리 :
+								${cntvo.cMaxPerson-cntvo.cPerson }</td>
+							<td style="width: 20%; height: 25px;">D-day :${day}
+							 
+							</td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr style="height: 70px">
-							<td colspan="3">강의 요약설명</td>
+							<td colspan="3">강의 요약설명<br>${cntvo.cSummary }</td>
 						</tr>
 					</tfoot>
 				</table>
 			</div>
 		</li>
 		<li class="contents2">
-			<div style="margin: 20px 0 0 40px; font-size: 14px;">추천 모임</div>
-			<!-- 반복시작 -->
-			
-			<div class="infobox1">
-				<ul class="dotnone">
-					<li class="leli"></li>
-					<li class="rili">
-						<table border="1" class="infoboxtable">
-							<thead>
-								<tr>
-									<td colspan="2" style="height: 40px; line-height: 40px;">강의명</td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr style="height: 30px;">
-									<td class="box30">남은 자리</td>
-									<td class="box70">D-day</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr style="height: 30px;">
-									<td class="box70">카테고리</td>
-									<td class="box30"><input type="button" value="참가비"
-										id="joinbtn"></td>
-								</tr>
-							</tfoot>
-						</table>
-					</li>
-				</ul>
-			</div>
-			<!-- 반복끝 -->
+			<div style="margin: 20px 0 0 40px; font-size: 14px;">추천 모임</div> <!-- 반복시작 -->
+			<c:forEach var="recommandvo" items="${recommandList }">
+				<div class="infobox1">
+					<ul class="dotnone">
+						<li class="leli"></li>
+						<li class="rili">
+							<table border="1" class="infoboxtable">
+								<thead>
+									<tr>
+										<td colspan="2" style="height: 40px; line-height: 40px;">${recommandvo.cName }</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr style="height: 30px;">
+										<td class="box30">남은
+											자리:${recommandvo.cMaxPerson-recommandvo.cPerson }</td>
+										<td class="box70">D-day</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr style="height: 30px;">
+										<td class="box70">카테고리 : ${recommandvo.cCategory }</td>
+										<td class="box30"><input type="button"
+											value="${recommandvo.cMoney }" id="joinbtn"></td>
+									</tr>
+								</tfoot>
+							</table>
+						</li>
+					</ul>
+				</div>
+			</c:forEach> <!-- 반복끝 -->
 		</li>
 	</ul>
 	<!-- Portfolio Section -->
@@ -290,166 +299,41 @@ body {
 	<div class="container" style="margin-top: 20px; width: 990px;">
 		<div class="row">
 			<!-- 반복시작 -->
-			<div class="col-lg-4 col-sm-6 portfolio-item">
-				<div class="card">
+			<c:forEach var="regdateList" items="${regdateList }">
+				<div class="col-lg-4 col-sm-6 portfolio-item">
+					<div class="card">
 
-					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1">
-						<a href="#">
-							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
-						</a>
-					</div>
+						<div style="position: relative; height: 170px;">
+							<input type="button" value="${regdateList.cMoney }"
+								class="joinfee1"> <a href="#"> <img
+								class="card-img-top" src="http://placehold.it/700x400" alt="">
+							</a>
+						</div>
 
-					<div class="card-body" style="height: 150px;">
-						<table class="cardtable">
+						<div class="card-body" style="height: 150px;">
+							<table class="cardtable">
 
-							<tr>
-								<td colspan="2">강의 명</td>
-							</tr>
+								<tr>
+									<td colspan="2">${regdateList.cName }</td>
+								</tr>
 
-							<tr>
-								<td class="box30">남은 자리</td>
-								<td class="box70">D-day</td>
-							</tr>
+								<tr>
+									<td class="box30">남은
+										자리:${regdateList.cMaxPerson-regdateList.cPerson }</td>
+									<td class="box70">D-day</td>
+								</tr>
 
-							<tr>
-								<td colspan="2">카테고리</td>
-							</tr>
-						</table>
+								<tr>
+									<td colspan="2">${regdateList.cCategory }</td>
+								</tr>
+							</table>
 
+						</div>
 					</div>
 				</div>
-			</div>
+			</c:forEach>
 			<!-- 반복끝 -->
-			<div class="col-lg-4 col-sm-6 portfolio-item">
-				<div class="card">
-					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1">
-						<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
-						</a>
-					</div>
-					<div class="card-body" style="height: 150px;">
-						<table class="cardtable">
-							<tr>
-								<td colspan="2">강의 명</td>
-							</tr>
 
-							<tr>
-								<td class="box30">남은 자리</td>
-								<td class="box70">D-day</td>
-							</tr>
-
-							<tr>
-								<td colspan="2">카테고리</td>
-							</tr>
-						</table>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 portfolio-item">
-				<div class="card">
-					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1">
-						<a href="#">
-							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
-						</a>
-					</div>
-					<div class="card-body" style="height: 150px;">
-						<table class="cardtable">
-							<tr>
-								<td colspan="2">강의 명</td>
-							</tr>
-
-							<tr>
-								<td class="box30">남은 자리</td>
-								<td class="box70">D-day</td>
-							</tr>
-
-							<tr>
-								<td colspan="2">카테고리</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 portfolio-item">
-				<div class="card">
-					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1">
-						<a href="#">
-							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
-						</a>
-					</div>
-					<div class="card-body" style="height: 150px;">
-						<table class="cardtable">
-
-							<tr>
-								<td colspan="2">강의 명</td>
-							</tr>
-
-							<tr>
-								<td class="box30">남은 자리</td>
-								<td class="box70">D-day</td>
-							</tr>
-
-							<tr>
-								<td colspan="2">카테고리</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 portfolio-item">
-				<div class="card">
-					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1">
-						<a href="#">
-							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
-						</a>
-					</div>
-					<div class="card-body" style="height: 150px;">
-						<table class="cardtable">
-							<tr>
-								<td colspan="2">강의 명</td>
-							</tr>
-							<tr>
-								<td class="box30">남은 자리</td>
-								<td class="box70">D-day</td>
-							</tr>
-
-							<tr>
-								<td colspan="2">카테고리</td>
-							</tr>
-						</table>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-6 portfolio-item">
-				<div class="card">
-					<div style="position: relative; height: 170px;">
-						<input type="button" value="참가비" class="joinfee1">
-						<a href="#">
-							<img class="card-img-top" src="http://placehold.it/700x400" alt=""> 
-						</a>
-					</div>
-					<div class="card-body" style="height: 150px;">
-						<table class="cardtable">
-							<tr>
-								<td colspan="2">강의 명</td>
-							</tr>
-							<tr>
-								<td class="box30">남은 자리</td>
-								<td class="box70">D-day</td>
-							</tr>
-							<tr>
-								<td colspan="2">카테고리</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
 		</div>
 		<!-- /row -->
 

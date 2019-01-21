@@ -161,27 +161,27 @@ public class LectureDAO {
 			rs=ps.executeQuery();
 
 			while(rs.next()) {
-				int cNo=rs.getInt("cNo");
-				String cCategory=rs.getString("cCategory");
-				String cName=rs.getString("cName");
-				String cTeacherIntro=rs.getString("cTeacherIntro");
-				String cStatus=rs.getString("cStatus");
-				String cSummary=rs.getString("cSummary");
-				String cDetail=rs.getString("cDetail");
-				Timestamp cDate=rs.getTimestamp("cDate");
-				String cLocation=rs.getString("cLocation");
-				int cMaxPerson=rs.getInt("cMaxPerson");
-				int cPerson=rs.getInt("cPerson");
-				String cPay=rs.getString("cPay");
-				int cMoney=rs.getInt("cMoney");
-				String cAccount=rs.getString("cAccount");
-				int imgNo=rs.getInt("imgNo");
-				String cBank=rs.getString("cBank");
-				int cReadCount=rs.getInt("cReadCount");
-				Timestamp cRegdate=rs.getTimestamp("cRegdate");
-				String cDelflag=rs.getString("cDelflag");
-				String cRecommand=rs.getString("cRecommand");
-				String memUserid=rs.getString("memUserid");
+				int cNo=rs.getInt("c_no");
+				String cCategory=rs.getString("c_category");
+				String cName=rs.getString("c_name");
+				String cTeacherIntro=rs.getString("c_teacher_intro");
+				String cStatus=rs.getString("c_status");
+				String cSummary=rs.getString("c_summary");
+				String cDetail=rs.getString("c_detail");
+				Timestamp cDate=rs.getTimestamp("c_date");
+				String cLocation=rs.getString("c_location");
+				int cMaxPerson=rs.getInt("c_maxPerson");
+				int cPerson=rs.getInt("c_person");
+				String cPay=rs.getString("c_pay");
+				int cMoney=rs.getInt("c_money");
+				String cAccount=rs.getString("c_account");
+				int imgNo=rs.getInt("img_no");
+				String cBank=rs.getString("c_bank");
+				int cReadCount=rs.getInt("c_readcnt");
+				Timestamp cRegdate=rs.getTimestamp("c_regdate");
+				String cDelflag=rs.getString("c_delflag");
+				String cRecommand=rs.getString("c_recommand");
+				String memUserid=rs.getString("mem_userid");
 
 				LectureVO vo=
 						new LectureVO(cNo, cCategory, cName, cTeacherIntro, cStatus, cSummary, cDetail, cDate, cLocation, cMaxPerson, cPerson, cPay, cMoney, cAccount, imgNo, cBank, cReadCount, cRegdate, cDelflag, cRecommand, memUserid);
@@ -214,27 +214,27 @@ public class LectureDAO {
 			rs=ps.executeQuery();
 
 			while(rs.next()) {
-				int cNo=rs.getInt("cNo");
-				String cCategory=rs.getString("cCategory");
-				String cName=rs.getString("cName");
-				String cTeacherIntro=rs.getString("cTeacherIntro");
-				String cStatus=rs.getString("cStatus");
-				String cSummary=rs.getString("cSummary");
-				String cDetail=rs.getString("cDetail");
-				Timestamp cDate=rs.getTimestamp("cDate");
-				String cLocation=rs.getString("cLocation");
-				int cMaxPerson=rs.getInt("cMaxPerson");
-				int cPerson=rs.getInt("cPerson");
-				String cPay=rs.getString("cPay");
-				int cMoney=rs.getInt("cMoney");
-				String cAccount=rs.getString("cAccount");
-				int imgNo=rs.getInt("imgNo");
-				String cBank=rs.getString("cBank");
-				int cReadCount=rs.getInt("cReadCount");
-				Timestamp cRegdate=rs.getTimestamp("cRegdate");
-				String cDelflag=rs.getString("cDelflag");
-				String cRecommand=rs.getString("cRecommand");
-				String memUserid=rs.getString("memUserid");
+				int cNo=rs.getInt("c_no");
+				String cCategory=rs.getString("c_category");
+				String cName=rs.getString("c_name");
+				String cTeacherIntro=rs.getString("c_teacher_intro");
+				String cStatus=rs.getString("c_status");
+				String cSummary=rs.getString("c_summary");
+				String cDetail=rs.getString("c_detail");
+				Timestamp cDate=rs.getTimestamp("c_date");
+				String cLocation=rs.getString("c_location");
+				int cMaxPerson=rs.getInt("c_maxPerson");
+				int cPerson=rs.getInt("c_person");
+				String cPay=rs.getString("c_pay");
+				int cMoney=rs.getInt("c_money");
+				String cAccount=rs.getString("c_account");
+				int imgNo=rs.getInt("img_no");
+				String cBank=rs.getString("c_bank");
+				int cReadCount=rs.getInt("c_readcnt");
+				Timestamp cRegdate=rs.getTimestamp("c_regdate");
+				String cDelflag=rs.getString("c_delflag");
+				String cRecommand=rs.getString("c_recommand");
+				String memUserid=rs.getString("mem_userid");
 
 				LectureVO vo=
 						new LectureVO(cNo, cCategory, cName, cTeacherIntro, cStatus, cSummary, cDetail, cDate, cLocation, cMaxPerson, cPerson, cPay, cMoney, cAccount, imgNo, cBank, cReadCount, cRegdate, cDelflag, cRecommand, memUserid);

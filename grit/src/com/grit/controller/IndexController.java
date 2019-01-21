@@ -1,6 +1,9 @@
 package com.grit.controller;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,18 +21,26 @@ public class IndexController implements Controller {
 		LectureService lectureService=new LectureService();
 		LectureVO cntvo=null;
 		List<LectureVO> recommandList=null;
+		List<LectureVO> regdateList=null;
+		long day=0;
 		try {
 			cntvo=lectureService.selectReadCnt();
 			recommandList=lectureService.selectRecommand();
+			regdateList=lectureService.selectRegdate();
+			
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
+		
 		System.out.println("cntvo="+cntvo);
 		request.setAttribute("cntvo", cntvo);
 		
 		System.out.println("recommandList="+recommandList);
 		request.setAttribute("recommandList", recommandList);
+		
+		System.out.println("regdateList="+regdateList);
+		request.setAttribute("regdateList", regdateList);
 		
 		
 		return "/grit/index.jsp";
