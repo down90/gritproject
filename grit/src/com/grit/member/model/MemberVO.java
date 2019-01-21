@@ -7,7 +7,7 @@ public class MemberVO {
 	private String mgCode;//멤버구분코드
 	private int memNo;//회원번호
 	private String memPwd;//비밀번호
-	private String memName;//a이름
+	private String memName;//이름
 	private String memNickname;//닉네임
 	private String memEmail;//이메일
 	private Timestamp memJoindate;//가입일

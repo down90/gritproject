@@ -1,7 +1,7 @@
 /**
  * js/member.js
  */
-	$(function(){
+/*	$(function(){
 		$("#email2").change(function(){
 			if($(this).val()=="etc"){
 				$("#email3").val("");
@@ -21,9 +21,9 @@
 		$("#btnZipcode").click(function(){
 			open("/mymvc/zipcode/zipcode.do","zip","width=550,height=700,left=0,top=0,location=yes,resizable=yes");
 		});
-	});
+	});*/
 	function validate_userid(userid){
-		var pattern=new RegExp(/^[a-zA-Z0-9_]+$/g);
+		var pattern=new RegExp(/^[a-zA-Z0-9_@.]+$/g);
 		return pattern.test(userid);//정규표현식을 만족하면 true, 아니면 false
 		/*
 			정규식 /^[a-zA-Z0-9_]+$/g
