@@ -12,17 +12,7 @@
 <link rel="stylesheet" href="resource/ckeditor/samples/sample.css">
 
 <script type="text/javascript" src="<c:url value='/jquery/jquery-3.3.1.min.js'/>"></script>
-<script>
-	$(function(){
-		$(".btn_box").click(function(){
-			if($("#cName").val().length<1){
-				alert("강의 제목을 입력하세요");
-				$("#cName").focus();
-				return false;
-			}
-		});
-	});
-</script>
+
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   	<link rel="stylesheet" href="/resources/demos/style.css">
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -32,29 +22,43 @@
 	 $( function() {
 	    $( "#datepicker" ).datepicker({
 	      showOn: "button",
-	      buttonImageOnly: false,
-	      buttonText: "선택"
+	      buttonImageOnly: true,
+	      buttonImage: "../img/icon/cal.png",
+	      changeYear:true,
+			dateFormat:"yy-mm-dd",
+			monthNames:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+			dayNamesMin:["일","월","화","수","목","금","토"],
+	      buttonText: "날짜 선택"
 	    });
 	});
-  </script>
+		$(function(){
+			$("#startDay").datepicker({
+				
+			});
+			
+		});
+  	</script>
 <title>register.jsp</title>
+<style type="text/css">
+	div #ui-datepicker-div { width: 250px; }
+</style>
 </head>
 <body>
-	<form name="login" method="post"  action="<c:url value='/grit/lecture/lectureRegister_ok.do'/>">
-		<div class="pg_layout">
+	form name="login" method="post" action="<c:url value='/grit/lecture/lectureRegister_ok.do'/>">
+		<div class="pg_layout" style="position: relative; top: 35px;">
 			<div class="cont1">
 				<div class="pwrap">
-					<p style="float: left; width: 12%;">강의 제목</p>
+					<p>강의 제목</p>
 					<input type="text" class="size_85" name="cName" id="cName">
 				</div>
 				<div class="pwrap">
-					<p style="float: left; width: 12%;">강사 소개</p>
-					<textarea class="size_85" name="cTeacherIntro"></textarea>
+					<p style="position: relative; top: -110px;">강사 소개</p>
+					<textarea class="size_85" name="cTeacherIntro" style="height: 125px;"></textarea>
 				</div>
 				<div class="pwrap">
-					<p style="float: left; width: 15%;">카테고리</p>
-					<div class="">
-						<ul>
+					<p>카테 고리</p>
+					<div>
+						<ul style="height: 54px;">
 							<li class="cate_box">카테고리1</li>
 							<li class="cate_box">카테고리2</li>
 							<li class="cate_box">카테고리3</li>
@@ -67,7 +71,7 @@
 						</ul>
 					</div>
 					<div class="btnwrap1">
-						<div class="btn_box">+ 직접입력</div>
+						<div class="cate_box" style="position : relative; top: -10px; left: 10px;">+ 직접 입력</div>
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -80,17 +84,17 @@
 						<img class="sub_img" src=""></img> <img class="sub_img" src=""></img>
 					</div>
 				</div>
-				<div class="pwrap">
-					<p style="float: left; width: 12%;">강사 요약</p>
-					<textarea class="size_85" name="cSummary"></textarea>
+				<div class="pwrap" style="position: relative; top: -20px;">
+					<p style="position: relative; top: -30px;">강사 요약</p>
+					<textarea class="size_85" name="cSummary" style="position: relative; top: 25px; height: 75px;"></textarea>
 				</div>
 				
-				<div style="width:100%; height:300px;">
-					<div style="float:left; margin-right:39px;">
+				<div style="position: relative; top: 10px;">
+					<div>
 						<p>강의 상세</p>
 					</div>
-					<div style="width:80%; float:left; ">
-						<textarea id="editor1" style="resize:none;" name="cDetail"></textarea>
+					<div>
+						<textarea id="editor1" style="width: 1024px;" name="cDetail"></textarea>
 						<script>
 	  						 CKEDITOR.replace( 'editor1', {
 	  							 width:640,
@@ -104,18 +108,23 @@
 				<div class="pwrap">
 					<p class="size_15">강의날짜</p>
 					<div class="in_wrap">
-						<input type="text" id="datepicker" class="b_left" name="cDate">
+						<input type="text" class="b_left" name="cDate" id="datepicker">
 						<div class="btnwrap2">
-							<div class="btn_box">선택</div>
-						</div>
-					</div>
-				</div>
-				<div class="pwrap">
-					<p class="size_15">강의장소</p>
-					<div class="in_wrap">
-						<input type="text" class="b_left" name="cLocation">
-						<div class="btnwrap2">
-							<div class="btn_box">검색</div>
+							<select class="b_left">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+							</select>
+							<p class="size_15">시</p>
 						</div>
 					</div>
 				</div>
@@ -124,48 +133,62 @@
 					<div class="in_wrap">
 						<input type="text" class="b_left" name="cMaxPerson">
 						<div class="btnwrap2">
-							<div class="btn_box">▲</div>
-							<div class="btn_box">▼</div>
+							<div class="btn_box" style="display: inline-block;">▲</div>
+							<div class="btn_box" style="display: inline-block;">▼</div>
+						</div>
+					</div>
+				</div>
+				<div class="pwrap">
+					<p class="size_15">수강인원</p>
+					<div class="in_wrap">
+						<input type="text" class="b_left" name="cMaxPerson">
+						<div class="btnwrap2">
+							<div class="btn_box" style="display: inline-block;">▲</div>
+							<div class="btn_box" style="display: inline-block;">▼</div>
 						</div>
 					</div>
 				</div>
 				<div class="pwrap">
 					<p class="size_15">수강료</p>
-					<input type="radio" name="cPay" style="float: none;" value="N"> 무료 
-					<input type="radio" name="cPay" style="float: none;" value="Y"> 유료
+						<span class="span">
+							<input type="radio" name="cPay" value="N"> 무료 
+							<input type="radio" name="cPay" value="Y"> 유료
+						</span>
 				</div>
 				<div class="pwrap">
 					<p class="size_15">가격</p>
 					<div class="in_wrap">
-						<input type="text" class="b_left t_center" name="cMoney" value="0">
+						<input type="text" class="b_left t_center" name="cMoney" value="0 ">
 						<div class="btnwrap2">
-							<div class="btn_box">▲</div>
-							<div class="btn_box">▼</div>
+							<div class="btn_box" style="display: inline-block;">▲</div>
+							<div class="btn_box" style="display: inline-block;">▼</div>
 						</div>
 					</div>
 				</div>
 				<div class="pwrap">
-					<p class="size_15">입금계좌</p>
-					<div class="slctwrap1">
-						<select name="cBank" class="b_left" style="height: 48px;">
+					<p class="size_15" style="position: relative; top: 5px;">입금계좌</p>
+					<div class="slctwrap1" style="height: 80px;">
+						<select name="cBank" class="b_left" style="height: 35px;">
 							<option>은행선택</option>
 							<option>국민은행</option>
 							<option>신한은행</option>
 							<option>하나은행</option>
-						</select> <input type="text" class="in_mg" name="cAccount">
+						</select> 
+						<input type="text" class="in_mg" name="cAccount" style="height: 35px;">
 					</div>
 				</div>
 				<div class="clear"></div>
 				<div class="pwrap">
 					<input type="checkbox" class="chk_fleft" name="chk1">
-					<p>
+					<p style="position: relative; top: 10px;">
 						강사 약관에 동의합니다. <a href="#">강사 약관 보기</a>
 					</p>
 				</div>
 				<div class="btnwrap1">
-					<input type="submit" class="btn_box" value="강의 등록하기">
+					<input type="submit" class="btn_box" style="width: 150px; height: 50px;" value="강의 등록하기">
 				</div>
 			</div>
 		</div>
 	</form>
 	<%@ include file="../inc/footer.jsp"%>
+
