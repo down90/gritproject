@@ -101,7 +101,8 @@ public class LectureDAO {
 
 			String sql="select * " + 
 					" from(" + 
-					"    select * from class" + 
+					"    select * from class" +
+					" where c_readcnt is not null"+
 					"    order by c_readcnt desc" + 
 					") where rownum<=1";
 			ps=con.prepareStatement(sql);
