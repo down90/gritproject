@@ -7,12 +7,15 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/grit/css/modal_login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<c:url value='/grit/js/member.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/grit/jquery/jquery-3.3.1.min.js'/>"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#validation").css("visibility","hidden");
@@ -105,7 +108,7 @@
 							</div>
 						</div>
 						<div>
-							<input type="button" value="카카오로 로그인 하기" class="modal-button kakao modal_margin80">
+							<input id="kakao-login-btn" type="button" value="카카오로 로그인 하기" class="modal-button kakao modal_margin80">
 							<input type="button" value="페이스북으로 로그인 하기" class="modal-button facebook modal_margin5">
 						</div>
 					</form>
@@ -113,7 +116,28 @@
 			</div>
 		</div>
 		<!-- modal login -->
-		
+		<!-- 카카오톡 login script -->
+		<script type='text/javascript'>
+		  //<![CDATA[
+		    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+		    Kakao.init('2ffccc18b7aad9e9d90d5777aa5e3285');
+		    // 카카오 로그인 버튼을 생성합니다.
+		    Kakao.Auth.createLoginButton({
+		      container: '#kakao-login-btn',
+		      
+		    //{"access_token":"Uds6shHwFw1vU-zqX4MjeXs884wgg8gAMPiohgoqAucAAAFocu22XA",
+		    //"token_type":"bearer","refresh_token":"Ls6eUj8Xc4ZERHSy8d2g32WQiVIDg_8LmZNGxAoqAucAAAFocu22WA",
+		    //"expires_in":7199,"scope":"profile","refresh_token_expires_in":2591999,
+		    //"stateToken":"bflhl9hwj9gms5lweeijyo"}
+		      success: function(authObj) {
+			 	 alert(JSON.stringify(authObj));
+		      },
+		      fail: function(err) {
+		         alert(JSON.stringify(err));
+		      }
+		    });
+		  //]]>
+		</script>
 		<!-- modal findpwd -->
 		<div class="modal" id="modal1-1" role="dialog">
 			<div class="modal-dialog">

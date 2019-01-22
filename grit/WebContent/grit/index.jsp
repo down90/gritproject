@@ -319,7 +319,8 @@ body {
 						</li>
 					</ul>
 				</div>
-			</c:forEach> <!-- 반복끝 -->
+			</c:forEach> 
+			<!-- 반복끝 -->
 		</li>
 	</ul>
 	<!-- Portfolio Section -->
@@ -371,10 +372,8 @@ body {
 				</div>
 			</c:forEach>
 			<!-- 반복끝 -->
-
 		</div>
 		<!-- /row -->
-
 	</div>
 	<!-- /.container -->
 	<%@ include file="inc/footer.jsp"%>
