@@ -7236,7 +7236,7 @@ function Datepicker() {
 		prevText: "Prev", // Display text for previous month link
 		nextText: "Next", // Display text for next month link
 		currentText: "Today", // Display text for current month link
-		monthNames: [ "January","February","March","April","May","June",
+		monthNames: [ "January","February","3월","April","May","June",
 			"July","August","September","October","November","December" ], // Names of months for drop-down and formatting
 		monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ], // For formatting
 		dayNames: [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ], // For formatting
@@ -7249,6 +7249,7 @@ function Datepicker() {
 		showMonthAfterYear: false, // True if the year select precedes month, false for month then year
 		yearSuffix: "" // Additional text to append to the year in the month headers
 	};
+
 	this._defaults = { // Global defaults for all the date picker instances
 		showOn: "focus", // "focus" for popup on focus,
 			// "button" for trigger button, or "both" for either
@@ -7408,7 +7409,7 @@ $.extend( Datepicker.prototype, {
 			inst.trigger = $( this._get( inst, "buttonImageOnly" ) ?
 				$( "<img/>" ).addClass( this._triggerClass ).
 					attr( { src: buttonImage, alt: buttonText, title: buttonText } ) :
-				$( "<button type='button' style='float : left;border : 1px solid #000000;background : #eeeeee;font-size : 12px;text-align : center;font-weight : bold;padding : 13px;'></button>" ).addClass( this._triggerClass ).
+				$( "<button type='button'></button>" ).addClass( this._triggerClass ).
 					html( !buttonImage ? buttonText : $( "<img/>" ).attr(
 					{ src:buttonImage, alt:buttonText, title:buttonText } ) ) );
 			input[ isRTL ? "before" : "after" ]( inst.trigger );
@@ -18679,9 +18680,13 @@ $.widget( "ui.tooltip", {
 	}
 } );
 
-// DEPRECATED // TODO: Switch return back to widget declaration at top of file when this is removed
-if ( $.uiBackCompat !== false ) { // Backcompat for tooltipClass option
-	 $.widget ( "ui.tooltip ", $.ui.tooltip, { options: {
+// DEPRECATED
+// TODO: Switch return back to widget declaration at top of file when this is removed
+if ( $.uiBackCompat !== false ) {
+
+	// Backcompat for tooltipClass option
+	$.widget( "ui.tooltip", $.ui.tooltip, {
+		options: {
 			tooltipClass: null
 		},
 		_tooltip: function() {

@@ -35,7 +35,6 @@ public class LectureRegisterOkController implements Controller{
 		String cMoney=request.getParameter("cMoney");
 		String cAccount=request.getParameter("cAccount");
 		String cBank=request.getParameter("cBank");
-		
 		LectureVO vo=new LectureVO();
 		vo.setcName(cName);
 		vo.setcTeacherIntro(cTeacherIntro);

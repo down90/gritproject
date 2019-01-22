@@ -1,6 +1,10 @@
 package com.grit.admin.member.model;
 
 import java.sql.SQLException;
+import java.util.List;
+
+import com.grit.company.member.model.CMemberVO;
+import com.grit.member.model.MemberVO;
 
 public class AdminService {
 	private AdminDAO adminDao;
@@ -42,5 +46,16 @@ public class AdminService {
 		return adminDao.selectMember(adminId);
 	}
 	
+	public int insertMember(MemberVO vo) throws SQLException {
+		return adminDao.insertMember(vo);
+	}
+	
+	public List<MemberVO> selectMemberList() throws SQLException{
+		return adminDao.selectMemberList();
+	}
+	
+	public List<CMemberVO> selectComMemberList() throws SQLException{
+		return adminDao.selectComMemberList();
+	}
 	
 }
