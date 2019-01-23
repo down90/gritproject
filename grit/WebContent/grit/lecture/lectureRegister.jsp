@@ -23,7 +23,7 @@
 	    $( "#datepicker" ).datepicker({
 	      showOn: "button",
 	      buttonImageOnly: true,
-	      buttonImage: "../img/icon/cal.png",
+	      buttonImage: "../img/icon/cal2.png",
 	      changeYear:true,
 			dateFormat:"yy-mm-dd",
 			monthNames:["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
@@ -48,12 +48,12 @@
 		<div class="pg_layout" style="position: relative; top: 35px;">
 			<div class="cont1">
 				<div class="pwrap">
-					<p>강의 제목</p>
-					<input type="text" class="size_85" name="cName" id="cName">
+					<p class="p">강의 제목</p>
+					<input type="text" class="input size_85" name="cName" id="cName">
 				</div>
 				<div class="pwrap">
-					<p style="position: relative; top: -110px;">강사 소개</p>
-					<textarea class="size_85" name="cTeacherIntro" style="height: 125px;"></textarea>
+					<p class="p" style="position: relative; top: -110px;">강사 소개</p>
+					<textarea class="textarea size_85" name="cTeacherIntro" style="height: 125px;"></textarea>
 				</div>
 				<div class="pwrap">
 					<p>카테 고리</p>
@@ -85,8 +85,8 @@
 					</div>
 				</div>
 				<div class="pwrap" style="position: relative; top: -20px;">
-					<p style="position: relative; top: -30px;">강사 요약</p>
-					<textarea class="size_85" name="cSummary" style="position: relative; top: 25px; height: 75px;"></textarea>
+					<p class="p" style="position: relative; top: -30px;">강사 요약</p>
+					<textarea class="textarea size_85" name="cSummary" style="position: relative; top: 25px; height: 75px;"></textarea>
 				</div>
 				
 				<div style="position: relative; top: 10px;">
@@ -108,8 +108,11 @@
 				<div class="pwrap">
 					<p class="size_15">강의날짜</p>
 					<div class="in_wrap">
-						<input type="text" class="b_left" name="cDate" id="datepicker">
-						<div class="btnwrap2">
+						<input type="text" placeholder="달력을 클릭해주세요" class="input b_left" name="cDate" id="datepicker" >
+						<!-- <div style="float:left;">
+							<img src="../img/icon/cal2.png" style="pointer:cursor;">
+						</div> -->
+						<div class="btnwrap2" style="float:right; position:relative; right:266px;"> 
 							<select class="b_left">
 								<option>1</option>
 								<option>2</option>
@@ -124,7 +127,7 @@
 								<option>11</option>
 								<option>12</option>
 							</select>
-							<p class="size_15">시</p>
+							<span style="top:6px; margin-left:2px; position: relative; font-size:15px;">시</span>
 						</div>
 					</div>
 				</div>

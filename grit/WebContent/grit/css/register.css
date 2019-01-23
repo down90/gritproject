@@ -16,7 +16,7 @@ em,address{font-style:normal;}
 .blind {display:none;text-indent:-1000px;height:0;font-size:0;line-height:0;}
 .comment {position:absolute;left:-10000px;width:1px; height:1px; overflow:hidden;font-size:0;line-height:0;}
 
-p{
+.p{
 	font-size : 14px;
 	color : #000000;
 	display: inline;
@@ -25,7 +25,7 @@ p{
 }
 
 /* form style */
-input, textarea, select {
+.input, .textarea, .select {
 	padding : 10px;
 	border : 1px solid #000000;
 	font-size : 14px;
