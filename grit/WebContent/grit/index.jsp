@@ -331,7 +331,6 @@ body {
 			<c:forEach var="regdateList" items="${regdateList }">
 				<div class="col-lg-4 col-sm-6 portfolio-item">
 					<div class="card">
-
 						<div style="position: relative; height: 170px;">
 							<c:if test="${regdateList.cPay=='N'}">
 								<input type="button" value="무료" class="joinfee1">
@@ -366,7 +365,6 @@ body {
 									<td colspan="2">${regdateList.cCategory }</td>
 								</tr>
 							</table>
-
 						</div>
 					</div>
 				</div>
