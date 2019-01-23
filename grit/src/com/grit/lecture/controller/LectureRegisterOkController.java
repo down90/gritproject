@@ -29,12 +29,18 @@ public class LectureRegisterOkController implements Controller{
 		String cTeacherIntro=request.getParameter("cTeacherIntro");
 		String cSummary=request.getParameter("cSummary");
 		String cDetail=request.getParameter("cDetail");
+		String cDate=request.getParameter("cDate");
+		String cLine=request.getParameter("cLine");
+		String cTime=request.getParameter("cTime");
 		String cLocation=request.getParameter("cLocation");
 		String cMaxPerson=request.getParameter("cMaxPerson");
 		String cPay=request.getParameter("cPay");
 		String cMoney=request.getParameter("cMoney");
 		String cAccount=request.getParameter("cAccount");
 		String cBank=request.getParameter("cBank");
+		
+		cDate+="-"+cLine+"-"+cTime;
+		
 		LectureVO vo=new LectureVO();
 		vo.setcName(cName);
 		vo.setcTeacherIntro(cTeacherIntro);
