@@ -30,13 +30,31 @@
 			dayNamesMin:["일","월","화","수","목","금","토"],
 	      buttonText: "날짜 선택"
 	    });
+	    
+	    $("#personup").click(function(){
+		    var i=$("input[name='cMaxPerson']").val();
+	    	$("input[name='cMaxPerson']").val(i*1+1);
+	    });
+	    $("#persondown").click(function(){
+		    var i=$("input[name='cMaxPerson']").val();
+		    if(i==0){
+		    	return false;
+		    }
+	    	$("input[name='cMaxPerson']").val(i*1-1);
+	    });
+	    
+	    $("#moneyup").click(function(){
+	    	var i=$("input[name='cMoney']").val();
+	    	$("input[name='cMoney']").val(i*1+1000);
+	    });
+	    $("#moneydown").click(function(){
+	    	var i=$("input[name='cMoney']").val();
+	    	if(i<1000){
+	    		return false;
+	    	}
+	    	$("input[name='cMoney']").val(i*1-1000);
+	    });
 	});
-		$(function(){
-			$("#startDay").datepicker({
-				
-			});
-			
-		});
   	</script>
 <title>register.jsp</title>
 <style type="text/css">
@@ -119,7 +137,6 @@
 									<option>오후</option>
 								</select> 
 								<select class="b_left" name="cTime">
-									<option>시간</option>
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -149,10 +166,10 @@
 					<div class="pwrap">
 						<p class="p size_15">수강인원</p>
 						<div class="in_wrap">
-							<input type="text" class="input b_left" name="cMaxPerson">
+							<input type="text" class="input b_left" name="cMaxPerson" readonly="readonly" value="0" style="text-align:right;">
 							<div class="btnwrap2">
-								<div class="btn_box" style="display: inline-block;">▲</div>
-								<div class="btn_box" style="display: inline-block;">▼</div>
+								<div class="btn_box" style="display: inline-block;" id="personup">▲</div>
+								<div class="btn_box" style="display: inline-block;" id="persondown">▼</div>
 							</div>
 						</div>
 					</div>
@@ -166,10 +183,10 @@
 					<div class="pwrap">
 						<p class="p size_15">가격</p>
 						<div class="in_wrap">
-							<input type="text" class="input b_left t_center" name="cMoney" value="0 ">
+							<input type="text" class="input b_left t_center" name="cMoney" value="0">
 							<div class="btnwrap2">
-								<div class="btn_box" style="display: inline-block;">▲</div>
-								<div class="btn_box" style="display: inline-block;">▼</div>
+								<div class="btn_box" style="display: inline-block;" id="moneyup">▲</div>
+								<div class="btn_box" style="display: inline-block;" id="moneydown">▼</div>
 							</div>
 						</div>
 					</div>

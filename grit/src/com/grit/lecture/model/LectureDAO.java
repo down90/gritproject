@@ -24,8 +24,8 @@ public class LectureDAO {
 		try {
 			con=pool.getConnection();
 
-			String sql="insert into class(c_no,c_name,c_category,c_teacher_intro,c_summary,c_detail,c_location,c_maxperson,c_pay,c_money,c_account,c_bank,mem_userid) "
-					+ " values(class_seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?) ";
+			String sql="insert into class(c_no,c_name,c_category,c_teacher_intro,c_summary,c_detail,c_date,c_location,c_maxperson,c_pay,c_money,c_account,c_bank,mem_userid) "
+					+ " values(class_seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
 			ps=con.prepareStatement(sql);
 
 			ps.setString(1, vo.getcName());
@@ -33,13 +33,14 @@ public class LectureDAO {
 			ps.setString(3, vo.getcTeacherIntro());
 			ps.setString(4, vo.getcSummary());
 			ps.setString(5, vo.getcDetail());
-			ps.setString(6, vo.getcLocation());
-			ps.setInt(7, vo.getcMaxPerson());
-			ps.setString(8, vo.getcPay());
-			ps.setInt(9, vo.getcMoney());
-			ps.setString(10, vo.getcAccount());
-			ps.setString(11, vo.getcBank());
-			ps.setString(12, vo.getMemUserid());
+			ps.setTimestamp(6, vo.getcDate());
+			ps.setString(7, vo.getcLocation());
+			ps.setInt(8, vo.getcMaxPerson());
+			ps.setString(9, vo.getcPay());
+			ps.setInt(10, vo.getcMoney());
+			ps.setString(11, vo.getcAccount());
+			ps.setString(12, vo.getcBank());
+			ps.setString(13, vo.getMemUserid());
 
 			int cnt=ps.executeUpdate();
 			System.out.println("강의 등록 결과, cnt="+cnt);
@@ -71,6 +72,7 @@ public class LectureDAO {
 				vo.setcName(rs.getString("c_name"));
 				vo.setcSummary(rs.getString("c_summary"));
 				vo.setcDetail(rs.getString("c_detail"));
+				vo.setcDate(rs.getTimestamp("c_date"));
 				vo.setcLocation(rs.getString("c_location"));
 				vo.setcMaxPerson(rs.getInt("c_maxperson"));
 				vo.setcPay(rs.getString("c_pay"));

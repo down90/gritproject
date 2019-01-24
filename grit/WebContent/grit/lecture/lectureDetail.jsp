@@ -189,7 +189,7 @@ $(function(){
 			<div class="h100 fl-r ali-c" style="width:48%">
 				<div class="w100" style="height:15%">
 					<div class="h70 fl-l bor-s line-h40" style="width:48%;">참가인원 : 0 / ${vo.cMaxPerson }명</div>
-					<div class="h70 fl-r bor-s line-h40" style="width:48%;">강의 시작일 : ${vo.cRegdate }</div>
+					<div class="h70 fl-r bor-s line-h40" style="width:48%;">강의 시작일 : <fmt:for></div>
 				</div>
 				<div class="w100" style="height:24%; line-height:30px">
 					<div class="w20 h30 bkg fl-l bor-s bor-ra" style="">카테고리</div>
