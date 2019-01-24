@@ -57,7 +57,7 @@ public class LectureRegisterOkController implements Controller{
 		try {
 			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 			Date d=sdf.parse(cDate);
-			Timestamp totalCdate=new Timestamp(d.getTime());
+			Timestamp totalCdate=new Timestamp(d.getTime()); //최종 db에 들어갈 날짜,시간
 			
 			LectureVO vo=new LectureVO();
 			vo.setcName(cName);

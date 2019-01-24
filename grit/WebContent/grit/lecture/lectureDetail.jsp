@@ -189,7 +189,7 @@ $(function(){
 			<div class="h100 fl-r ali-c" style="width:48%">
 				<div class="w100" style="height:15%">
 					<div class="h70 fl-l bor-s line-h40" style="width:48%;">참가인원 : 0 / ${vo.cMaxPerson }명</div>
-					<div class="h70 fl-r bor-s line-h40" style="width:48%;">강의 시작일 : <fmt:for></div>
+					<div class="h70 fl-r bor-s line-h40" style="width:48%;">강의 시작일 : <fmt:formatDate value="${vo.cDate}" pattern="yyyy년 MM월 dd일 HH시"/></div>
 				</div>
 				<div class="w100" style="height:24%; line-height:30px">
 					<div class="w20 h30 bkg fl-l bor-s bor-ra" style="">카테고리</div>
@@ -243,6 +243,9 @@ $(function(){
 			</div>
 			<!-- --------- -->
 			
+			<input id="maplocation" type="hidden" value="경기 안양시 동안구 관악대로106번길 72">
+			<!--지도에 넣을 값을 슬쩍 넣어줄 곳 -->
+			
 			<!-- 강의 장소 -->
 			<div class="bor-s" style="height:600px;">
 				&nbsp;<div class="" style="font-size:30px;">&nbsp;강의 장소</div>
@@ -263,8 +266,11 @@ var map = new daum.maps.Map(mapContainer, mapOption);
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new daum.maps.services.Geocoder();
 
+//주소를 가져온다
+var maplocation=$("#maplocation").val();
+
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch('경기도 안양시 동안구 호계동 1102-1', function(result, status) {
+geocoder.addressSearch("경기 안양시 동안구 관악대로106번길 72", function(result, status) {
                   //address 주소 입력하면 될듯!!
     // 정상적으로 검색이 완료됐으면 
      if (status === daum.maps.services.Status.OK) {
@@ -297,7 +303,9 @@ geocoder.addressSearch('경기도 안양시 동안구 호계동 1102-1', functio
         map.setCenter(coords);
     } 
 });    
-</script></div>
+</script>
+
+			</div>
 				<div class="w90 bor-s ali-c line-h40" style="height:40px;margin:0 auto;">${vo.cLocation }</div>
 			</div>
 			<!-- ------ -->
