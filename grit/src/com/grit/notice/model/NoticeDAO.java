@@ -56,7 +56,7 @@ public class NoticeDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		
+
 		List<NoticeVO> list = new ArrayList<>();
 		try {
 			//[1][2]con
@@ -80,10 +80,10 @@ public class NoticeDAO {
 				int notiDownCnt=rs.getInt("noti_downcnt");
 				int notiReadCnt=rs.getInt("noti_readcnt");
 				String notiDelflag=rs.getString("noti_delfalg");
-				
+
 				NoticeVO vo=new NoticeVO(notiNo, notiTitle, adminId, notiContent, notiRegdate, notiFileName, notiFileSize, notiOFileName, notiDownCnt, notiReadCnt, notiCategory, notiDelflag);
 				list.add(vo);
-				
+
 			}
 			System.out.println("전체 글 조회 결과 list.size="+list.size());
 			return list;
@@ -91,6 +91,45 @@ public class NoticeDAO {
 		}finally {
 			pool.dbClose(rs, ps, con);
 		}
+	}
 
+	public NoticeVO selectByNoNotice(int notiNo) throws SQLException{
+		//no에 해당하는 글 조회
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		NoticeVO vo = new NoticeVO();
+
+		try {
+			//[1][2]con
+			con=pool.getConnection();
+
+			//[3] ps
+			String sql="select * from notice where noti_No=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, notiNo);
+
+			//[4] exec
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				vo.setNotiNo(rs.getInt("noti_no"));
+				vo.setNotiTitle(rs.getString("noti_Title"));
+				vo.setAdminId(rs.getString("admin_Id"));
+				vo.setNotiContent(rs.getString("noti_content"));
+				vo.setNotiRegdate(rs.getTimestamp("noti_Regdate"));
+				vo.setNotiFileName(rs.getString("noti_filename"));
+				vo.setNotiFileSize(rs.getInt("noti_filesize"));
+				vo.setNotiOFileName(rs.getString("noti_ofilename"));
+				vo.setNotiDownCnt(rs.getInt("noti_downcnt"));
+				vo.setNotiReadCnt(rs.getInt("noti_readcnt"));
+				vo.setNotiCategory(rs.getString("noti_category"));
+				vo.setNotiDelflag(rs.getString("noti_Delfalg"));
+			}
+			System.out.println("상세글 조회 결과 vo="+vo+", 입력값 no="+notiNo);
+			return vo;
+		}finally{
+			pool.dbClose(rs, ps, con);
+		}
 	}
 }

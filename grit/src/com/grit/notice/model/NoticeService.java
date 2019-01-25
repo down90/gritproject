@@ -16,4 +16,10 @@ public class NoticeService {
 	public List<NoticeVO> selectAllNotice() throws SQLException {
 		return noticeDao.selectAllNotice();
 	}
+	public NoticeVO selectByNoNotice(int notiNo) throws SQLException{
+		return noticeDao.selectByNoNotice(notiNo);
+	}
+	
+	
+	
 }
