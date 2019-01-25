@@ -15,11 +15,18 @@ public class RegisterController implements Controller{
 	public String requestProcess(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		//1.
 		String memName=request.getParameter("memName");
+		String memNickname=request.getParameter("memNickname");
 		String memUserid=request.getParameter("memUserid");
 		String memPwd=request.getParameter("memPwd");
 		String memEmail=request.getParameter("memUserid");
 		String memHp=request.getParameter("memHp");
 		String memIntro=request.getParameter("memIntro");
+		if(memNickname==null||memNickname.isEmpty()) {
+			memNickname="손님";
+		}
+		if(memIntro==null||memIntro.isEmpty()) {
+			memIntro="안녕하세요.";
+		}
 		//2.
 		MemberService service=new MemberService();
 		MemberVO vo=new MemberVO();
@@ -29,6 +36,7 @@ public class RegisterController implements Controller{
 		vo.setMemEmail(memEmail);
 		vo.setMemHp(memHp);
 		vo.setMemIntro(memIntro);
+		vo.setMemNickname(memNickname);
 		
 		String msg="회원등록에 실패하셨습니다.", url="/grit/grit/index.do";
 		try {

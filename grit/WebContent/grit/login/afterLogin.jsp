@@ -68,7 +68,7 @@ $(function(){
 						<a href=""><img alt="개인회원이 등록한 사진" src="<c:url value='/grit/img/img1.png'/>" class="profile-img"></a>
 					</div>
 					<div class="profile-nick-box">
-						<a href="" data-toggle="modal" data-target="#modal3-2">{닉네임}</a>
+						<a href="" data-toggle="modal" data-target="#modal3-2">{ ${memVo.memNickname } }</a>
 					</div>
 				</div>
 				<div class="profile-category">
@@ -90,7 +90,7 @@ $(function(){
 					</div>
 					<div class="profile-intro">
 						<h4>자기소개</h4>
-						<div class="profile-intro-text"></div>
+						<div class="profile-intro-text">${memVo.memIntro }</div>
 					</div>
 				</div>
 			</div>

@@ -14,7 +14,7 @@ public class NoticeVO {
 	int notiDownCnt; //다운수
 	int notiReadCnt; //조회수
 	String notiCategory; //분야
-	String notiDelflag; //삭제구분 //DB에서는 NOTI_DELFALG로 되어있음 참고.
+	String notiDelfalg; //삭제구분 //DB에서는 NOTI_DELFALG로 되어있음 참고.
 	
 	public NoticeVO() {
 		super();
@@ -23,7 +23,7 @@ public class NoticeVO {
 	
 	public NoticeVO(int notiNo, String notiTitle, String adminId, String notiContent, Timestamp notiRegdate,
 			String notiFileName, int notiFileSize, String notiOFileName, int notiDownCnt, int notiReadCnt,
-			String notiCategory, String notiDelflag) {
+			String notiCategory, String notiDelfalg) {
 		super();
 		this.notiNo = notiNo;
 		this.notiTitle = notiTitle;
@@ -36,7 +36,7 @@ public class NoticeVO {
 		this.notiDownCnt = notiDownCnt;
 		this.notiReadCnt = notiReadCnt;
 		this.notiCategory = notiCategory;
-		this.notiDelflag = notiDelflag;
+		this.notiDelfalg = notiDelfalg;
 	}
 	
 	public int getNotiNo() {
@@ -106,10 +106,10 @@ public class NoticeVO {
 		this.notiCategory = notiCategory;
 	}
 	public String getNotiDelflag() {
-		return notiDelflag;
+		return notiDelfalg;
 	}
-	public void setNotiDelflag(String notiDelflag) {
-		this.notiDelflag = notiDelflag;
+	public void setNotiDelflag(String notiDelfalg) {
+		this.notiDelfalg = notiDelfalg;
 	}
 	
 	@Override
@@ -117,7 +117,7 @@ public class NoticeVO {
 		return "NoticeVO [notiNo=" + notiNo + ", notiTitle=" + notiTitle + ", adminId=" + adminId + ", notiContent="
 				+ notiContent + ", notiRegdate=" + notiRegdate + ", notiFileName=" + notiFileName + ", notiFileSize="
 				+ notiFileSize + ", notiOFileName=" + notiOFileName + ", notiDownCnt=" + notiDownCnt + ", notiReadCnt="
-				+ notiReadCnt + ", notiCategory=" + notiCategory + ", notiDelflag=" + notiDelflag + "]";
+				+ notiReadCnt + ", notiCategory=" + notiCategory + ", notiDelfalg=" + notiDelfalg + "]";
 	}
 	
 
