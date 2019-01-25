@@ -13,8 +13,10 @@
 	String url=(String)request.getAttribute("url");
 %>
 <script type="text/javascript">
+
 	alert("<%=msg%>");
 	location.href="<%=url%>";
+
 </script>
 
 </body>
