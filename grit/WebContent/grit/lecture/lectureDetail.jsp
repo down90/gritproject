@@ -270,7 +270,7 @@ var geocoder = new daum.maps.services.Geocoder();
 var maplocation=$("#maplocation").val();
 
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch("경기 안양시 동안구 관악대로106번길 72", function(result, status) {
+geocoder.addressSearch(maplocation, function(result, status) {
                   //address 주소 입력하면 될듯!!
     // 정상적으로 검색이 완료됐으면 
      if (status === daum.maps.services.Status.OK) {
