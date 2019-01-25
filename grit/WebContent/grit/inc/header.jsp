@@ -153,10 +153,10 @@
 						<a class="gnb_li_a" href="#" data-toggle="modal" data-target="#modal3">{닉네임}</a>
 					</li>
 					<li class="gnb_li4">
-						<a class="gnb_li_a" data-toggle="modal" data-target="#modal4">3</a>
+						<a class="gnb_li_a" data-toggle="modal" data-target="#modal4"><img src="<c:url value='/grit/img/icon/alarm-icon.png'/>" style="width:40%;height:60%;float:left;margin:5px 0 0 3px;"> 0</a>
 					</li>
 					<li class="gnb_li4">
-						<a class="gnb_li_a" data-toggle="modal" data-target="#modal5">4</a>
+						<a class="gnb_li_a" data-toggle="modal" data-target="#modal5"><img src="<c:url value='/grit/img/icon/list-clipboard.png'/>" style="width:40%;height:60%;float:left;margin:5px 0 0 3px;"> 0</a>
 					</li>
 					<li class="gnb_li5" onclick="location.href='<c:url value="/grit/index-logout.do"/>'">
 						<a class="gnb_li_a">Log out</a>
