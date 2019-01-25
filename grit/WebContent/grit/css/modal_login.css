@@ -281,10 +281,16 @@ h4{
 	flaot:right;
 	width:30px;
 	height:30px;
+	background-color:#eee;
 	color: #aaa;
-	background-color: #eee;
 	border: 1px solid #aaa;
 	border-radius: 3px;
+	cursor:pointer;
+}
+.profile-header-btn-img{
+	width:60%;
+	heigth:60%;
+	margin-top:6px;
 }
 
 /* 컨텐츠 modal 부분*/
@@ -294,8 +300,9 @@ h4{
 .new-box{
 	width: 20px;
 	height: 20px;
-	border: 1px solid #555;
-	background-color: #555;
+	position: absolute;
+	top:-15PX;
+	left: -5PX;
 }
 .notice-box{
 	width:100%;
@@ -303,6 +310,8 @@ h4{
 	background-color: #eee;
 	border: 1px solid #aaa;
 	padding:10px;
+	margin-bottom:20px;
+	position: relative;
 }
 .notice-title{
 	width:100%;
