@@ -131,7 +131,7 @@ public class NoticeDAO {
 				vo.setNotiDownCnt(rs.getInt("noti_downcnt"));
 				vo.setNotiReadCnt(rs.getInt("noti_readcnt"));
 				vo.setNotiCategory(rs.getString("noti_category"));
-				vo.setNotiDelflag(rs.getString("noti_Delfalg"));
+				vo.setNotiDelfalg(rs.getString("noti_Delfalg"));
 			}
 			System.out.println("상세글 조회 결과 vo="+vo+", 입력값 no="+notiNo);
 			return vo;
