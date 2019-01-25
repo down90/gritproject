@@ -16,9 +16,11 @@ public class NoticeVO {
 	String notiCategory; //분야
 	String notiDelflag; //삭제구분 //DB에서는 NOTI_DELFALG로 되어있음 참고.
 	
+	//new이미지를 위한 변수
+	int newImgTerm;
+	
 	public NoticeVO() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public NoticeVO(int notiNo, String notiTitle, String adminId, String notiContent, Timestamp notiRegdate,
@@ -39,6 +41,34 @@ public class NoticeVO {
 		this.notiDelflag = notiDelflag;
 	}
 	
+	
+	public NoticeVO(int notiNo, String notiTitle, String adminId, String notiContent, Timestamp notiRegdate,
+			String notiFileName, int notiFileSize, String notiOFileName, int notiDownCnt, int notiReadCnt,
+			String notiCategory, String notiDelflag, int newImgTerm) {
+		super();
+		this.notiNo = notiNo;
+		this.notiTitle = notiTitle;
+		this.adminId = adminId;
+		this.notiContent = notiContent;
+		this.notiRegdate = notiRegdate;
+		this.notiFileName = notiFileName;
+		this.notiFileSize = notiFileSize;
+		this.notiOFileName = notiOFileName;
+		this.notiDownCnt = notiDownCnt;
+		this.notiReadCnt = notiReadCnt;
+		this.notiCategory = notiCategory;
+		this.notiDelflag = notiDelflag;
+		this.newImgTerm = newImgTerm;
+	}
+	
+	public int getNewImgTerm() {
+		return newImgTerm;
+	}
+
+	public void setNewImgTerm(int newImgTerm) {
+		this.newImgTerm = newImgTerm;
+	}
+
 	public int getNotiNo() {
 		return notiNo;
 	}
@@ -117,7 +147,8 @@ public class NoticeVO {
 		return "NoticeVO [notiNo=" + notiNo + ", notiTitle=" + notiTitle + ", adminId=" + adminId + ", notiContent="
 				+ notiContent + ", notiRegdate=" + notiRegdate + ", notiFileName=" + notiFileName + ", notiFileSize="
 				+ notiFileSize + ", notiOFileName=" + notiOFileName + ", notiDownCnt=" + notiDownCnt + ", notiReadCnt="
-				+ notiReadCnt + ", notiCategory=" + notiCategory + ", notiDelflag=" + notiDelflag + "]";
+				+ notiReadCnt + ", notiCategory=" + notiCategory + ", notiDelflag=" + notiDelflag + ", newImgTerm="
+				+ newImgTerm + "]";
 	}
 	
 

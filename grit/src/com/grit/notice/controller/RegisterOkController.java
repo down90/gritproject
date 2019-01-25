@@ -18,11 +18,12 @@ public class RegisterOkController implements Controller{
 		/grit/admin/notice/register_ok.do=RegisterOkController => message.jsp로 포워드*/
 		
 		//1.
-		String notiTitle = request.getParameter("notiTitle");
-		String adminId ="tjsdb107";
+		String notiTitle = request.getParameter("noti_title");
+		String adminId ="admin";
 		//String adminId = request.getParameter("adminId");
-		String notiContent = request.getParameter("notiContent");
-		String notiCategory = request.getParameter("notiCategory");
+		String notiContent = request.getParameter("noti_content");
+		String notiCategory = request.getParameter("noti_category");
+		System.out.println("noti_title="+notiTitle);
 		
 		//2.
 		NoticeService service = new NoticeService();

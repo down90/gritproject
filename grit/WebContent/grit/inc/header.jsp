@@ -151,7 +151,7 @@
 						<div class="profile-div"></div>
 					</li>
 					<li class="gnb_li3">
-						<a class="gnb_li_a" href="#" data-toggle="modal" data-target="#modal3">{닉네임}</a>
+						<a class="gnb_li_a" href="#" data-toggle="modal" data-target="#modal3">[ ${memVo.memNickname } ]</a>
 					</li>
 					<li class="gnb_li4">
 						<a class="gnb_li_a" data-toggle="modal" data-target="#modal4"><img src="<c:url value='/grit/img/icon/alarm-icon.png'/>" style="width:40%;height:60%;float:left;margin:5px 0 0 3px;"> 0</a>

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -182,22 +184,22 @@ $(function(){
 			<div class="modal-content content-size1">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<!-- 반복시작 -->
-				<button class="notice-box" style="margin-top:20px;">
-					<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
-					<div class="notice-title"><span>공지사항 명</span></div>
-					<div class="notice-regdate"><span>게시일시</span></div>
-				</button>
+				<c:forEach var="i" begin="0" end="4">
+					<c:set var="notiVo" value="${notiList[i] }"></c:set>
+					<button class="notice-box" style="margin-top:20px;">
+						<c:if test="${notiVo.newImgTerm<24 }">
+							<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
+						</c:if>
+						<c:if test="${fn:length(notiVo.notiTitle)>15}">
+							<div class="notice-title"><span>${fn:substring(notiVo.notiTitle,0,15) }...</span></div>
+						</c:if>
+						<c:if test="${fn:length(notiVo.notiTitle)<=15}">
+							<div class="notice-title"><span>${notiVo.notiTitle }</span></div>
+						</c:if>
+						<div class="notice-regdate"><span><fmt:formatDate value="${notiVo.notiRegdate }" pattern="yyyy-MM-dd E"/></span></div>
+					</button>
+				</c:forEach>
 				<!-- 반복끝 -->
-				<button class="notice-box">
-					<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
-					<div class="notice-title"><span>공지사항 명</span></div>
-					<div class="notice-regdate"><span>게시일시</span></div>
-				</button>
-				<button class="notice-box">
-					<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
-					<div class="notice-title"><span>공지사항 명</span></div>
-					<div class="notice-regdate"><span>게시일시</span></div>
-				</button>
 			</div>
 		</div>
 	</div>
