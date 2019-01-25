@@ -249,6 +249,27 @@ public class LectureDAO {
 			pool.dbClose(rs, ps, con);
 		}
 	}//
+	
+	public int updateReadCount(int cNo) throws SQLException {
+		Connection con=null;
+		PreparedStatement ps=null;
+		
+		try {
+			con=pool.getConnection();
+			
+			String sql="update class "
+					+ " set c_readcnt=c_readcnt+1 "
+					+ " where c_no=?";
+			ps=con.prepareStatement(sql);
+			
+			ps.setInt(1, cNo);
+			
+			int cnt=ps.executeUpdate();
+			return cnt;
+		}finally {
+			pool.dbClose(ps, con);
+		}
+	}
 }
 
 

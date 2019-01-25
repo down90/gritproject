@@ -241,7 +241,7 @@ body {
 					style="margin: 20px 0 0 40px; font-size: 14px; text-align: left; font-wegiht: bold;">실시간
 					인기 모임</div>
 					<div class="imgbox1" style="background-image: url('img/img1.png');cursor: pointer;" 
-					onclick="location.href='<c:url value="/grit/lecture/lectureDetail.do?cNo=${cntvo.cNo }"/>'">
+					onclick="location.href='<c:url value="/grit/lecture/readCount.do?cNo=${cntvo.cNo }"/>'">
 						<!-- 이미지 넣는곳 ${img_no} -->
 						<c:if test="${cntvo.cPay=='N'}">
 							<input type="button" value="무료" class="joinfee">
@@ -258,7 +258,7 @@ body {
 						<tr>
 							<td colspan="3" style="height: 25px;">
 								<div class="a_text" style="line-height: 25px"
-									onclick="location.href='<c:url value="/grit/lecture/lectureDetail.do?cNo=${cntvo.cNo }"/>'">${cntvo.cName }</div>
+									onclick="location.href='<c:url value="/grit/lecture/readCount.do?cNo=${cntvo.cNo }"/>'">${cntvo.cName }</div>
 							</td>
 						</tr>
 					</thead>
@@ -292,7 +292,7 @@ body {
 									<tr>
 										<td colspan="2" style="height: 40px; line-height: 40px;">
 											<div class="a_text"
-												onclick="location.href='<c:url value="/grit/lecture/lectureDetail.do?cNo=${recommandvo.cNo }"/>'">
+												onclick="location.href='<c:url value="/grit/lecture/readCount.do?cNo=${recommandvo.cNo }"/>'">
 												${recommandvo.cName }</div>
 										</td>
 									</tr>
@@ -350,7 +350,7 @@ body {
 								<tr>
 									<td colspan="2" style="height: 30px; line-height: 30px;">
 										<div class="a_text"
-											onclick="location.href='<c:url value="/grit/lecture/lectureDetail.do?cNo=${regdateList.cNo }"/>'">
+											onclick="location.href='<c:url value="/grit/lecture/readCount.do?cNo=${regdateList.cNo }"/>'">
 											${regdateList.cName }</div>
 									</td>
 								</tr>
