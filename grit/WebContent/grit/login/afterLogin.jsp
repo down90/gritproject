@@ -58,13 +58,11 @@ $(function(){
 				<div class="profile-header">
 					<div class="profile-img-box">
 						<div class="set-box">
-							<div class="display-i-b">
-								<input type="button" class="profile-header-btn" data-toggle="modal" data-target="#modal3-1" >
-								<img alt="" src="">
+							<div class="display-i-b profile-header-btn" data-toggle="modal" data-target="#modal3-1" >
+								<img src="<c:url value='/grit/img/icon/unlocked2.png'/>" class="profile-header-btn-img">
 							</div>
-							<div class="display-i-b">
-								<input type="button" class="profile-header-btn" data-toggle="modal" data-target="#modal3-2">
-								<img alt="" src="">
+							<div class="display-i-b profile-header-btn" data-toggle="modal" data-target="#modal3-2">
+								<img src="<c:url value='/grit/img/icon/edit-document-icon.png'/>" class="profile-header-btn-img">
 							</div>
 						</div>
 						<a href=""><img alt="개인회원이 등록한 사진" src="<c:url value='/grit/img/img1.png'/>" class="profile-img"></a>
@@ -184,25 +182,19 @@ $(function(){
 			<div class="modal-content content-size1">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<!-- 반복시작 -->
-				<div class="new-box">
-					<img alt="" src="">
-				</div>
-				<button class="notice-box">
+				<button class="notice-box" style="margin-top:20px;">
+					<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
 					<div class="notice-title"><span>공지사항 명</span></div>
 					<div class="notice-regdate"><span>게시일시</span></div>
 				</button>
 				<!-- 반복끝 -->
-				<div class="new-box">
-					<img alt="" src="">
-				</div>
 				<button class="notice-box">
+					<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
 					<div class="notice-title"><span>공지사항 명</span></div>
 					<div class="notice-regdate"><span>게시일시</span></div>
 				</button>
-				<div class="new-box">
-					<img alt="" src="">
-				</div>
 				<button class="notice-box">
+					<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
 					<div class="notice-title"><span>공지사항 명</span></div>
 					<div class="notice-regdate"><span>게시일시</span></div>
 				</button>

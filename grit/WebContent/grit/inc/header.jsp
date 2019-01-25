@@ -147,6 +147,7 @@
 				</c:if>
 				<c:if test="${!empty sessionScope.memUserid }">
 					<li class="gnb_li">
+						<img src="<c:url value='/grit/img/icon/human-people-profile.png'/>" style="width:100%;height:100%;">
 						<div class="profile-div"></div>
 					</li>
 					<li class="gnb_li3">
