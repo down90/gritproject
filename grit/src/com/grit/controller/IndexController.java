@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.controller.Controller;
 import com.grit.lecture.model.LectureService;
 import com.grit.lecture.model.LectureVO;
+import com.grit.member.model.MemberService;
+import com.grit.member.model.MemberVO;
 
 public class IndexController implements Controller {
 
@@ -39,6 +41,14 @@ public class IndexController implements Controller {
 		System.out.println("regdateList="+regdateList);
 		request.setAttribute("regdateList", regdateList);
 		
+		//로그인된 경우만 프로필 클릭이 되도록
+		if(memUserid!=null&&!memUserid.isEmpty()) {
+			MemberService memService=new MemberService();
+			MemberVO memVo=memService.selectMember(memUserid);
+			System.out.println("memVo="+memVo);
+			request.setAttribute("memVo", memVo);
+			return "/grit/index.jsp";
+		}
 		
 		return "/grit/index.jsp";
 	}

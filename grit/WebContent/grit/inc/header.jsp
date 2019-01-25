@@ -205,3 +205,68 @@
 		    });
 		  //]]>
 		</script>
+		
+<!-- <script type='text/javascript'>
+
+		
+
+  	//<![CDATA[
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('2ffccc18b7aad9e9d90d5777aa5e3285');
+    // 카카오 로그인 버튼을 생성합니다.
+    
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      
+    //{"access_token":"Uds6shHwFw1vU-zqX4MjeXs884wgg8gAMPiohgoqAucAAAFocu22XA",
+    //"token_type":"bearer","refresh_token":"Ls6eUj8Xc4ZERHSy8d2g32WQiVIDg_8LmZNGxAoqAucAAAFocu22WA",
+    //"expires_in":7199,"scope":"profile","refresh_token_expires_in":2591999,
+    //"stateToken":"bflhl9hwj9gms5lweeijyo"}
+      success: function() {
+    	  Kakao.API.request({ 
+                url: '/v1/user/me', 
+                success: function(res) { 
+                     var info = [ 
+                          JSON.stringify(res.id), 
+                          JSON.stringify(res.kaccount_email), 
+                          JSON.stringify(res.properties.nickname), 
+                          JSON.stringify(res.properties.profile_image), 
+                          JSON.stringify(res.properties.thumbnail_image)
+                      ]; 
+                     createLogoutKakao();                    
+               }, 
+               fail: function(error) { 
+                     console.log(JSON.stringify(error)); 
+              } 
+       	  }); 
+      },
+      fail: function(err) {
+         alert(JSON.stringify(err));
+      }
+    });
+  	//]]>
+  	//로그아웃 버튼에 onclick 이벤트
+    function logoutWithKakao(){
+        Kakao.Auth.logout();
+        alert('카카오 로그아웃 완료!');
+        createLoginKakao();//로그인창이 보여져야 함
+        window.location.href="../index.html";
+    }
+    
+
+     //로그인창이 보여져야 함
+	 function createLoginKakao(){
+	  document.getElementById('beforeLogin-1').style.display  = "none";
+	  document.getElementById('beforeLogin-2').style.display  = "none";
+	 }
+	  
+	//로그아웃창이 보여져야 함
+	 function createLogoutKakao(){
+	  document.getElementById('afterLogin-1').style.display  = "none";
+	  document.getElementById('afterLogin-2').style.display  = "none";
+	  document.getElementById('afterLogin-3').style.display  = "none";
+	  document.getElementById('afterLogin-4').style.display  = "none";
+	  	
+	 }
+</script> -->
+		
