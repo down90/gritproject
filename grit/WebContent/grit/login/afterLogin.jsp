@@ -11,6 +11,23 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/grit/css/modal_login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<c:url value='/grit/js/member.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/grit/jquery/jquery-3.3.1.min.js'/>"></script>
+<script type="text/javascript">
+$(function(){
+	$("#change-pwd-ptn").click(function(){
+		//비밀번호, 비밀번호 확인 일치여부 jq
+		if($("#pwd1").val()!=$("#pwd2").val()){
+			$(".validation").css("visibility", "visible");
+			$(".validation").html("비밀번호를 일치시켜 주세요.")
+			$("#pwd2").focus();
+			event.preventDefault();
+		}else{
+			$(".validation").css("visibility", "hidden");
+		}
+	});
+});
+</script>
 </head>
 <body>
 <!-- 	<div id="after-login-header">
@@ -34,7 +51,7 @@
 	
 	<!-- modal부분시작 -->
 	<!-- 프로필-->
-	<div class="modal fade" id="modal3" role="dialog">
+	<div class="modal fade" id="modal3" role="dialog" >
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
 			<button type="button" class="close" data-dismiss="modal" style="display: none;">&times;</button>
@@ -85,14 +102,15 @@
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
 				<button type="button" class="close" data-dismiss="modal" style="display: none;">&times;</button>
-				<form action="" method="post" name="">
+				<form action="<c:url value='/grit/change-pwd.do'/>" method="post" name="frmPwd">
 					<div>
-						<input type="text"  placeholder="현재 비밀번호를 입력해주세요" class="modal-button">
-						<input type="text"  placeholder="새 비밀번호를 입력해주세요" class="modal-button">
-						<input type="text"  placeholder="비밀번호를 한번 더 입력해주세요" class="modal-button">
+						<input type="password" name ="currentPwd" placeholder="현재 비밀번호를 입력해주세요" class="modal-button">
+						<input type="password" id="pwd1" name ="newPwd" placeholder="새 비밀번호를 입력해주세요" class="modal-button">
+						<input type="password" id="pwd2" placeholder="비밀번호를 한번 더 입력해주세요" class="modal-button">
 					</div>
+					<p class="validation" style="margin-top:5px; text-align:right">validation message field</p>
 					<div>
-						<input type="submit" value="변경" class="modal-button">
+						<input id="change-pwd-ptn" type="submit" value="변경" class="modal-button">
 					</div>
 				</form>
 			</div>
