@@ -14,9 +14,8 @@
 <script type="text/javascript">
 	var IMP = window.IMP; // 생략가능
 
+	IMP.init('imp07537802'); // 가맹점 식별 코드
 	function pay() {
-		IMP.init('imp07537802'); // 가맹점 식별 코드
-
 		IMP.request_pay({
 			pg : 'html5_inicis',
 			pay_method : 'card',
@@ -399,7 +398,7 @@ body {
 						// 주소로 좌표를 검색합니다
 						geocoder
 								.addressSearch(
-										"경기 안양시 동안구 관악대로106번길 72",
+										maplocation,
 										function(result, status) {
 											//address 주소 입력하면 될듯!!
 											// 정상적으로 검색이 완료됐으면 
