@@ -26,17 +26,16 @@ public class NoticeDAO {
 		try {
 			//[1][2] 드라이버 로딩, db서버에 연결하기 위한 Connection객체 생성
 			con = pool.getConnection();
-
+			
 			//[3]sql문장을 처리할 PreparedStatement객체 생성
-			String sql="insert into NOTICE(NOTI_NO, NOTI_TITLE, ADMIN_ID, NOTI_CONTENT, NOTI_CATEGORY)" + 
-					"values(NOTICE_seq.nextval,?,?,?,?)";
+			String sql="insert into notice(NOTI_NO, NOTI_TITLE, ADMIN_ID, NOTI_CONTENT, NOTI_CATEGORY)" + 
+					" values(NOTICE_seq.nextval,?,?,?,?)";
 			ps=con.prepareStatement(sql);
 			//in parameter setting
 			ps.setString(1, vo.getNotiTitle());
 			ps.setString(2, vo.getAdminId());
 			ps.setString(3, vo.getNotiContent());
 			ps.setString(4, vo.getNotiCategory());
-
 			//[4]
 			int cnt = ps.executeUpdate();
 			System.out.println("글쓰기 결과 cnt="+cnt+", 입력값 vo=" +vo);
@@ -56,14 +55,17 @@ public class NoticeDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		
+
 		List<NoticeVO> list = new ArrayList<>();
 		try {
 			//[1][2]con
 			con=pool.getConnection();
 
 			//[3]ps
-			String sql="select * from NOTICE";
+			String sql="select noti_no,noti_title,admin_id,noti_content,noti_regdate,noti_filename," + 
+					" noti_filesize,noti_ofilename,noti_downcnt,noti_readcnt,noti_category,noti_delfalg," + 
+					" (sysdate-noti_regdate)*24 as newImgTerm from notice"
+					+ " order by noti_no desc";
 			ps=con.prepareStatement(sql);
 			//[4]exec
 			rs=ps.executeQuery();
@@ -80,10 +82,15 @@ public class NoticeDAO {
 				int notiDownCnt=rs.getInt("noti_downcnt");
 				int notiReadCnt=rs.getInt("noti_readcnt");
 				String notiDelflag=rs.getString("noti_delfalg");
+
+				int newImgTerm=rs.getInt("newImgTerm");
 				
-				NoticeVO vo=new NoticeVO(notiNo, notiTitle, adminId, notiContent, notiRegdate, notiFileName, notiFileSize, notiOFileName, notiDownCnt, notiReadCnt, notiCategory, notiDelflag);
+				NoticeVO vo=new NoticeVO(notiNo, notiTitle, adminId, notiContent, notiRegdate, 
+						notiFileName, notiFileSize, notiOFileName, notiDownCnt, notiReadCnt, 
+						notiCategory, notiDelflag, newImgTerm);
+
 				list.add(vo);
-				
+
 			}
 			System.out.println("전체 글 조회 결과 list.size="+list.size());
 			return list;
@@ -91,6 +98,45 @@ public class NoticeDAO {
 		}finally {
 			pool.dbClose(rs, ps, con);
 		}
+	}
 
+	public NoticeVO selectByNoNotice(int notiNo) throws SQLException{
+		//no에 해당하는 글 조회
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		NoticeVO vo = new NoticeVO();
+
+		try {
+			//[1][2]con
+			con=pool.getConnection();
+
+			//[3] ps
+			String sql="select * from notice where noti_No=?";
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, notiNo);
+
+			//[4] exec
+			rs=ps.executeQuery();
+			if(rs.next()) {
+				vo.setNotiNo(rs.getInt("noti_no"));
+				vo.setNotiTitle(rs.getString("noti_Title"));
+				vo.setAdminId(rs.getString("admin_Id"));
+				vo.setNotiContent(rs.getString("noti_content"));
+				vo.setNotiRegdate(rs.getTimestamp("noti_Regdate"));
+				vo.setNotiFileName(rs.getString("noti_filename"));
+				vo.setNotiFileSize(rs.getInt("noti_filesize"));
+				vo.setNotiOFileName(rs.getString("noti_ofilename"));
+				vo.setNotiDownCnt(rs.getInt("noti_downcnt"));
+				vo.setNotiReadCnt(rs.getInt("noti_readcnt"));
+				vo.setNotiCategory(rs.getString("noti_category"));
+				vo.setNotiDelfalg(rs.getString("noti_Delfalg"));
+			}
+			System.out.println("상세글 조회 결과 vo="+vo+", 입력값 no="+notiNo);
+			return vo;
+		}finally{
+			pool.dbClose(rs, ps, con);
+		}
 	}
 }

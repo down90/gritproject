@@ -28,4 +28,8 @@ public class LectureService {
 	public List<LectureVO> selectRegdate() throws SQLException{
 		return lectureDao.selectRegdate();
 	}
+	
+	public int updateReadCount(int cNo) throws SQLException {
+		return lectureDao.updateReadCount(cNo);
+	}
 }

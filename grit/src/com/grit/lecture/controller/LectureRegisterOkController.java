@@ -3,6 +3,7 @@ package com.grit.lecture.controller;
 
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,34 +30,61 @@ public class LectureRegisterOkController implements Controller{
 		String cTeacherIntro=request.getParameter("cTeacherIntro");
 		String cSummary=request.getParameter("cSummary");
 		String cDetail=request.getParameter("cDetail");
+		String cDate=request.getParameter("cDate");
+		String cLine=request.getParameter("cLine");
+		int cTime=Integer.parseInt(request.getParameter("cTime")); //시간 int 로 변환해서 문자열 사이에 넣을생각
 		String cLocation=request.getParameter("cLocation");
 		String cMaxPerson=request.getParameter("cMaxPerson");
 		String cPay=request.getParameter("cPay");
 		String cMoney=request.getParameter("cMoney");
 		String cAccount=request.getParameter("cAccount");
 		String cBank=request.getParameter("cBank");
-		LectureVO vo=new LectureVO();
-		vo.setcName(cName);
-		vo.setcTeacherIntro(cTeacherIntro);
-		vo.setcSummary(cSummary);
-		vo.setcDetail(cDetail);
-		vo.setcLocation(cLocation);
-		vo.setcMaxPerson(Integer.parseInt(cMaxPerson));
-		vo.setcPay(cPay);
-		vo.setcMoney(Integer.parseInt(cMoney));
-		vo.setcAccount(cAccount);
-		vo.setcBank(cBank);
-		vo.setMemUserid(memUserid);
-		vo.setcCategory("강의");
-		LectureService service=new LectureService();
+		if(cLine.equals("오후")) {
+			cTime+=12;
+			if(cTime==24) {
+				cTime=0;
+			}
+		}
+		String ctime="";
+		if(cTime<10) {
+			ctime="0"+cTime;
+		}else {
+			ctime=" "+cTime;
+		}
+		cDate+=" "+ctime+":00:00";
+		
 		String msg="등록 실패", url="/grit/grit/lecture/lectureRegister.do";
 		try {
-			int cnt=service.insertClass(vo);
-			if(cnt>0) {
-				msg="등록 성공";
-				url="/grit/grit/index.do";
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			Date d=sdf.parse(cDate);
+			Timestamp totalCdate=new Timestamp(d.getTime()); //최종 db에 들어갈 날짜,시간
+			
+			LectureVO vo=new LectureVO();
+			vo.setcName(cName);
+			vo.setcTeacherIntro(cTeacherIntro);
+			vo.setcSummary(cSummary);
+			vo.setcDetail(cDetail);
+			vo.setcDate(totalCdate);
+			vo.setcLocation(cLocation);
+			vo.setcMaxPerson(Integer.parseInt(cMaxPerson));
+			vo.setcPay(cPay);
+			vo.setcMoney(Integer.parseInt(cMoney));
+			vo.setcAccount(cAccount);
+			vo.setcBank(cBank);
+			vo.setMemUserid(memUserid);
+			vo.setcCategory("강의");
+			LectureService service=new LectureService();
+			System.out.println(vo);
+			try {
+				int cnt=service.insertClass(vo);
+				if(cnt>0) {
+					msg="등록 성공";
+					url="/grit/grit/index.do";
+				}
+			}catch (SQLException e) {
+				e.printStackTrace();
 			}
-		}catch (SQLException e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		request.setAttribute("msg", msg);

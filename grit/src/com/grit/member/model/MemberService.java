@@ -35,4 +35,7 @@ public class MemberService {
 	public int withdrawMember(String memUserid) throws SQLException {
 		return memberDao.withdrawMember(memUserid);
 	}
+	public int changePwdMember(String memUserid, String newPwd) throws SQLException {
+		return memberDao.changePwdMember(memUserid, newPwd);
+	}
 }

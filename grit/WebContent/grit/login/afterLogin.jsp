@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +13,23 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/grit/css/modal_login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<c:url value='/grit/js/member.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/grit/jquery/jquery-3.3.1.min.js'/>"></script>
+<script type="text/javascript">
+$(function(){
+	$("#change-pwd-ptn").click(function(){
+		//비밀번호, 비밀번호 확인 일치여부 jq
+		if($("#pwd1").val()!=$("#pwd2").val()){
+			$(".validation").css("visibility", "visible");
+			$(".validation").html("비밀번호를 일치시켜 주세요.")
+			$("#pwd2").focus();
+			event.preventDefault();
+		}else{
+			$(".validation").css("visibility", "hidden");
+		}
+	});
+});
+</script>
 </head>
 <body>
 <!-- 	<div id="after-login-header">
@@ -34,26 +53,24 @@
 	
 	<!-- modal부분시작 -->
 	<!-- 프로필-->
-	<div class="modal fade" id="modal3" role="dialog">
+	<div class="modal fade" id="modal3" role="dialog" >
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
 			<button type="button" class="close" data-dismiss="modal" style="display: none;">&times;</button>
 				<div class="profile-header">
 					<div class="profile-img-box">
 						<div class="set-box">
-							<div class="display-i-b">
-								<input type="button" class="profile-header-btn" data-toggle="modal" data-target="#modal3-1" >
-								<img alt="" src="">
+							<div class="display-i-b profile-header-btn" data-toggle="modal" data-target="#modal3-1" >
+								<img src="<c:url value='/grit/img/icon/unlocked2.png'/>" class="profile-header-btn-img">
 							</div>
-							<div class="display-i-b">
-								<input type="button" class="profile-header-btn" data-toggle="modal" data-target="#modal3-2">
-								<img alt="" src="">
+							<div class="display-i-b profile-header-btn" data-toggle="modal" data-target="#modal3-2">
+								<img src="<c:url value='/grit/img/icon/edit-document-icon.png'/>" class="profile-header-btn-img">
 							</div>
 						</div>
 						<a href=""><img alt="개인회원이 등록한 사진" src="<c:url value='/grit/img/img1.png'/>" class="profile-img"></a>
 					</div>
 					<div class="profile-nick-box">
-						<a href="" data-toggle="modal" data-target="#modal3-2">{닉네임}</a>
+						<a href="" data-toggle="modal" data-target="#modal3-2">{ ${memVo.memNickname } }</a>
 					</div>
 				</div>
 				<div class="profile-category">
@@ -75,7 +92,7 @@
 					</div>
 					<div class="profile-intro">
 						<h4>자기소개</h4>
-						<div class="profile-intro-text"></div>
+						<div class="profile-intro-text">${memVo.memIntro }</div>
 					</div>
 				</div>
 			</div>
@@ -87,14 +104,15 @@
 		<div class="modal-dialog">
 			<div class="modal-content content-size1">
 				<button type="button" class="close" data-dismiss="modal" style="display: none;">&times;</button>
-				<form action="" method="post" name="">
+				<form action="<c:url value='/grit/change-pwd.do'/>" method="post" name="frmPwd">
 					<div>
-						<input type="text"  placeholder="현재 비밀번호를 입력해주세요" class="modal-button">
-						<input type="text"  placeholder="새 비밀번호를 입력해주세요" class="modal-button">
-						<input type="text"  placeholder="비밀번호를 한번 더 입력해주세요" class="modal-button">
+						<input type="password" name ="currentPwd" placeholder="현재 비밀번호를 입력해주세요" class="modal-button">
+						<input type="password" id="pwd1" name ="newPwd" placeholder="새 비밀번호를 입력해주세요" class="modal-button">
+						<input type="password" id="pwd2" placeholder="비밀번호를 한번 더 입력해주세요" class="modal-button">
 					</div>
+					<p class="validation" style="margin-top:5px; text-align:right">validation message field</p>
 					<div>
-						<input type="submit" value="변경" class="modal-button">
+						<input id="change-pwd-ptn" type="submit" value="변경" class="modal-button">
 					</div>
 				</form>
 			</div>
@@ -166,28 +184,22 @@
 			<div class="modal-content content-size1">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<!-- 반복시작 -->
-				<div class="new-box">
-					<img alt="" src="">
-				</div>
-				<button class="notice-box">
-					<div class="notice-title"><span>공지사항 명</span></div>
-					<div class="notice-regdate"><span>게시일시</span></div>
-				</button>
+				<c:forEach var="i" begin="0" end="4">
+					<c:set var="notiVo" value="${notiList[i] }"></c:set>
+					<button class="notice-box" style="margin-top:20px;">
+						<c:if test="${notiVo.newImgTerm<24 }">
+							<img src="<c:url value='/grit/img/icon/new-icon3.png'/>" class="new-box">
+						</c:if>
+						<c:if test="${fn:length(notiVo.notiTitle)>15}">
+							<div class="notice-title"><span>${fn:substring(notiVo.notiTitle,0,15) }...</span></div>
+						</c:if>
+						<c:if test="${fn:length(notiVo.notiTitle)<=15}">
+							<div class="notice-title"><span>${notiVo.notiTitle }</span></div>
+						</c:if>
+						<div class="notice-regdate"><span><fmt:formatDate value="${notiVo.notiRegdate }" pattern="yyyy-MM-dd E"/></span></div>
+					</button>
+				</c:forEach>
 				<!-- 반복끝 -->
-				<div class="new-box">
-					<img alt="" src="">
-				</div>
-				<button class="notice-box">
-					<div class="notice-title"><span>공지사항 명</span></div>
-					<div class="notice-regdate"><span>게시일시</span></div>
-				</button>
-				<div class="new-box">
-					<img alt="" src="">
-				</div>
-				<button class="notice-box">
-					<div class="notice-title"><span>공지사항 명</span></div>
-					<div class="notice-regdate"><span>게시일시</span></div>
-				</button>
 			</div>
 		</div>
 	</div>

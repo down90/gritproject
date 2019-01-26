@@ -35,10 +35,9 @@ public class DispatcherServlet extends HttpServlet {
 		realConfigFile="C:\\Users\\in440\\git\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //강훈이 노트북 경로
 		//realConfigFile="C:\\Users\\pjs3m\\git\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //종석이 노트북경로
 		//realConfigFile="C:\\Users\\in440\\git\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //강훈이 노트북 경로
-		//realConfigFile="C:\\Users\\pjs3m\\OneDrive\\Desktop\\projectlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //종석이 노트북경로
 		//realConfigFile="C:\\Users\\user\\Desktop\\gritlocal\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
 		//realConfigFile="C:\\Users\\jhkim\\grit\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
-		//realConfigFile="D:\\grit_local\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties";
+		//realConfigFile="D:\\lecture\\workspace_list\\jsp_ws\\gritproject\\grit\\WebContent\\grit\\config\\CommandPro.properties"; //선유
 		System.out.println("realConfigFile="+realConfigFile+"\n\n");
 		
 	
