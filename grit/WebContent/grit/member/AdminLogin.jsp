@@ -10,56 +10,6 @@
 <title>AdminLogin.jsp</title>
 <meta name="description" content="Ela Admin - HTML5 Admin Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="../jquery/jquery-3.3.1.min.js">
-</script>
-<script type="text/javascript">
-
-
-/*  function check() {		
-	
-	var email = document.getElementById("adminId").value;
-	var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
-	if(exptext.test(email)==false){
-		//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
-		alert("이메일의 형식이 아닙니다. 예)xxx@aver.com");
-		$("#adminPwd").focus();
-		event.preventDefault();
-		return false;
-	}
-}
- */
-
- $(function(){
-	$("input[name='adminId']").focus();
-	var email = document.getElementById("adminId").value;
-	var exptext = ^[a-zA-Z0-9]+@[a-zA-Z0-9]+$ or ^[_0-9a-zA-Z-]+@[0-9a-zA-Z-]+(.[_0-9a-zA-Z-]+)*$;
-
-
-
-
-	
-	$("button[type='submit']").click(function(){
-		if($("input[name='adminId']").val().length<1){
-			alert($("input[name='adminId']").parent().find("label").text() +"을(를) 입력하세요");
-			$("#adminId").focus();
-			event.preventDefault(); //이벤트 진행 막기					
-			return false;  //each 탈출
-		}else if(exptext.test(email)==false){
-			//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
-			alert("이메일의 형식이 아닙니다. 예)xxx@aver.com");
-			$("#adminPwd").focus();
-			event.preventDefault();
-			return false;
-		}else if($("input[name='adminPwd']").val().length<1){
-			alert($("input[name='adminPwd']").parent().find("label").text() +"을(를) 입력하세요");
-			$("#adminPwd").focus();
-			event.preventDefault(); //이벤트 진행 막기					
-			return false;  //each 탈출
-		}
-		
-	});
-}); 
-</script>
 <!-- 기본적으로 딸려오는 css -->
 <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
 <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
@@ -82,6 +32,36 @@
 	rel='stylesheet' type='text/css'>
 <!-- 기본적으로 딸려오는 css 끝 -->
 
+<script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="<c:url value='../js/member.js'/>"></script>
+<script type="text/javascript">
+
+
+ $(function(){
+	$("input[name='adminId']").focus();
+
+	$("button[type='submit']").click(function(){
+		if($("input[name='adminId']").val().length<1){
+			alert($("input[name='adminId']").parent().find("label").text() +"을(를) 입력하세요");
+			$("input[name='adminId']").focus();
+			event.preventDefault(); //이벤트 진행 막기					
+			return false;  //each 탈출
+		}else if(!validate_userid($("input[name='adminId']").val())){
+			//이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우			
+			alert("이메일의 형식이 아닙니다. 예)xxx@aver.com");
+			$("input[name='adminId']").focus();
+			event.preventDefault();
+			return false;
+		}else if($("input[name='adminPwd']").val().length<1){
+			alert($("input[name='adminPwd']").parent().find("label").text() +"을(를) 입력하세요");
+			$("#adminPwd").focus();
+			event.preventDefault(); //이벤트 진행 막기					
+			return false;  //each 탈출
+		}
+		
+	});
+}); 
+</script>
 
 </head>
 <body class="bg-dark">
@@ -114,7 +94,7 @@
 
 						</div>
 						<button type="submit"
-							class="btn btn-success btn-flat m-b-30 m-t-30" onclick="check()"> 로그인</button>
+							class="btn btn-success btn-flat m-b-30 m-t-30"> 로그인</button>
 					</form>
 					<!-- form태그 끝 -->
 				</div>
